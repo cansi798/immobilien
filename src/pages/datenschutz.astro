@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../consts";
+// An die neue statische Website angepasst: keine Cookies, keine Tracker, keine externen Schriften,
+// kein Formular-Backend, Karte nur als Link. Hosting derzeit GitHub Pages (Vorschau).
+---
+<BaseLayout title="Datenschutz | Henrick Jung Immobilien" description="Datenschutzerklärung von Henrick Jung Immobilien – keine Cookies, keine Tracking-Dienste." noindex>
+  <section class="section legal">
+    <div class="container">
+      <h1>Datenschutzerklärung</h1>
+      <h2>1. Datenschutz auf einen Blick</h2>
+      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+      <p><strong>Kurz gesagt:</strong> Diese Website verwendet keine Cookies, keine Analyse- oder Tracking-Dienste und keine eingebetteten Inhalte Dritter (z. B. Karten, Videos oder Social-Media-Plugins). Schriften werden direkt von unserem Server geladen. Daten erhalten wir nur, wenn Sie uns selbst kontaktieren.</p>
+
+      <h2>2. Verantwortliche Stelle</h2>
+      <p>{SITE.owner}<br />{SITE.name}<br />{SITE.street}<br />{SITE.zip} {SITE.city}<br />Telefon: {SITE.phoneDisplay}<br />E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+      <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.</p>
+
+      <h2>3. Hosting und Server-Logfiles</h2>
+      <p>Diese Website wird derzeit über den Dienst GitHub Pages der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, bereitgestellt. Beim Aufruf der Seiten verarbeitet der Hoster technisch notwendige Daten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Abrufs, die aufgerufene Seite sowie Browser- und Betriebssysteminformationen. Diese Verarbeitung ist erforderlich, um die Website sicher und fehlerfrei auszuliefern (Art. 6 Abs. 1 lit. f DSGVO). Eine Übermittlung in die USA kann dabei nicht ausgeschlossen werden; GitHub ist nach dem EU-U.S. Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+
+      <h2>4. Keine Cookies, kein Tracking</h2>
+      <p>Wir setzen keine Cookies und keine Analyse-, Marketing- oder Tracking-Werkzeuge ein. Ein Einwilligungsbanner ist daher nicht erforderlich.</p>
+
+      <h2>5. Schriftarten</h2>
+      <p>Die auf dieser Website verwendeten Schriften (Playfair Display und Inter) sind lokal eingebunden. Beim Seitenaufruf wird keine Verbindung zu Servern Dritter (z. B. Google Fonts) aufgebaut.</p>
+
+      <h2>6. Kontaktaufnahme per E-Mail, Telefon und Kontaktformular</h2>
+      <p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Kontaktdaten, Ihr Anliegen) zur Bearbeitung Ihrer Anfrage und für mögliche Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag oder vorvertraglichen Maßnahmen zusammenhängt, im Übrigen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+      <p>Das Kontaktformular auf dieser Website überträgt keine Daten an einen Server. Es bereitet lediglich eine E-Mail in Ihrem eigenen E-Mail-Programm vor, die Sie selbst absenden. Ihre Daten verbleiben bei uns, bis der Zweck der Speicherung entfällt oder Sie die Löschung verlangen; gesetzliche Aufbewahrungsfristen bleiben unberührt.</p>
+
+      <h2>7. Externe Links</h2>
+      <p>Diese Website enthält Links zu externen Angeboten, z. B. zu Instagram und zu OpenStreetMap (Kartenansicht). Erst wenn Sie einen solchen Link anklicken, werden Daten an den jeweiligen Anbieter übertragen. Für die Datenverarbeitung dort ist der jeweilige Anbieter verantwortlich.</p>
+
+      <h2>8. Ihre Rechte</h2>
+      <p>Sie haben im Rahmen der gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft, Empfänger und den Zweck der Verarbeitung (Art. 15 DSGVO) sowie ein Recht auf Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20 DSGVO).</p>
+      <h3>Widerruf Ihrer Einwilligung</h3>
+      <p>Eine bereits erteilte Einwilligung können Sie jederzeit formlos, z. B. per E-Mail, widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt.</p>
+      <h3>Widerspruchsrecht (Art. 21 DSGVO)</h3>
+      <p>Erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO, haben Sie jederzeit das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, Widerspruch einzulegen. Werden Ihre Daten zur Direktwerbung verarbeitet, können Sie dem jederzeit widersprechen.</p>
+      <h3>Beschwerderecht bei der Aufsichtsbehörde</h3>
+      <p>Im Falle von Verstößen gegen die DSGVO steht Ihnen ein Beschwerderecht bei einer Aufsichtsbehörde zu. Zuständig für uns ist der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit: <a href="https://datenschutz-hamburg.de/" target="_blank" rel="noopener">datenschutz-hamburg.de</a>.</p>
+
+      <h2>9. SSL- bzw. TLS-Verschlüsselung</h2>
+      <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers.</p>
+      <p class="small">Stand: Oktober 2026</p>
+    </div>
+  </section>
+</BaseLayout>

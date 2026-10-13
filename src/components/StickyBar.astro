@@ -1,0 +1,24 @@
+---
+// Feste Kontaktleiste auf Handy/Tablet.
+import { SITE, u } from "../consts";
+import Icon from "./Icon.astro";
+---
+<div class="sb" role="region" aria-label="Schnellkontakt">
+  <a class="sb__btn sb__btn--dark" href={`tel:${SITE.phoneTel}`}><Icon name="phone" size={18} /> Anrufen</a>
+  <a class="sb__btn" href={u("kontakt/")}><Icon name="mail" size={18} /> Anfrage senden</a>
+</div>
+<style>
+  .sb {
+    position: fixed; inset: auto 0 0 0; z-index: 90;
+    display: flex; gap: 8px; padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--linie);
+  }
+  .sb__btn {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 48px; border-radius: 999px; border: 1px solid var(--silber-300);
+    font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink); background: var(--weiss);
+  }
+  .sb__btn--dark { background: var(--ink); color: var(--weiss); border-color: var(--ink); }
+  @media (min-width: 1024px) { .sb { display: none; } }
+</style>

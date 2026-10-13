@@ -1,0 +1,48 @@
+---
+// Kopfbereich der Unterseiten: Überschrift + optional großes Bild (Ken-Burns).
+import Img from "./Img.astro";
+import RoofLine from "./RoofLine.astro";
+import { u } from "../consts";
+interface Props {
+  eyebrow?: string; title: string; lead?: string;
+  bild?: { src: string; w: number; h: number; alt: string };
+  crumbs?: { label: string; href?: string }[];
+}
+const { eyebrow, title, lead, bild, crumbs = [] } = Astro.props;
+---
+<section class:list={["ph", { "ph--bild": bild }]}>
+  <div class="container ph__inner">
+    <div class="ph__text">
+      {crumbs.length > 0 && (
+        <nav class="crumbs" aria-label="Brotkrumen">
+          <a href={u("")}>Start</a>
+          {crumbs.map((c) => (<><span aria-hidden="true">/</span>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>))}
+        </nav>
+      )}
+      {eyebrow && <p class="eyebrow reveal">{eyebrow}</p>}
+      <h1 class="reveal" style="--d:80ms" set:html={title} />
+      {lead && <p class="lead reveal" style="--d:160ms">{lead}</p>}
+      <div class="reveal" style="--d:240ms"><slot /></div>
+    </div>
+    {bild ? (
+      <div class="ph__bild pic pic--r reveal-img"><Img src={bild.src} w={bild.w} h={bild.h} alt={bild.alt} eager sizes="(min-width: 1024px) 50vw, 100vw" /></div>
+    ) : (
+      <RoofLine class="ph__roof" width={260} />
+    )}
+  </div>
+</section>
+<style>
+  .ph { padding-block: 40px 64px; background: var(--papier); position: relative; overflow: hidden; }
+  @media (min-width: 900px) { .ph { padding-block: 64px 96px; } }
+  .ph__inner { display: grid; gap: 40px; align-items: center; }
+  @media (min-width: 1024px) { .ph--bild .ph__inner { grid-template-columns: 1.05fr 1fr; gap: 64px; } .ph:not(.ph--bild) .ph__inner { grid-template-columns: 1fr auto; } }
+  .ph__text { min-width: 0; }
+  .ph h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
+  .ph__bild { aspect-ratio: 4 / 3; }
+  .ph__bild :global(img) { animation: kenburns 16s var(--ease) both; }
+  :global(.ph__roof) { display: none !important; }
+  @media (min-width: 1024px) { :global(.ph__roof) { display: block !important; } }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--stein); margin-bottom: 24px; }
+  .crumbs a { color: var(--stein); }
+  @keyframes kenburns { from { transform: scale(1.1); } to { transform: scale(1); } }
+</style>

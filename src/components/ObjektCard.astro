@@ -1,0 +1,45 @@
+---
+import Img from "./Img.astro";
+import Icon from "./Icon.astro";
+import { u } from "../consts";
+interface Props { o: any; d?: number; }
+const { o, d = 0 } = Astro.props;
+const b = o.bilder[0];
+---
+<a class="oc reveal" style={`--d:${d}ms`} href={u(`immobilien/${o.slug}/`)}>
+  <div class="oc__pic pic zoom">
+    <Img src={b.src} w={b.w} h={b.h} alt={`${o.typ} in ${o.ort}`} sizes="(min-width: 1024px) 33vw, (min-width: 720px) 50vw, 100vw" />
+    <span class="oc__badge">{o.typ.split(" (")[0].split(" – ")[0]}</span>
+  </div>
+  <div class="oc__body">
+    <p class="oc__ort"><Icon name="pin" size={16} /> {o.ort} · {o.region}</p>
+    <h3 class="oc__t">{o.titel}</h3>
+    <ul class="oc__facts">
+      {o.flaeche && <li><Icon name="area" size={17} />{o.flaeche}</li>}
+      {o.zimmer && <li><Icon name="rooms" size={17} />{o.zimmer} Zi.</li>}
+      {!o.flaeche && o.grundstueck && <li><Icon name="plot" size={17} />{o.grundstueck}</li>}
+      {o.baujahr && <li><Icon name="calendar" size={17} />Bj. {o.baujahr}</li>}
+    </ul>
+    <div class="oc__foot">
+      <span class="oc__preis"><small>{o.preisLabel}</small>{o.preis}</span>
+      <span class="oc__more" aria-hidden="true"><Icon name="arrow" size={20} /></span>
+    </div>
+  </div>
+</a>
+<style>
+  .oc { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--weiss); border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--linie); transition: box-shadow var(--t), transform var(--t), opacity 900ms var(--ease); height: 100%; }
+  .oc:hover { box-shadow: var(--shadow-lg); }
+  .oc__pic { aspect-ratio: 3 / 2; }
+  .oc__badge { position: absolute; left: 16px; top: 16px; background: rgba(20,20,20,.78); color: var(--weiss); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+  .oc__body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex: 1; }
+  .oc__ort { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--stein); margin: 0 0 8px; }
+  .oc__t { font-size: 1.3rem; margin-bottom: 16px; }
+  .oc__facts { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--graphit); }
+  .oc__facts li { display: inline-flex; align-items: center; gap: 6px; }
+  .oc__facts :global(.icon) { color: var(--champagner-text); }
+  .oc__foot { margin-top: auto; display: flex; justify-content: space-between; align-items: end; padding-top: 18px; border-top: 1px solid var(--linie); }
+  .oc__preis { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); display: grid; line-height: 1.2; }
+  .oc__preis small { font-family: var(--sans); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+  .oc__more { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--silber-300); display: grid; place-items: center; transition: background var(--t), color var(--t), border-color var(--t); }
+  .oc:hover .oc__more { background: var(--ink); color: var(--weiss); border-color: var(--ink); }
+</style>

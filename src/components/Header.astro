@@ -1,0 +1,190 @@
+---
+// Header: transparent über dem Startseiten-Hero (helles Logo), beim Scrollen weiß mit Blur.
+// Desktop: Dropdown „Leistungen“ (Hover/Fokus/Klick, Escape schließt). Mobil: Vollbildmenü.
+import { NAV, CTA, SITE, u } from "../consts";
+import Icon from "./Icon.astro";
+import logo from "../data/bilder.json";
+interface Props { transparent?: boolean; }
+const { transparent = false } = Astro.props;
+const lw = logo.logo[0].w, lh = logo.logo[0].h;
+const path = Astro.url.pathname;
+const isActive = (href?: string) => !!href && href !== u("") && path.startsWith(href);
+---
+<header class:list={["hdr", { "hdr--transparent": transparent }]} id="hdr">
+  <div class="hdr__inner">
+    <a class="hdr__logo" href={u("")} aria-label={`${SITE.name} – zur Startseite`}>
+      <img class="logo-dunkel" src={u("assets/logo-dunkel.png")} alt={SITE.name} width={lw} height={lh} />
+      <img class="logo-hell" src={u("assets/logo-hell.png")} alt="" width={lw} height={lh} aria-hidden="true" />
+    </a>
+
+    <nav class="hdr__nav" aria-label="Hauptnavigation">
+      <ul>
+        {NAV.map((item) => item.children ? (
+          <li class="dd">
+            <button class="hdr__link dd__btn" type="button" aria-expanded="false" aria-haspopup="true">
+              {item.label}<Icon name="chevron" size={15} />
+            </button>
+            <div class="dd__panel">
+              <ul>
+                {item.children.map((c) => (
+                  <li>
+                    <a class="dd__item" href={c.href}>
+                      {c.icon && <span class="dd__ico"><Icon name={c.icon} size={20} /></span>}
+                      <span><strong>{c.label}</strong>{c.desc && <small>{c.desc}</small>}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ) : (
+          <li><a class="hdr__link" href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="hdr__actions">
+      <a class="hdr__tel" href={`tel:${SITE.phoneTel}`}><Icon name="phone" size={18} /><span>{SITE.phoneDisplay}</span></a>
+      <a class="btn hdr__cta" href={CTA.href}>{CTA.label}</a>
+      <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mm" id="mm">
+    <nav aria-label="Mobile Navigation">
+      <ul class="mm__list">
+        <li><a href={u("")}>Start</a></li>
+        {NAV.flatMap((i) => i.children ? i.children.filter((c) => c.icon !== "arrow").map((c) => ({ label: c.label, href: c.href, sub: true })) : [{ label: i.label, href: i.href!, sub: false }]).map((l) => (
+          <li><a class:list={{ sub: l.sub }} href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="mm__foot">
+      <a class="btn" href={`tel:${SITE.phoneTel}`}><Icon name="phone" size={18} />{SITE.phoneDisplay}</a>
+      <a class="btn btn--line" href={`mailto:${SITE.email}`}><Icon name="mail" size={18} />E-Mail schreiben</a>
+      <p class="small">{SITE.hoursShort}</p>
+    </div>
+  </div>
+</header>
+{!transparent && <div class="hdr-spacer" aria-hidden="true"></div>}
+
+<style>
+  .hdr {
+    position: fixed; inset: 0 0 auto 0; z-index: 100;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid var(--linie);
+    transition: background var(--t), border-color var(--t), box-shadow var(--t);
+  }
+  .hdr-spacer { height: var(--header-h); }
+  .hdr.is-scrolled { box-shadow: 0 6px 24px rgba(20,20,20,.06); }
+  .hdr__inner {
+    max-width: 1440px; margin-inline: auto;
+    height: var(--header-h); padding-inline: 20px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  @media (min-width: 768px) { .hdr__inner { padding-inline: 32px; } }
+  .hdr__logo { position: relative; display: block; flex: none; }
+  .hdr__logo img { height: 52px; width: auto; transition: opacity var(--t); }
+  .logo-hell { position: absolute; inset: 0; opacity: 0; }
+
+  /* Transparent über dem Hero */
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) { background: transparent; border-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) .logo-dunkel { opacity: 0; }
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) .logo-hell { opacity: 1; }
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) .hdr__link,
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) .hdr__tel { color: var(--weiss); }
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) .hdr__cta { background: var(--weiss); color: var(--ink); border-color: var(--weiss); }
+  .hdr--transparent:not(.is-scrolled):not(.menu-open) .hdr__burger span { background: var(--weiss); }
+
+  .hdr__nav { display: none; margin-inline: auto; }
+  .hdr__nav > ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+  .hdr__link {
+    position: relative; display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 14px; border: 0; background: none;
+    font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none;
+    transition: color var(--t);
+  }
+  .hdr__link::after {
+    content: ""; position: absolute; left: 14px; right: 14px; bottom: 4px; height: 1px;
+    background: var(--champagner); transform: scaleX(0); transform-origin: left; transition: transform 380ms var(--ease);
+  }
+  .hdr__link:hover::after, .hdr__link[aria-current="page"]::after, .dd.open .hdr__link::after { transform: scaleX(1); }
+
+  .dd { position: relative; }
+  .dd__panel {
+    position: absolute; top: calc(100% + 10px); left: 50%; min-width: 320px;
+    transform: translate(-50%, 8px); opacity: 0; visibility: hidden;
+    background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--r-lg);
+    box-shadow: var(--shadow-lg); padding: 10px;
+    transition: opacity var(--t), transform var(--t), visibility var(--t);
+  }
+  .dd__panel::before { content: ""; position: absolute; inset: -12px 0 auto 0; height: 12px; }
+  .dd:hover .dd__panel, .dd:focus-within .dd__panel, .dd.open .dd__panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .dd__panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .dd__item { display: flex; gap: 14px; align-items: center; padding: 12px; border-radius: var(--r); text-decoration: none; color: var(--ink); transition: background var(--t); }
+  .dd__item:hover { background: var(--papier); }
+  .dd__item strong { display: block; font-weight: 600; font-size: 15px; }
+  .dd__item small { display: block; font-size: 13px; line-height: 1.4; }
+  .dd__ico { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--sand); color: var(--champagner-text); }
+
+  .hdr__actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+  .hdr__tel { display: none; align-items: center; gap: 8px; text-decoration: none; font-weight: 500; font-size: 15px; color: var(--ink); white-space: nowrap; }
+  .hdr__cta { display: none; min-height: 46px; padding: 10px 22px; font-size: 14.5px; white-space: nowrap; }
+  .hdr__burger { width: 46px; height: 46px; border: 0; background: none; display: grid; place-content: center; gap: 7px; }
+  .hdr__burger span { display: block; width: 26px; height: 1.5px; background: var(--ink); transition: transform var(--t), background var(--t); }
+  .hdr__burger[aria-expanded="true"] span:first-child { transform: translateY(4.25px) rotate(45deg); }
+  .hdr__burger[aria-expanded="true"] span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
+
+  @media (min-width: 1100px) {
+    .hdr__nav, .hdr__cta { display: flex; }
+    .hdr__burger { display: none; }
+  }
+  @media (min-width: 1280px) { .hdr__tel { display: inline-flex; } .hdr__logo img { height: 58px; } }
+
+  .mm {
+    position: fixed; inset: var(--header-h) 0 0 0; z-index: 99;
+    background: var(--weiss); overflow-y: auto; padding: 16px 20px calc(28px + env(safe-area-inset-bottom));
+    display: flex; flex-direction: column; gap: 24px;
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity var(--t), transform var(--t), visibility var(--t);
+  }
+  .menu-open .mm { opacity: 1; visibility: visible; transform: none; }
+  @media (min-width: 1100px) { .mm { display: none; } }
+  .mm__list { list-style: none; margin: 0; padding: 0; }
+  .mm__list a { display: block; padding: 14px 4px; border-bottom: 1px solid var(--linie); font-family: var(--serif); font-size: 24px; color: var(--ink); text-decoration: none; }
+  .mm__list a.sub { font-family: var(--sans); font-size: 17px; padding-left: 20px; color: var(--graphit); }
+  .mm__foot { display: grid; gap: 10px; margin-top: auto; }
+  .mm__foot .small { text-align: center; margin: 4px auto 0; }
+</style>
+
+<script>
+  const hdr = document.getElementById("hdr")!;
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => { hdr.classList.toggle("is-scrolled", scrollY > 30); ticking = false; });
+  };
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  const dds = Array.from(hdr.querySelectorAll<HTMLElement>(".dd"));
+  const closeAll = () => dds.forEach((d) => { d.classList.remove("open"); d.querySelector(".dd__btn")?.setAttribute("aria-expanded", "false"); });
+  dds.forEach((dd) => {
+    const btn = dd.querySelector<HTMLButtonElement>(".dd__btn")!;
+    btn.addEventListener("click", () => { const o = !dd.classList.contains("open"); closeAll(); dd.classList.toggle("open", o); btn.setAttribute("aria-expanded", String(o)); });
+    dd.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeAll(); btn.focus(); } });
+  });
+  document.addEventListener("click", (e) => { if (!(e.target as Element).closest(".dd")) closeAll(); });
+
+  const burger = hdr.querySelector<HTMLButtonElement>(".hdr__burger")!;
+  const setMenu = (open: boolean) => {
+    hdr.classList.toggle("menu-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burger.addEventListener("click", () => setMenu(!hdr.classList.contains("menu-open")));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+</script>

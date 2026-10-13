@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import Img from "../../components/Img.astro";
+import Icon from "../../components/Icon.astro";
+import KontaktBand from "../../components/KontaktBand.astro";
+import { LEISTUNGEN } from "../../data/leistungen";
+import { u, bild } from "../../consts";
+---
+<BaseLayout title="Leistungen: Verkaufen, Kaufen, Vermieten, Beraten | Henrick Jung Immobilien" description="Was Henrick Jung Immobilien für Sie tun kann: Immobilien verkaufen, kaufen, vermieten und Beratung rund um Ihre Immobilie in Hamburg und Umland.">
+  <PageHero eyebrow="Leistungen" title="Was kann ich <em>für Sie</em> tun?" lead="Vier Leistungen, ein Anspruch: Sie persönlich, ehrlich und zuverlässig zu begleiten – bis Ihr Vorhaben erfolgreich abgeschlossen ist." crumbs={[{ label: "Leistungen" }]} />
+  <section class="section">
+    <div class="container lst">
+      {LEISTUNGEN.map((l, i) => (
+        <a class:list={["li", { "li--rev": i % 2 }]} href={u(`leistungen/${l.slug}/`)}>
+          <div class="li__pic pic pic--r reveal-img zoom"><Img {...bild(l.bild)} alt={l.bildAlt} sizes="(min-width: 900px) 50vw, 100vw" /></div>
+          <div class="li__text">
+            <span class="li__nr reveal">0{i + 1}</span>
+            <h2 class="reveal" style="--d:60ms">{l.titel}</h2>
+            <p class="li__claim reveal" style="--d:100ms">{l.claim}</p>
+            <p class="reveal" style="--d:140ms">{l.kurz}</p>
+            <span class="link-arrow reveal" style="--d:200ms">Mehr erfahren <Icon name="arrow" size={20} /></span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+  <KontaktBand />
+</BaseLayout>
+<style>
+  .lst { display: grid; gap: 88px; }
+  .li { display: grid; gap: 32px; align-items: center; text-decoration: none; color: inherit; }
+  @media (min-width: 900px) { .li { grid-template-columns: 1.1fr 1fr; gap: 80px; } .li--rev .li__pic { order: 2; } }
+  .li__pic { aspect-ratio: 3 / 2; }
+  .li__nr { font-family: var(--serif); font-size: 1.1rem; color: var(--champagner-text); display: block; margin-bottom: 8px; }
+  .li__claim { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--graphit); }
+</style>

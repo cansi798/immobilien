@@ -1,0 +1,16 @@
+---
+// Dach-Motiv aus dem Logo als feine Linienzeichnung (zeichnet sich beim Einblenden).
+interface Props { class?: string; light?: boolean; width?: number; }
+const { class: cls = "", light = false, width = 220 } = Astro.props;
+const c = light ? "#d9c7a5" : "#b59a6a";
+---
+<svg class:list={["roof draw", cls]} width={width} height={Math.round(width * 0.42)} viewBox="0 0 220 92" fill="none" aria-hidden="true" focusable="false">
+  <path d="M8 84 L110 12 L212 84" stroke={c} stroke-width="1.2" style="--len:260" />
+  <path d="M30 84 L110 28 L190 84" stroke={c} stroke-width="1" style="--len:200;--d:250ms" opacity=".55" />
+  <path d="M138 31 V14 H150 V40" stroke={c} stroke-width="1.2" style="--len:60;--d:600ms" />
+  <rect x="101" y="52" width="18" height="18" stroke={c} stroke-width="1.2" style="--len:80;--d:900ms" />
+  <path d="M110 52 V70 M101 61 H119" stroke={c} stroke-width="1" style="--len:40;--d:1200ms" />
+</svg>
+<style>
+  .roof { display: block; overflow: visible; }
+</style>

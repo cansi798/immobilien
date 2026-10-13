@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Icon from "../components/Icon.astro";
+import { SITE, u } from "../consts";
+---
+<BaseLayout title="Kontakt | Henrick Jung Immobilien Hamburg" description="Kontakt zu Henrick Jung Immobilien: Telefon 040 506 847 95, mobil 0176 8025 1738, E-Mail info@henrickjung-immobilien.de – Mexikoring 27–29, 22297 Hamburg.">
+  <PageHero eyebrow="Kontakt" title="Ich freue mich auf <em>Ihren Anruf</em>!" lead="Erzählen Sie mir von Ihrem Vorhaben – ob Sie verkaufen, kaufen, vermieten oder einfach eine Frage haben. Ich melde mich zeitnah bei Ihnen." crumbs={[{ label: "Kontakt" }]} />
+  <section class="section">
+    <div class="container kt">
+      <div class="kt__info">
+        <a class="kt__row reveal" href={`tel:${SITE.phoneTel}`}><span class="kt__ico"><Icon name="phone" /></span><span><small>Telefon</small>{SITE.phoneDisplay}</span></a>
+        <a class="kt__row reveal" style="--d:60ms" href={`tel:${SITE.mobileTel}`}><span class="kt__ico"><Icon name="phone" /></span><span><small>Mobil</small>{SITE.mobileDisplay}</span></a>
+        <a class="kt__row reveal" style="--d:120ms" href={`mailto:${SITE.email}`}><span class="kt__ico"><Icon name="mail" /></span><span><small>E-Mail</small>{SITE.email}</span></a>
+        <a class="kt__row reveal" style="--d:180ms" href={SITE.mapUrl} target="_blank" rel="noopener"><span class="kt__ico"><Icon name="pin" /></span><span><small>Adresse (Karte öffnet OpenStreetMap)</small>{SITE.street}, {SITE.zip} {SITE.city}</span></a>
+        <div class="kt__hours reveal" style="--d:240ms">
+          <h2 class="h3">Erreichbarkeit</h2>
+          <dl>{SITE.hours.map((h) => <div><dt>{h.tag}</dt><dd>{h.zeit}</dd></div>)}</dl>
+        </div>
+        <a class="kt__insta reveal" href={SITE.instagram} target="_blank" rel="noopener"><Icon name="instagram" size={20} /> Henrick Jung Immobilien auf Instagram</a>
+      </div>
+
+      <form class="kt__form card reveal" id="kform" action={`mailto:${SITE.email}`} method="post" enctype="text/plain">
+        <h2 class="h3">Ihre Nachricht</h2>
+        <p class="small">Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht. Es werden keine Daten über diese Website gespeichert oder übertragen.</p>
+        <fieldset>
+          <legend>Worum geht es?</legend>
+          <div class="chips">
+            {[["verkaufen", "Verkaufen"], ["kaufen", "Kaufen"], ["vermieten", "Vermieten"], ["beraten", "Beratung"]].map(([v, l], i) => (
+              <label class="chip"><input type="radio" name="anliegen" value={v} checked={i === 0} /><span>{l}</span></label>
+            ))}
+          </div>
+        </fieldset>
+        <div class="f2">
+          <label>Name<input name="name" autocomplete="name" required /></label>
+          <label>Telefon<input name="telefon" type="tel" autocomplete="tel" /></label>
+        </div>
+        <label>E-Mail<input name="email" type="email" autocomplete="email" /></label>
+        <label>Ihre Nachricht<textarea name="nachricht" rows="5" placeholder="z. B. Lage, Objektart, Größe, gewünschter Zeitpunkt …"></textarea></label>
+        <button class="btn" type="submit"><Icon name="mail" size={18} /> E-Mail vorbereiten</button>
+        <p class="small">Lieber direkt? Schreiben Sie an <a href={`mailto:${SITE.email}`}>{SITE.email}</a> oder rufen Sie an: <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>. Hinweise zum Datenschutz finden Sie in der <a href={u("datenschutz/")}>Datenschutzerklärung</a>.</p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+<script define:vars={{ email: SITE.email }}>
+  const f = document.getElementById("kform");
+  const q = new URLSearchParams(location.search).get("anliegen");
+  if (q) { const r = f.querySelector(`input[value="${CSS.escape(q)}"]`); if (r) r.checked = true; }
+  f.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = new FormData(f);
+    const anl = { verkaufen: "Verkauf", kaufen: "Kauf / Suche", vermieten: "Vermietung", beraten: "Beratung" }[d.get("anliegen")] || "Anfrage";
+    const body = `Guten Tag Herr Jung,\n\n${d.get("nachricht") || ""}\n\nName: ${d.get("name") || ""}\nTelefon: ${d.get("telefon") || ""}\nE-Mail: ${d.get("email") || ""}\n\nViele Grüße`;
+    location.href = `mailto:${email}?subject=${encodeURIComponent("Anfrage über die Website: " + anl)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+<style>
+  .kt { display: grid; gap: 48px; }
+  @media (min-width: 1024px) { .kt { grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: start; } }
+  .kt__info { display: grid; gap: 4px; }
+  .kt__row { display: flex; gap: 18px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--linie); text-decoration: none; color: var(--ink); font-size: 1.15rem; font-weight: 500; overflow-wrap: anywhere; }
+  .kt__row small { display: block; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
+  .kt__row:hover { color: var(--champagner-text); }
+  .kt__ico { width: 52px; height: 52px; flex: none; border-radius: 50%; background: var(--sand); color: var(--champagner-text); display: grid; place-items: center; }
+  .h3 { font-size: 1.4rem; }
+  .kt__hours { margin-top: 32px; }
+  .kt__hours dl { margin: 0; }
+  .kt__hours div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--linie); }
+  .kt__hours dd { margin: 0; font-weight: 500; }
+  .kt__insta { margin-top: 24px; display: inline-flex; gap: 10px; align-items: center; color: var(--ink); }
+  .kt__form { display: grid; gap: 18px; padding: 32px; }
+  @media (min-width: 720px) { .kt__form { padding: 44px; } }
+  fieldset { border: 0; margin: 0; padding: 0; }
+  legend { font-weight: 600; font-size: 15px; margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip input { position: absolute; opacity: 0; }
+  .chip span { display: inline-block; padding: 10px 18px; border: 1px solid var(--silber-300); border-radius: 999px; cursor: pointer; font-size: 15px; transition: background var(--t), color var(--t), border-color var(--t); }
+  .chip input:checked + span { background: var(--ink); color: var(--weiss); border-color: var(--ink); }
+  .chip input:focus-visible + span { outline: 2px solid var(--champagner-text); outline-offset: 2px; }
+  label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+  input:not([type="radio"]), textarea { font: inherit; font-weight: 400; padding: 13px 16px; border: 1px solid var(--silber-300); border-radius: var(--r); background: var(--weiss); color: var(--ink); width: 100%; }
+  input:focus, textarea:focus { outline: 2px solid var(--champagner-text); outline-offset: 1px; border-color: transparent; }
+  .f2 { display: grid; gap: 18px; }
+  @media (min-width: 720px) { .f2 { grid-template-columns: 1fr 1fr; } }
+  .kt__form .small { margin: 0; }
+</style>

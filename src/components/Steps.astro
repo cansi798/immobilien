@@ -1,0 +1,42 @@
+---
+// Ablauf in Schritten – Linie und Schritte bauen sich beim Scrollen nacheinander auf.
+interface Props { items: { titel: string; text: string }[]; dark?: boolean; }
+const { items, dark = false } = Astro.props;
+---
+<ol class:list={["steps reveal-steps", { "steps--dark": dark }]} style={`--n:${items.length}`}>
+  <span class="steps__line" aria-hidden="true"></span>
+  {items.map((s, i) => (
+    <li class="step" style={`--i:${i}`}>
+      <span class="step__nr" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+      <h3 class="step__t">{s.titel}</h3>
+      <p>{s.text}</p>
+    </li>
+  ))}
+</ol>
+<style>
+  .steps { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 36px; }
+  .steps__line { position: absolute; left: 27px; top: 10px; bottom: 10px; width: 1px; background: var(--champagner); transform-origin: top; }
+  .step { position: relative; padding-left: 84px; }
+  .step__nr {
+    position: absolute; left: 0; top: -4px; width: 56px; height: 56px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--weiss); border: 1px solid var(--champagner);
+    font-family: var(--serif); font-size: 1.2rem; color: var(--champagner-text);
+  }
+  .step__t { font-size: 1.3rem; margin-bottom: 8px; }
+  .step p { color: var(--stein); margin: 0; font-size: 16px; }
+  .steps--dark .step__nr { background: var(--ink); color: var(--champagner-hell); }
+  .steps--dark .step p { color: #bdbdbd; }
+  @media (min-width: 1024px) {
+    .steps { grid-template-columns: repeat(var(--n), 1fr); gap: 28px; }
+    .steps__line { left: 28px; right: 28px; top: 27px; bottom: auto; width: auto; height: 1px; transform-origin: left; }
+    .step { padding-left: 0; padding-top: 84px; }
+    .step__nr { top: 0; }
+  }
+  /* Animation */
+  :global(html.js) .steps__line { transform: scaleY(0); transition: transform 1.6s var(--ease); }
+  @media (min-width: 1024px) { :global(html.js) .steps__line { transform: scaleX(0); } }
+  :global(html.js) .step { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i) * 220ms + 200ms); }
+  :global(html.js) .steps.is-visible .steps__line { transform: none; }
+  :global(html.js) .steps.is-visible .step { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { :global(html.js) .step, :global(html.js) .steps__line { opacity: 1; transform: none; } }
+</style>

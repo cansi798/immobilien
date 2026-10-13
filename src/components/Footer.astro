@@ -1,0 +1,60 @@
+---
+import { SITE, NAV, u } from "../consts";
+import { LEISTUNGEN } from "../data/leistungen";
+import Icon from "./Icon.astro";
+import b from "../data/bilder.json";
+const year = new Date().getFullYear();
+---
+<footer class="ft dark">
+  <div class="container">
+    <div class="ft__grid">
+      <div class="ft__brand">
+        <img src={u("assets/logo-hell.png")} alt={SITE.name} width={b.logo[0].w} height={b.logo[0].h} loading="lazy" />
+        <p>{SITE.claim}. Persönlich, zuverlässig und mit regionaler Marktkenntnis in {SITE.region}.</p>
+        <a class="ft__social" href={SITE.instagram} target="_blank" rel="noopener"><Icon name="instagram" size={20} /> Instagram</a>
+      </div>
+      <div>
+        <h2 class="ft__h">Leistungen</h2>
+        <ul>{LEISTUNGEN.map((l) => <li><a href={u(`leistungen/${l.slug}/`)}>{l.titel}</a></li>)}</ul>
+      </div>
+      <div>
+        <h2 class="ft__h">Seiten</h2>
+        <ul>
+          <li><a href={u("immobilien/")}>Immobilien</a></li>
+          <li><a href={u("henrick-jung/")}>Über mich</a></li>
+          <li><a href={u("kontakt/")}>Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ft__h">Kontakt</h2>
+        <address>
+          {SITE.name}<br />{SITE.street}<br />{SITE.zip} {SITE.city}
+        </address>
+        <ul class="ft__contact">
+          <li><a href={`tel:${SITE.phoneTel}`}>Tel. {SITE.phoneDisplay}</a></li>
+          <li><a href={`tel:${SITE.mobileTel}`}>Mobil {SITE.mobileDisplay}</a></li>
+          <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bottom">
+      <span>© {year} {SITE.name}, Hamburg</span>
+      <nav aria-label="Rechtliches"><a href={u("impressum/")}>Impressum</a><a href={u("datenschutz/")}>Datenschutz</a></nav>
+    </div>
+  </div>
+</footer>
+<style>
+  .ft { padding-block: 80px 32px; font-size: 15px; }
+  .ft__grid { display: grid; gap: 40px; }
+  @media (min-width: 720px) { .ft__grid { grid-template-columns: 1.4fr 1fr 1fr 1.3fr; } }
+  .ft__brand img { height: 74px; width: auto; margin-bottom: 20px; }
+  .ft__brand p { color: #bdbdbd; max-width: 320px; }
+  .ft__h { font-family: var(--sans); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--champagner-hell); font-weight: 600; margin-bottom: 16px; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  a { color: #e6e6e6; text-decoration: none; }
+  a:hover { color: var(--weiss); text-decoration: underline; }
+  address { font-style: normal; color: #cfcfcf; margin-bottom: 12px; }
+  .ft__social { display: inline-flex; align-items: center; gap: 8px; }
+  .ft__bottom { margin-top: 56px; padding-top: 24px; border-top: 1px solid #333; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; color: #a8a8a8; font-size: 14px; }
+  .ft__bottom nav { display: flex; gap: 20px; }
+</style>

@@ -1,0 +1,2175 @@
+{
+ "angebote": [
+  {
+   "slug": "poppenbuettel",
+   "status": "angebot",
+   "order": 1,
+   "titel": "Luxus im Grünen – Neubau",
+   "untertitel": null,
+   "ort": "Poppenbüttel",
+   "region": "Hamburg",
+   "plz": "22399",
+   "typ": "Einfamilienhaus (Bungalow)",
+   "preis": "1.299.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 135 m²",
+   "flaecheLabel": "Wohnfläche",
+   "grundstueck": "ca. 773 m²",
+   "zimmer": "5",
+   "baujahr": "2022",
+   "teaser": "Neubau-Bungalow (KfW 40 Plus) mit Wellness-Garten, Pool und Sauna in ruhiger Seitenstraße nahe dem Alsterlauf.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Diese einzigartige Immobilie wurde im Jahr 2022 auf einem 773 m² großen Grundstück errichtet. Als Bungalow mit dem höchsten KfW-Effizienzhaus Standard „KfW 40 Plus“ hat die Firma „Viehbrockhaus“ einen Wohntraum erschaffen. Die Wohnfläche beträgt ca. 135 m², welche sich auf 5 Zimmer und einer Ebene verteilen. Ein wohnlich ausgebauter Keller bietet weitere ca. 120 m² Nutzfläche sowie zwei bewohnbare Zimmer."
+    },
+    {
+     "t": "p",
+     "text": "Über einen barrierefreien und überdachten Eingang lässt sich das Erdgeschoss betreten. Neben dem Eingangsbereich und einem modernen Gäste-WC folgt ein großzügiger Wohn-Essbereich. Dieser bietet Platz für die ganze Familie und sorgt mit einer Vielzahl von Terrassentüren für eine helle und sonnige Atmosphäre. In den kalten Jahreszeiten spendet der Kamin Wärme und erzeugt ein gemütliches Raumklima. Vom Essbereich kann die Terrasse sowie der Garten betreten werden. Es folgt die offene Küche, welche mit hochwertigen Geräten ausgestattet ist und zum HWR mit Backup-Küche führt. Hier sind die Anschlüsse für Waschmaschine und Trockner angelegt."
+    },
+    {
+     "t": "p",
+     "text": "Darüber hinaus befinden sich im Erdgeschoss zwei weitere Zimmer, welche als Schlaf-, Kinder- und Arbeitszimmer genutzt werden können. Ein großes Badezimmer mit einem Doppelwaschtisch sowie Badewanne und Dusche sorgt für den nötigen Komfort. Vom Flur gelangt man zum Wohnkeller."
+    },
+    {
+     "t": "p",
+     "text": "Im Kellergeschoss befinden sich zwei wohnlich ausgebaute Zimmer, ein großer Kellerbereich, der individuell gestaltet werden kann, sowie der Technik und Heizungsraum. Hier befinden sich die Anlagen für Wärmepumpe, Solaranlage sowie der Energiespeicher. Das Haus wird über eine Fußbodenheizung erwärmt."
+    },
+    {
+     "t": "p",
+     "text": "Ein besonderes Highlight stellen die Terrasse sowie der Garten, welcher als Wellness-Oase angelegt ist, dar. Eine Grillecke mit Sitzgelegenheiten sowie Feuerstelle sorgen für Gemütlichkeit auf der Terrasse. Der Garten ist mit einem Whirlpool für 5 Personen, einem Schwimmpool mit Gegenstromanlage, Sonnenliegen sowie einer Sauna mit Dusche ausgestattet. Um die Rasenfläche kümmert sich ein Mähroboter."
+    }
+   ],
+   "ausstattung": [
+    "Höchster KfW-Effizienzhaus Standard „KfW 40 Plus“",
+    "Hochwertige massive Bauweise von der Firma „Viehbrockhaus“",
+    "Solar- und Photovoltaikanlage sowie Batteriespeicher",
+    "Neuste Heizungsstandard mit Wärmepumpe",
+    "Fußbodenheizung im gesamten Haus",
+    "Lüftungsanlage (Be- und Entlüftung der einzelnen Räume)",
+    "Elektronische Haussteuerung (Somfy)",
+    "Kameraüberwachung sowie Alarmanlage",
+    "Elektrische Rollläden",
+    "Haustür per App und Schlüssel schließbar",
+    "Kaminofen mit Glastür im Wohn-/Esszimmer",
+    "Backup-Küche im Hauswirtschaftsraum",
+    "Hochwertig ausgestattete Einbauküche",
+    "Garten als Wellness-Oase angelegt mit Whirlpool, Schwimmpool, Gartensauna, Sonnenliegen und einem Mähroboter"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Immobilie präsentiert sich in einer idyllischen und ruhigen Seitenstraße in Hamburg Poppenbüttel. Fußläufig zum Café Reinhardt und dem Alsterlauf ist sie traumhaft gelegen."
+    },
+    {
+     "t": "p",
+     "text": "Das Umfeld besticht durch eine Vielzahl von attraktiven Freizeitangeboten, wie beispielsweise Reiten, Golfen oder anderen sportliche Aktivitäten im Sportverein Poppenbüttel. Drei unterschiedliche Schulformen, verschiedene Kindergärten, diverse Ärzte und eine Fülle an Restaurants sowie Einkaufsläden sind in wenigen Autominuten zu erreichen. Ein Highlight stellt das ”Alstertal Einkaufszentrum - AEZ” dar. Dies ist weit über die Grenzen von Poppenbüttel bekannt und bietet mit rund 240 Shops ein einmaliges Einkaufserlebnis."
+    },
+    {
+     "t": "p",
+     "text": "Ebenfalls ist ein guter Zugang zum ÖPNV durch eine nahegelegene Bushaltestelle gegeben. Die Bahnstation S Poppenbüttel mit den Linien S1 und S11 ist wenige Haltestellen entfernt. Mit dem Auto erreichen Sie den Hamburger Flughafen binnen 15 Minuten und die Hamburger Innenstadt innerhalb von 30 Minuten."
+    },
+    {
+     "t": "p",
+     "text": "Neben der tollen Infrastruktur bietet die Natur mit dem nahe gelegenen Hohenbuchenpark und dem Hennebergpark eine schöne Möglichkeit sich eine Auszeit vom Alltag zu nehmen. Ob bei einer Radtour, einem Spaziergang oder einer Kanufahrt."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Einfamilienhaus"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 135 m²"
+    ],
+    [
+     "Grundstück",
+     "ca. 773 m²"
+    ],
+    [
+     "Baujahr",
+     "2022"
+    ],
+    [
+     "Zimmer",
+     "5"
+    ],
+    [
+     "Badezimmer",
+     "1"
+    ],
+    [
+     "Bezugsfrei ab",
+     "Sofort"
+    ],
+    [
+     "Energieträger",
+     "Wärmepumpe"
+    ],
+    [
+     "Energieausweis",
+     "Liegt vor"
+    ],
+    [
+     "Energieausweistyp",
+     "Energiebedarfsausweis"
+    ],
+    [
+     "Energieeffizienzklasse",
+     "A+"
+    ],
+    [
+     "Endenergieverbrauch",
+     "20,93 kWh/(m²·a)"
+    ],
+    [
+     "Kaufpreis",
+     "1.299.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/poppenbuettel/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/07",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel/08",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "geesthacht-mehrfamilienhaus",
+   "status": "angebot",
+   "order": 2,
+   "titel": "Saniert & in Bestlage – MFH mit 8 Einheiten",
+   "untertitel": null,
+   "ort": "Geesthacht",
+   "region": "Schleswig-Holstein",
+   "plz": "21502",
+   "typ": "Mehrfamilienhaus (8 Einheiten)",
+   "preis": "1.699.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 720 m²",
+   "flaecheLabel": "Wohn-/Nutzfläche",
+   "grundstueck": "ca. 790 m²",
+   "zimmer": "22",
+   "baujahr": "1912",
+   "teaser": "Saniertes Wohn- und Geschäftshaus in zentraler Lage – 3 Gewerbe- und 5 Wohneinheiten, Faktor 16,92 laut Exposé.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Dieses schöne Mehrfamilienhaus wurde im Jahr 1912 in massiver Bauweise auf einem ca. 790 m² großen Grundstück errichtet. In den letzten Jahren wurde es sowohl von außen, als auch von innen nahezu vollständig saniert. Die gesamte Wohnfläche beträgt ca. 720 m², welche sich auf acht Einheiten, davon drei Gewerbe- und fünf Wohneinheiten verteilt. Die drei Gewerbeeinheiten als auch drei Wohneinheiten sind vermietet, zwei Wohneinheiten werden eigengenutzt und beim Verkauf frei übergeben."
+    },
+    {
+     "t": "p",
+     "text": "Die erste Gewerbeeinheit wurde letztes Jahr vollständig saniert, ist vermietet und wird als stilvoller Friseursalon geführt. Die zwei anderen Gewerbeeinheiten wurden ebenfalls letztes Jahr saniert und sind an zwei Kulturvereine vermietet."
+    },
+    {
+     "t": "p",
+     "text": "Von den insgesamt fünf Wohneinheiten sind drei vermietet. Davon sind zwei kernsaniert und eine in einem nicht sanierten Zustand. Die zwei weiteren Wohneinheiten, welche eigengenutzt werden, sind vollständig luxussaniert und werden in diesem Exposé dargestellt."
+    },
+    {
+     "t": "p",
+     "text": "Die Wohnungen haben eine Größe von 60 m² bis 95 m², die Gewerbeeinheiten von 65 m² bis 150 m². Zu jeder Einheit gehört ein Kellerraum. Die vermieteten drei Gewerbe- und die vermieteten drei Wohneinheiten bringen tatsächliche jährliche Mieteinnahmen in Höhe 73.920€. Die zwei eigengenutzten Wohneinheiten bringen bei einer ortsüblichen Kaltmiete von 13€/m² potenzielle jährliche Mieteinnahmen in Höhe von 26.520€. Somit können die jährlichen Mieteinnahmen bei vollständiger Vermietung mit 100.440€ kalkuliert werden. Dies entspricht dem Faktor 16,92 und einer Mietrendite von 5,91%."
+    },
+    {
+     "t": "p",
+     "text": "Das Mehrfamilienhaus wurde nicht nur von innen, sondern auch von außen komplett saniert. Im Jahr 2014 wurde das gesamte Dach erneuert. Im Jahr 2019 folgte eine neue Heizungsanlage, die das Mehrfamilienhaus mit Fernwärme beheizt. Ebenfalls wurde in diesem Jahr die Außenfassade erneuert und mit einer zeitgemäßen Dämmung versehen. Alle wesentlichen Modernisierungsmaßnahmen wurden umgesetzt, daher sind in naher Zukunft keine weiteren Maßnahmen nötig."
+    },
+    {
+     "t": "p",
+     "text": "Dieses attraktive Angebot wird von acht Stellplätzen, davon fünf freien und drei Carport-Stellplätzen abgerundet."
+    }
+   ],
+   "ausstattung": [
+    "Mehrfamilienhaus mit 8 Einheiten",
+    "3 Gewerbeeinheiten und 5 Wohneinheiten",
+    "Gewerbeeinheiten und 3 Wohneinheiten vermietet, 2 Wohneinheiten Eigennutz",
+    "Eigengenutzte Wohneinheiten werden frei geliefert",
+    "Für frei gelieferten Wohneinheiten liegt ortübliche Kaltmiete bei 13€/m ²",
+    "Mögliche Mieteinnahmen aus 2 frei gelieferten Wohneinheiten 26.520€ p.a.",
+    "Mieteinnahmen aus 6 vermieteten Einheiten 73.920€ p.a.",
+    "Faktor 16,92",
+    "Rendite 5,91%",
+    "Gebäude Kernsaniert, keine Maßnahmen in naher Zukunft nötig",
+    "Neue Heizungsanlage aus 2019 (Fernwärme)",
+    "Dach erneuert im Jahr 2014",
+    "Erneuerung und Dämmung der Außenfassade in 2019",
+    "Alle Gewerbeeinheiten kernsaniert von innen",
+    "Alle Wohnungen, bis auf Wohnung 3, von innen kernsaniert",
+    "5 freie Stellplätze und 3 Carport-Stellplätze"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Immobilie präsentiert sich zentral und in Bestlage der schönen Stadt Geesthacht in Schleswig-Holstein. Umgeben von Restaurants, Cafés und jeglichen Einkaufsmöglichkeiten, liegt die Immobilie in einer privilegierten Gegend."
+    },
+    {
+     "t": "p",
+     "text": "Mit rund 31.000 Einwohnern ist Geesthacht als größte Stadt im Kreis Herzogtum Lauenburg vor allem familienfreundlich und lebendig. Es stehen sämtliche Schularten mit vier Grundschulen, zwei Gemeinschaftsschulen und einem Gymnasium zur Auswahl. Für die ganz Kleinen kann zwischen drei Kindergärten gewählt werden."
+    },
+    {
+     "t": "p",
+     "text": "Das Umfeld besticht durch nahegelegene Einkaufsmöglichkeiten, Gaststätten sowie eine gute medizinische Versorgung. Ebenfalls sorgt die Verkehrsinfrastruktur für eine optimale Mobilität und eine gute Anbindung an Hamburg (ca. 30 Minuten) und Lüneburg (ca. 25 Minuten). Für eine gute Fortbewegung innerhalb von Geesthacht sorgt eine fußläufige Bushaltestelle."
+    },
+    {
+     "t": "p",
+     "text": "Neben der tollen Infrastruktur bietet Geesthacht auch viele Freizeitmöglichkeiten für Groß und Klein."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Mehrfamilienhaus"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 720 m²"
+    ],
+    [
+     "Grundstück",
+     "ca. 790 m²"
+    ],
+    [
+     "Baujahr",
+     "1912"
+    ],
+    [
+     "Zimmer",
+     "22"
+    ],
+    [
+     "Badezimmer",
+     "8"
+    ],
+    [
+     "Lieferbar ab",
+     "nach Absprache"
+    ],
+    [
+     "Energieträger",
+     "Fernwärme"
+    ],
+    [
+     "Energieausweis",
+     "Beantragt, liegt zur Bes. vor"
+    ],
+    [
+     "Einheiten",
+     "8"
+    ],
+    [
+     "Faktor",
+     "16,92"
+    ],
+    [
+     "Mietrendite",
+     "5,91%"
+    ],
+    [
+     "Kaufpreis",
+     "1.699.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/07",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/geesthacht-mehrfamilienhaus/08",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "norderstedt-anlageobjekt",
+   "status": "angebot",
+   "order": 3,
+   "titel": "Lukrativ & in Bestlage",
+   "untertitel": "Rendite 7,51% · Faktor 13,31",
+   "ort": "Norderstedt",
+   "region": "Schleswig-Holstein",
+   "plz": "22848",
+   "typ": "Anlageimmobilie – Gewerbehalle & Haus",
+   "preis": "1.099.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 1.110 m²",
+   "flaecheLabel": "Fläche",
+   "grundstueck": "ca. 3.031 m²",
+   "zimmer": "31",
+   "baujahr": "1964",
+   "teaser": "Gewerbe- und Wohnobjekt auf großem Grundstück – Mietrendite 7,51 % und Faktor 13,31 laut Exposé.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Zum Verkauf wird ein voll vermietetes Gewerbeobjekt samt vermietetem Einfamilienhaus angeboten. Beide Gebäude wurden im Jahr 1964 in massiver Bauweise auf einem ca. 3031 m² großem Erbpachtgrundstück (bis 2055) errichtet, für welches jährlich 3.600€ Pacht fällig werden. Die Gesamtfläche der Gewerbeimmobilie beträgt ca. 990 m², welche sich auf drei Einheiten, verteilt. Die Gesamtfläche des Einfamilienhauses beträgt ca. 120 m². Die erwirtschaftete Jahresnettokaltmiete beträgt insgesamt 82.560€."
+    },
+    {
+     "t": "p",
+     "text": "Die Gewerbeimmobilie teilt sich in drei Einheiten auf. Im Erdgeschoss befindet sich eine Tischlerei samt zwei Büros, einer Umkleide, einem Aufenthaltsraum, Sanitäranlagen sowie mehreren großen Arbeitsräumen. Die Gesamtfläche beträgt ca. 500 m². Diese ist seit 1990 unbefristet vermietet. Die Nettokaltmiete beträgt 2750€ pro Monat."
+    },
+    {
+     "t": "p",
+     "text": "Im Dachgeschoss befindet sich eine sanierte Fitnesshalle, samt neuen Umkleiden, neuen Sanitäranlagen sowie einem Büro. Die Gesamtfläche beträgt ca. 390 m². Diese ist seit dem 15.08.2023 bis zum 14.08.2028 vermietet. Die Nettokaltmiete beträgt 2730€ pro Monat."
+    },
+    {
+     "t": "p",
+     "text": "Ebenfalls im Dachgeschoss auf der rechten Seite der Gewerbeimmobilie befindet sich ein Atelier, bestehend aus einem Badezimmer, einer Küche sowie mehreren kleineren Arbeitsräumen. Hier werden hochwertige Möbelstücke restauriert. Die Gesamtfläche beträgt ca. 100 m². Das Atelier ist seit 2016 unbefristet vermietet. Die Nettokaltmiete beträgt 400€ pro Monat."
+    },
+    {
+     "t": "p",
+     "text": "Auf dem Grundstück befindet sich neben der vermieteten Gewerbeimmobilie ein vermietetes Einfamilienhaus. Dies hat vier Zimmer und weißt eine Wohn- und Nutzfläche von 120 m² auf sowie einen sehr großzügigen Garten. Das Einfamilienhaus ist seit 2014 unbefristet vermietet. Die Nettokaltmiete beträgt 1000€ pro Monat."
+    },
+    {
+     "t": "p",
+     "text": "Mit einer Jahresnettokaltmiete von insgesamt 82.560€ bietet die Gewerbeimmobilie samt Einfamilienhaus eine lukrative Rendite von 7,51% p.a. auf das eingesetzte Kapital. Mit einem attraktiven Faktor von 13,31, ist die Immobilie nach unter 13 Jahren durch die Jahresnettokaltmiete abbezahlt. Damit stellt es ein überaus lukratives Investment in bester Lage von Norderstedt dar."
+    },
+    {
+     "t": "p",
+     "text": "In den letzten Jahren wurden einige Sanierungen vorgenommen, welche im Abschnitt Details näher erläutert werden."
+    }
+   ],
+   "ausstattung": [
+    "Gewerbeimmobilie samt Einfamilienhaus mit insgesamt 4 Einheiten",
+    "3 Gewerbeeinheiten und 1 Wohneinheit",
+    "Gewerbeeinheiten und Wohneinheit vermietet",
+    "Jahresnettokaltmiete 82.560€",
+    "Rendite 7,51%",
+    "Faktor 13,31",
+    "Folgende Sanierungen wurden in den letzten Jahren vorgenommen:",
+    "– Neue Gastherme im Fitnessbereich 2017 und Wohnbereich 2024",
+    "– Fitnessbereich samt Sanitäranlagen und Umkleiden kernsaniert 2017/2018",
+    "– Neues Bad und Gäste-WC im Einfamilienhaus 2016"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Immobilie präsentiert sich in bester Lage von Norderstedt direkt an der Hamburger Grenze. Der schöne Bach Tarpenbek trennt das Grundstück von der Hamburger Grenze, welche 3 Meter entfernt ist."
+    },
+    {
+     "t": "p",
+     "text": "Die angebotene Gewerbe- sowie Wohnimmobilie befindet sich im Fabersweg im wirtschaftsstarken Stadtgebiet von Norderstedt, einer der dynamischsten Städte im nördlichen Einzugsgebiet der Metropole Hamburg. Mit ihrer strategisch günstigen Lage im direkten Hamburger Umland hat sich Norderstedt zu einem bedeutenden Wirtschaftsstandort mit hoher Standortattraktivität für Unternehmen verschiedenster Branchen entwickelt."
+    },
+    {
+     "t": "p",
+     "text": "Der Fabersweg liegt in einem etablierten Gewerbe- und Mischgebiet mit einer gewachsenen Unternehmensstruktur. Die Umgebung ist geprägt von Gewerbeeinheiten, Dienstleistungsunternehmen sowie kleineren Produktions- und Handwerksbetrieben. Diese Mischung sorgt für eine konstante wirtschaftliche Aktivität und stabile Nachfrage nach Gewerbeflächen, was den Standort besonders für Kapitalanleger attraktiv macht."
+    },
+    {
+     "t": "p",
+     "text": "Die Verkehrsanbindung ist hervorragend. Über die nahegelegene Autobahn Bundesautobahn 7 sowie weitere überregionale Verkehrsachsen ist die Hamburger Innenstadt ebenso schnell erreichbar wie die wirtschaftsstarken Regionen in Schleswig-Holstein. Zusätzlich bietet die Nähe zum internationalen Drehkreuz Hamburg Airport einen erheblichen Standortvorteil für Unternehmen mit nationalen und internationalen Geschäftsbeziehungen."
+    },
+    {
+     "t": "p",
+     "text": "Auch der öffentliche Nahverkehr gewährleistet eine gute Erreichbarkeit für Mitarbeiter und Kunden. Mehrere Buslinien verbinden den Standort mit dem U-Bahn-Netz der Hamburger U-Bahn, insbesondere mit der U-Bahn-Linie U1 (Hamburg), über die eine direkte Verbindung in die Hamburger Innenstadt besteht."
+    },
+    {
+     "t": "p",
+     "text": "In unmittelbarer Umgebung befinden sich zudem zahlreiche Versorgungs- und Dienstleistungsangebote. Das überregional bekannte Herold-Center bietet eine Vielzahl an Einzelhandelsgeschäften, Gastronomie sowie medizinischer Versorgung und stellt einen wichtigen Versorgungs- und Frequenzstandort dar."
+    },
+    {
+     "t": "p",
+     "text": "Insgesamt überzeugt der Standort durch seine hervorragende infrastrukturelle Anbindung, die wirtschaftsstarke Umgebung sowie die Nähe zur Metropolregion Hamburg. Diese Faktoren sorgen für eine nachhaltig stabile Nachfrage nach Gewerbeflächen und unterstreichen die Attraktivität der Immobilie als langfristige Anlage mit solidem Vermietungspotenzial."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Anlageimmobilie – Gewerbe / Haus"
+    ],
+    [
+     "Fläche",
+     "ca. 1110 m²"
+    ],
+    [
+     "Grundstück",
+     "ca. 3031 m²"
+    ],
+    [
+     "Baujahr",
+     "1964"
+    ],
+    [
+     "Zimmer",
+     "31"
+    ],
+    [
+     "Badezimmer",
+     "6"
+    ],
+    [
+     "Lieferbar ab",
+     "nach Absprache"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Energieausweis",
+     "Energieverbrauchsausweis"
+    ],
+    [
+     "Einheiten",
+     "8"
+    ],
+    [
+     "Faktor",
+     "13,31"
+    ],
+    [
+     "Mietrendite",
+     "7,51%"
+    ],
+    [
+     "Kaufpreis",
+     "1.099.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/02",
+     "w": 1600,
+     "h": 1198
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/07",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/norderstedt-anlageobjekt/08",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "lemsahl-mellingstedt-doppelhaushaelfte",
+   "status": "angebot",
+   "order": 4,
+   "titel": "Elegantes Landhaus",
+   "untertitel": "Ruhig, Großzügig, Gehoben",
+   "ort": "Lemsahl-Mellingstedt",
+   "region": "Hamburg",
+   "plz": "22397",
+   "typ": "Doppelhaushälfte",
+   "preis": "799.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 167 m²",
+   "flaecheLabel": "Wohnfläche",
+   "grundstueck": "ca. 350 m²",
+   "zimmer": "5",
+   "baujahr": "1999",
+   "teaser": "Elegantes Landhaus in ruhiger Endlage – Erker, Marmorbad, Westterrasse und Doppelcarport.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Diese gehobene Doppelhaushälfte wurde 1999 in massiver Bauweise auf einem ca. 350 m² großen Grundstück errichtet. Die Wohnfläche beträgt ca. 167 m², welche sich auf 5 Zimmer und über drei Ebenen verteilt. Das Wohngefühl entspricht einem Einfamilienhaus, da die Terrasse des Doppelhauspartners eine andere Ausrichtung hat."
+    },
+    {
+     "t": "p",
+     "text": "Die Immobilie wird über einen gepflegten Eingangsbereich mit einer hochwertigen Massivholzeingangstür betreten. Über das großzügige Entrée lässt sich die stilvolle Landhausküche mit Essbereich, das Gäste-WC mit französischer Keramikausstattung, der Hauswirtschaftsraum sowie der weitläufige Wohnbereich erreichen. Der Wohnbereich bietet mit ca. 41 m² Platz für die ganze Familie und sorgt mit bodentiefen Fenstern für eine helle und sonnige Atmosphäre. Ein besonderes Highlight stellt der wunderschöne Erker mit großen Panoramafenstern dar. Der Wohnbereich gewährt Zugang zur westlich ausgerichteten Terrasse und dem wunderschönen Garten, der im Sommer eine Augenweide ist. Durch seine ruhige und rückwärtige Lage eignet sich der Garten optimal für Feste mit Freunden und bietet gleichzeitig genügend Platz für die Kinder zum Toben."
+    },
+    {
+     "t": "p",
+     "text": "Eine elegante und extra breite Betontreppe mit Massivholzgeländer führt ins Obergeschoss dieser Immobilie. Durch die besondere Dachform des Mansardenwalmdaches und die sechs Gauben sind im Obergeschoss keine Dachschrägen vorhanden, wodurch sich die Zimmer optimal nutzen lassen. Diese weisen eine angenehme Größe auf, sind gut geschnitten und eines der drei Zimmer ist mit bodentiefen Fenstern sowie einem Balkon versehen. Für den nötigen Komfort sorgt das weiße Marmorbadezimmer, welches mit einer Badewanne, einer Dusche, einem großen Fenster sowie einem schwarzen Marmor-Waschtisch ausgestattet ist."
+    },
+    {
+     "t": "p",
+     "text": "Eine weitere stilvolle Holztreppe führt ins ausgebaute Dachgeschoss. Hier eröffnet sich ein großzügiges Zimmer, welches als Büro oder auch als Gäste-Zimmer genutzt werden kann. Damit die Gäste es bequem haben, befindet sich auch hier ein kleines Gäste-WC. Ebenfalls ist ein weiteres Zimmer vorhanden, welches als Abstellraum genutzt werden kann."
+    },
+    {
+     "t": "p",
+     "text": "Die Immobilie ist mit einer Fußbodenheizung ausgestattet. Beheizt wird sie über eine Gasheizung aus dem Jahr 2012. Besonders hervorzuheben ist die sehr gute Energieeffizienzklasse C, welche auf die hochwertige Bauweise zurückzuführen ist. Ein Doppelcarport auf dem Grundstück samt Anbau für extra Lagerfläche runden dieses attraktive Angebot ab."
+    }
+   ],
+   "ausstattung": [
+    "Hochwertigen Massivholzeingangstür",
+    "Entrée mit eingebauter Garderobe",
+    "Stilvolle Landhausküche mit Essbereich",
+    "Gäste-WC mit französischer Keramikausstattung und Hauswirtschaftsraum im Erdgeschoss",
+    "Großzügiger Wohnbereich mit hellem Erker",
+    "Ruhig gelegener, rückwärtiger Garten mit 40 m² Terrasse",
+    "Pergola aus feuerverzinktem Metall",
+    "Elegante und extra breite Massivholztreppe zum Obergeschoss",
+    "Durch Mansardenwalmdach und sechs Gauben keine Dachschrägen im OG",
+    "Gut geschnittene Zimmer, eines mit bodentiefen Fenstern und Balkon",
+    "Weißes Marmorbadezimmer mit Badewanne, Dusche, Fenster sowie schwarzen Marmor-Waschtisch",
+    "Gästezimmer, Gäste-WC sowie Abstellraum im Dachgeschoss",
+    "Fenster sind Isolierverglast mit Wärmeschutzbeschichtung und innenliegenden, großformatigen Sprossen",
+    "Fußbodenheizung im EG und OG, Heizungsanlage von 2012",
+    "Energieeffizienzklasse C",
+    "Fensterbänke in Carrara Marmor",
+    "Doppelcarport samt Anbau mit Getränkekühlschrank",
+    "Immobilie befindet sich in hinterer Endlage"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Immobilie präsentiert sich in einer idyllischen Straße im beliebten Stadtteil Lemsahl-Mellingstedt. Auf einem Pfeifenstielgrundstück in hinterer Endlage ist die Immobilie ruhig gelegen und bietet einen erholsamen Ausblick ins Grüne."
+    },
+    {
+     "t": "p",
+     "text": "Die privilegierte Lage zeichnet sich durch schöne Natur sowie eine gehobene Umgebungsbebauung aus. Besonders hervorzuheben ist, dass die Immobilie ruhig gelegen und dennoch eine gute Infrastruktur aufweist. Das kleine Geschäftszentrum am Tannenhof ist fußläufig erreichbar und bietet Einkaufsmöglichkeiten für Lebensmittel, einen Bäcker, einen Friseur, eine Apotheke, eine Post sowie diverse Ärzte."
+    },
+    {
+     "t": "p",
+     "text": "Das nähere Umfeld besticht durch ein vielfältiges Gastronomieangebot, Kindergärten, Grundschulen, weiterführende Schulen sowie diverse Freizeitmöglichkeiten wie beispielsweise Reiten, Golfen oder anderen sportliche Aktivitäten im Lemsahler Sportverein. Ebenfalls ist ein guter Zugang zum ÖPNV durch eine unweite Bushaltestelle gegeben. Positiv hervorzuheben ist ebenfalls die Nähe zum beliebten Alstertal Einkaufszentrum – AEZ. Dies ist weit über die Grenzen von Hamburg bekannt und bietet mit rund 240 Shops ein einmaliges Einkaufserlebnis. Das AEZ ist 10 Autominuten, der Airport 20 Autominuten und die Hamburger Innenstadt 30 Autominuten entfernt."
+    },
+    {
+     "t": "p",
+     "text": "Neben der tollen Infrastruktur bietet die Natur mit dem nahegelegenen Alsterlauf sowie dem Naturschutzgebiet \"Rodenbeker Quellental\" mit schönen Wanderwegen eine tolle Möglichkeit sich eine Auszeit vom Alltag zu nehmen."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Doppelhaushälfte"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 167 m²"
+    ],
+    [
+     "Grundstück",
+     "ca. 350 m²"
+    ],
+    [
+     "Baujahr",
+     "1999"
+    ],
+    [
+     "Zimmer",
+     "5"
+    ],
+    [
+     "Badezimmer",
+     "1"
+    ],
+    [
+     "Bezugsfrei ab",
+     "nach Absprache"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Energieausweis",
+     "Liegt vor"
+    ],
+    [
+     "Energieausweistyp",
+     "Energieverbrauchsausweis"
+    ],
+    [
+     "Energieeffizienzklasse",
+     "C"
+    ],
+    [
+     "Endenergieverbrauch",
+     "92,2 kWh/(m²·a)"
+    ],
+    [
+     "Kaufpreis",
+     "799.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/07",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/08",
+     "w": 1600,
+     "h": 1200
+    }
+   ]
+  },
+  {
+   "slug": "poppenbuettel-eigentumswohnung",
+   "status": "angebot",
+   "order": 5,
+   "titel": "Charmante 4-Zimmer-Wohnung mit Atrium & Garten in Poppenbüttel",
+   "untertitel": null,
+   "ort": "Poppenbüttel",
+   "region": "Hamburg",
+   "plz": "22399",
+   "typ": "Eigentumswohnung",
+   "preis": "499.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 130–140 m²",
+   "flaecheLabel": "Wohnfläche",
+   "grundstueck": null,
+   "zimmer": "4",
+   "baujahr": "1977",
+   "teaser": "Charmante 4-Zimmer-Wohnung mit Atrium und eigenem Garten, sofort bezugsfrei.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Diese außergewöhnliche Wohnung befindet sich in einem gepflegten Mehrfamilienhaus aus dem Jahr 1977 in einer der begehrtesten Wohnlagen Poppenbüttels. Eingebettet in ein grünes Umfeld und zugleich hervorragend angebunden, bietet sie ein ideales Zuhause für Familien, die Wert auf Wohnqualität, Komfort und ein harmonisches Wohnumfeld legen."
+    },
+    {
+     "t": "p",
+     "text": "Auf ca. 130 m² Wohnfläche verteilen sich vier großzügige Zimmer, eine moderne Küche sowie zwei stilvoll ausgestattete Badezimmer. Bereits beim Betreten der Wohnung empfängt Sie ein großzügiger Eingangsbereich, von dem aus alle Räume bequem erreichbar sind."
+    },
+    {
+     "t": "p",
+     "text": "Auf der unteren Ebene befinden sich das Elternschlafzimmer mit angrenzendem Bad, eine praktische Waschküche sowie das Herzstück der Wohnung: der offen gestaltete Wohn- und Essbereich. Große Fensterflächen eröffnen einen schönen Blick ins Grüne und schaffen eine helle, einladende Atmosphäre. Von hier aus gelangen Sie direkt auf die Terrasse sowie in das charmante Atrium, das dieser Immobilie einen ganz besonderen Charakter verleiht. Die funktional ausgestattete Küche mit praktischer Durchreiche fügt sich harmonisch in das Raumkonzept ein."
+    },
+    {
+     "t": "p",
+     "text": "Die obere Ebene bietet zwei gut geschnittene Kinderzimmer, ein weiteres Badezimmer mit Dusche sowie einen zusätzlichen Abstellraum und schafft damit ideale Voraussetzungen für das Familienleben."
+    },
+    {
+     "t": "p",
+     "text": "Für zusätzlichen Wohnkomfort sorgen elektrische Außenrollläden an nahezu allen Fenstern, hochwertiger Parkettboden in den Wohnräumen sowie geschmackvolle Fliesen in Küche und Bädern. Eine Fußbodenheizung in den Badezimmern und der Küche gewährleistet ganzjährig ein angenehmes Raumklima. Die zahlreichen Fensterelemente lassen viel Tageslicht herein und verleihen den Räumen eine freundliche, offene Atmosphäre."
+    },
+    {
+     "t": "p",
+     "text": "Der liebevoll angelegte Außenbereich begeistert mit einer sonnigen, nach Südwesten ausgerichteten Terrasse inklusive Markise, einem gepflegten Garten sowie dem außergewöhnlichen Atrium – ein geschützter Rückzugsort mit besonderem Flair."
+    },
+    {
+     "t": "p",
+     "text": "Abgerundet wird dieses attraktive Angebot durch einen eigenen Kellerraum sowie einen Tiefgaragenstellplatz. Darüber hinaus stehen den Bewohnern ein Gemeinschaftsraum und eine gemeinschaftliche Waschküche zur Verfügung."
+    }
+   ],
+   "ausstattung": [
+    "Gepflegtes Mehrfamilienhaus aus dem Jahr 1977",
+    "Begehrte, grüne und gut angebundene Lage in Poppenbüttel",
+    "Ca. 130 m² Wohnfläche",
+    "Vier großzügige Zimmer",
+    "Moderne Küche mit praktischer Durchreiche",
+    "Zwei stilvoll ausgestattete Badezimmer",
+    "Großzügiger Eingangsbereich",
+    "Offener, heller Wohn- und Essbereich mit Blick ins Grüne",
+    "Elternschlafzimmer mit angrenzendem Bad",
+    "Zwei gut geschnittene Kinderzimmer auf der oberen Ebene",
+    "Praktische Waschküche und zusätzlicher Abstellraum",
+    "Elektrische Außenrollläden an nahezu allen Fenstern",
+    "Parkettboden in den Wohnräumen",
+    "Fußbodenheizung in Küche und Badezimmern",
+    "Südwestlich ausgerichtete Terrasse mit Markise",
+    "Gepflegter Garten und außergewöhnliches Atrium",
+    "Eigener Kellerraum",
+    "Tiefgaragenstellplatz",
+    "Gemeinschaftsraum und gemeinschaftliche Waschküche vorhanden"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Poppenbüttel zählt zu den begehrtesten Wohnlagen im Hamburger Norden und verbindet auf besondere Weise naturnahes Wohnen mit einer ausgezeichneten Infrastruktur. Eingebettet in das idyllische Alstertal besticht der Stadtteil durch seine weitläufigen Grünflächen, die malerischen Alsterwanderwege und ein hohes Maß an Lebensqualität."
+    },
+    {
+     "t": "p",
+     "text": "Die Lage bietet ideale Voraussetzungen für Familien. Renommierte Bildungseinrichtungen wie das Carl-von-Ossietzky-Gymnasium, das Gymnasium Hummelsbüttel sowie die Stadtteilschule Poppenbüttel sind ebenso wie mehrere Kindergärten und Grundschulen bequem in wenigen Minuten mit dem Fahrrad erreichbar. Dank der guten Anbindung an das Bus- und Bahnnetz des HVV gelangen Sie zudem schnell und komfortabel in die Hamburger Innenstadt und die umliegenden Stadtteile."
+    },
+    {
+     "t": "p",
+     "text": "Für die Besorgungen des täglichen Bedarfs stehen Ihnen der Poppenbüttler Markt, der Norbert-Schmidt-Platz sowie der beliebte Wochenmarkt in unmittelbarer Nähe zur Verfügung. Das bekannte Alstertal-Einkaufszentrum (AEZ), eines der attraktivsten Shoppingcenter Norddeutschlands, lädt darüber hinaus mit einer Vielzahl an Geschäften, Restaurants und Cafés zum entspannten Einkaufsbummel ein."
+    },
+    {
+     "t": "p",
+     "text": "Auch in puncto Freizeitgestaltung lässt die Umgebung keine Wünsche offen. Die weitläufigen Grünanlagen entlang der Alster bieten ideale Bedingungen für Spaziergänge, Joggingrunden oder ausgedehnte Fahrradtouren. Zahlreiche Sportvereine für Hockey, Tennis oder Reitsport ergänzen das vielseitige Angebot. Für Wellness- und Fitnessliebhaber befindet sich das exklusive Aspria Hamburg Alstertal nur wenige Minuten entfernt. Golffreunde profitieren zudem von der Nähe zum renommierten Golf & Country Club Treudelberg, der zu den schönsten Golfanlagen der Region zählt."
+    },
+    {
+     "t": "p",
+     "text": "Eine Wohnlage, die urbanen Komfort, naturnahe Erholung und ein familienfreundliches Umfeld auf harmonische Weise miteinander verbindet."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Eigentumswohnung"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 130 m²"
+    ],
+    [
+     "Baujahr",
+     "1977"
+    ],
+    [
+     "Zimmer",
+     "4"
+    ],
+    [
+     "Badezimmer",
+     "2"
+    ],
+    [
+     "Bezugsfrei ab",
+     "Sofort"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Energieausweis",
+     "Liegt vor"
+    ],
+    [
+     "Energieausweistyp",
+     "Energieverbrauchsausweis"
+    ],
+    [
+     "Energieeffizienzklasse",
+     "E"
+    ],
+    [
+     "Endenergieverbrauch",
+     "150,7 kWh/(m²·a)"
+    ],
+    [
+     "Kaufpreis",
+     "499.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/07",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/poppenbuettel-eigentumswohnung/08",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "langenhorn-wohnung",
+   "status": "angebot",
+   "order": 6,
+   "titel": "Gehobenes Wohnen mit Galerie, Kamin & Dachterrasse",
+   "untertitel": null,
+   "ort": "Langenhorn",
+   "region": "Hamburg",
+   "plz": "22417",
+   "typ": "Eigentumswohnung",
+   "preis": "599.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 129 m²",
+   "flaecheLabel": "Wohnfläche",
+   "grundstueck": null,
+   "zimmer": "3",
+   "baujahr": "1938",
+   "teaser": "Gehobene Dachgeschosswohnung mit Galerie, Kamin und Dachterrasse.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Diese einzigartige Wohnung befindet sich in einem gepflegten Mehrfamilienhaus aus dem Jahr 1938 in einer der begehrtesten Wohnlagen Langenhorns."
+    },
+    {
+     "t": "p",
+     "text": "Auf ca. 129 m² Wohnfläche verteilen sich zwei großzügige Schlafzimmer, ein offener Wohn- und Essbereich mit einer wunderschönen Galerie, eine maßgefertigte Landhausküche sowie ein stilvoll ausgestattetes Badezimmer und Gäste-Duschbad."
+    },
+    {
+     "t": "p",
+     "text": "Bereits beim Betreten der Immobilie fällt die offene Raumgestaltung, besondere Architektur und das hohe Maß an Privatsphäre auf. Das Herzstück der Wohnung bildet der offen gestaltete Wohn- und Essbereich. Große bodentiefe Fenster sorgen für viel Tageslicht und eröffnen einen direkten Zugang zur einladenden Dachterrasse. Diese bietet einen beeindruckenden Ausblick ins Grüne und schafft einen privaten Rückzugsort mit nahezu uneinsehbarer Privatsphäre."
+    },
+    {
+     "t": "p",
+     "text": "Der Wohnbereich verbindet Offenheit mit einer gemütlichen Atmosphäre. Ein stilvoller Kaminofen bildet den Mittelpunkt des Raumes und sorgt für ein warmes und einladendes Ambiente. Der offene Blick in die darüber liegende Galerie unterstreicht die besondere Architektur und die hohen Decken sowie breite Gauben vermittelt ein großzügiges und luftiges Raumgefühl."
+    },
+    {
+     "t": "p",
+     "text": "Die Galerie erweitert das Raumangebot, bietet vielseitige Nutzungsmöglichkeiten und verleiht dem Objekt zusätzlichen Charakter."
+    },
+    {
+     "t": "p",
+     "text": "Neben dem Wohn- und Essbereich befindet sich die einzigartige Küche. Maßgefertigt im Landhausstil verleiht sie der Wohnung ganz besonderen Charme und fügt sich optimal ins Raumkonzept ein."
+    },
+    {
+     "t": "p",
+     "text": "Ein eleganter Flur, der mit handgefertigten Zierleisten versehen ist, führt in die privaten Bereiche der Immobilie. Hier befinden sich ein großzügiges und hochwertig Vollbad, welches mit zwei Waschbecken und Badewanne ausgestattetes ist, ein gemütliches Arbeitszimmer sowie das geräumige Master-Schlafzimmer mit hochwertiger Karl Lagerfeld Tapete. Die durchdachte Raumaufteilung eignet sich für Gäste und Gesellschaft und bietet gleichzeitig Möglichkeit für Ruhe und Rückzug."
+    }
+   ],
+   "ausstattung": [
+    "• Begehrte, grüne und sehr gut angebundene Lage in Langenhorn",
+    "• Gepflegtes und modernisiertes Mehrfamilienhaus aus dem Jahr 1938",
+    "• Energieeffizienzstufe B mit einem Verbrauch von 72,3 kWh/(m²*a)",
+    "• Hochwertiges und frisch saniertes Treppenhaus",
+    "• Ca. 129 m² Wohnfläche",
+    "• Offener und heller Wohn- und Essbereich mit Terrassenzugang",
+    "• Dachterrasse samt elektrischer Markise mit Blick ins Grüne und Privatsphäre",
+    "• Hochwertiger Kaminofen, der für gemütliche Atmosphäre sorgt",
+    "• Wunderschöne Galerie mit flexiblen Nutzungsmöglichkeiten",
+    "• Maßgefertigte Landhausküche mit hochwertigen Elektrogeräten",
+    "• Eleganter Flur mit geschmackvollen Zierleisten",
+    "• Großzügiges und Stilvolles Badezimmer und Gästeduschbad",
+    "• Zwei große und gut geschnittene Zimmer, die viel Platz bieten",
+    "• Hohe Decken und fünf Gauben sorgen für ein luftiges Raumgefühl",
+    "• Hochwertiges amerikanisches Kirschbaum Holzparkett in der ganzen Wohnung",
+    "• Zwei große Kellerräume gehören zur Wohnung"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Immobilie befindet sich in einer der begehrtesten Lagen von Hamburg Langenhorn. Abseits der lauten Straße liegt sie ruhig und privat gelegen in einer Einbahnstraße. Langenhorn verbindet ruhiges, naturnahes Wohnen mit einer hervorragend ausgebauten städtischen Infrastruktur."
+    },
+    {
+     "t": "p",
+     "text": "Ein besonderer Vorteil der Lage ist die unmittelbare Nähe zur Natur. Das beliebte Naturschutzgebiet Raakmoor sowie das Sommerbad Langenhorn liegen in direkter Nachbarschaft und laden zur Erholung ein."
+    },
+    {
+     "t": "p",
+     "text": "Gleichzeitig profitiert die Lage von einer sehr guten Infrastruktur für den täglichen Bedarf. Supermärkte befinden sich in unmittelbarer Nähe. Für größere Einkäufe, Wochenmärkte und Fachgeschäfte bietet der Langenhorner Markt ein gut erreichbares Zentrum."
+    },
+    {
+     "t": "p",
+     "text": "Für die medizinische Versorgung ist bestens gesorgt. Das Asklepios Klinikum Nord am Standort Heidberg befindet sich in direkter Nachbarschaft und gewährleistet eine umfassende medizinische, notfallmedizinische und fachärztliche Versorgung. Ergänzt wird das Angebot durch zahlreiche niedergelassene Ärzte und Apotheken im näheren Umfeld."
+    },
+    {
+     "t": "p",
+     "text": "Für Familien bietet die Lage ideale Voraussetzungen. Mehrere Kindertagesstätten, Grundschulen sowie weiterführende Schulen wie Gymnasien und Stadtteilschulen befinden sich in der näheren Umgebung."
+    },
+    {
+     "t": "p",
+     "text": "Die Anbindung an den öffentlichen Nahverkehr ist hervorragend: Eine Bushaltestelle befindet sich in unmittelbarer Nähe. Der U-Bahnhof Kiwittsmoor der Linie U1 ist fußläufig erreichbar. Von hier aus besteht eine direkte Verbindung ohne Umstieg in die Hamburger Innenstadt, sowie in Richtung Norderstedt."
+    },
+    {
+     "t": "p",
+     "text": "Auch mit dem Auto sind wichtige Ziele schnell erreichbar. Über die Langenhorner Chaussee sowie die umliegenden Hauptverkehrsstraßen bestehen gute Verbindungen in die angrenzenden Stadtteile und das Hamburger Umland. Der Hamburger Flughafen ist ebenfalls schnell erreichbar. Gleichzeitig liegt die Wohnstraße abseits der primären Lärmschneise des Flughafens. Die Autobahn A7 ist ebenfalls schnell erreichbar."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Eigentumswohnung"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 129 m²"
+    ],
+    [
+     "Baujahr",
+     "1938"
+    ],
+    [
+     "Zimmer",
+     "3"
+    ],
+    [
+     "Badezimmer",
+     "2"
+    ],
+    [
+     "Bezugsfrei ab",
+     "Sofort"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Energieausweis",
+     "Liegt vor"
+    ],
+    [
+     "Energieausweistyp",
+     "Energiebedarfsausweis"
+    ],
+    [
+     "Energieeffizienzklasse",
+     "B"
+    ],
+    [
+     "Endenergieverbrauch",
+     "72,3 kWh/(m²·a)"
+    ],
+    [
+     "Kaufpreis",
+     "599.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/langenhorn-wohnung/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/07",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/langenhorn-wohnung/08",
+     "w": 1600,
+     "h": 1198
+    }
+   ]
+  },
+  {
+   "slug": "sasel-grundstueck",
+   "status": "angebot",
+   "order": 7,
+   "titel": "Bestlage in Sasel: Ruhiges Südgrundstück",
+   "untertitel": "Zentral gelegen, ideal fürs Traumhaus",
+   "ort": "Sasel",
+   "region": "Hamburg",
+   "plz": "22393",
+   "typ": "Baugrundstück",
+   "preis": "499.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": null,
+   "flaecheLabel": null,
+   "grundstueck": "ca. 630 m²",
+   "zimmer": null,
+   "baujahr": null,
+   "teaser": "Ruhiges Südgrundstück in zweiter Reihe – ideal für ein Einfamilienhaus, Bebauung nach § 34 BauGB.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "In begehrter Wohnlage von Hamburg-Sasel bietet sich hier eine seltene Gelegenheit: Ein großzügig und ruhig gelegenes Baugrundstück im hinteren Bereich eines insgesamt ca. 1.178 m² großen Grundstücks wird hier angeboten. Es ist ideal für alle, die sich den Traum vom eigenen Haus in grüner und zentraler Lage erfüllen möchten."
+    },
+    {
+     "t": "p",
+     "text": "Zum Verkauf steht der hintere Grundstücksteil mit einer geplanten Größe von ca. 630 m². Die finale Grundstücksgröße wird im Zuge der noch ausstehenden Realteilung festgelegt und kann in diesem Rahmen individuell abgestimmt werden. Dies eröffnet zusätzlichen Spielraum für die persönliche Planung. Das massive Carport wird im Zuge der Realteilung weichen. Nennenswerten Baumbestand gibt es keinen."
+    },
+    {
+     "t": "p",
+     "text": "Das Grundstück wird eine attraktive und gut nutzbare Fläche mit ca. 22 Metern Breite und 28 Metern Länge erhalten – ideale Voraussetzungen für die Realisierung eines Einfamilienhauses mit Garten, Terrasse und ausreichend Privatsphäre. Durch die Lage im hinteren Bereich entsteht ein besonders ruhiges und geschütztes Wohnumfeld – perfekt für Familien, die dem Trubel der Stadt entfliehen möchten, ohne auf eine gute Anbindung zu verzichten. Die südliche Ausrichtung des zukünftigen Traumhauses sorgt für eine sonnige Atmosphäre den ganzen Tag über."
+    },
+    {
+     "t": "p",
+     "text": "Ein konkreter Bebauungsplan liegt für dieses Gebiet nicht vor. Die Bebaubarkeit richtet sich nach dem Baustufenplan Sasel (Ortsteil 518) mit der Ausweisung W1o. Das bedeutet eine eingeschossige, offene Bauweise, wobei sich das Bauvorhaben an der umliegenden Nachbarschaftsbebauung orientieren muss (§34 BauGB)."
+    },
+    {
+     "t": "p",
+     "text": "Konkret bedeutet das, man profitiert von einer gewachsenen, harmonischen Umgebung und kann das Bauvorhaben individuell gestalten – im Einklang mit der bestehenden Bebauung. Ein klassisches Einfamilienhaus mit ausgebautem Dachgeschoss fügt sich hier ideal ein und entspricht dem typischen Charakter der Umgebung."
+    }
+   ],
+   "ausstattung": [
+    "Baugrundstück in begehrter, ruhiger Wohnlage von Hamburg-Sasel",
+    "Hinterer Grundstücksteil eines insgesamt ca. 1.178 m² großen Grundstücks",
+    "Geplante Grundstücksgröße ca. 630 m² (noch flexibel durch Realteilung)",
+    "Individuelle Anpassung der finalen Grundstücksgröße möglich",
+    "Carport wird im Zuge der Realteilung entfernt, kein nennenswerter Baumbestand",
+    "Grundstücksmaße ca. 22 m Breite und 28 m Länge",
+    "Ideal für Einfamilienhaus mit Garten, Terrasse und Privatsphäre",
+    "Ruhige, geschützte Lage im hinteren Bereich – familienfreundlich",
+    "Südliche Ausrichtung sorgt für viel Sonne",
+    "Kein Bebauungsplan vorhanden – Bebauung nach Baustufenplan Sasel (W1o)",
+    "Eingeschossige, offene Bauweise vorgeschrieben",
+    "Bauvorhaben muss sich an Nachbarschaft orientieren (§34 BauGB)",
+    "Individuelle Gestaltung möglich im Einklang mit bestehender Bebauung",
+    "Klassisches Einfamilienhaus mit ausgebautem Dachgeschoss passt ideal ins Umfeld"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Willkommen in einem der begehrtesten Wohngebiete Hamburgs. Dieses Grundstück in ruhiger Lage bietet die ideale Basis für Ihr zukünftiges Traumhaus. Umgeben von einer grünen, familienfreundlichen Nachbarschaft verbindet dieser Standort Ruhe und Privatsphäre mit einer hervorragenden Infrastruktur. Der Saseler Markt mit Einkaufsmöglichkeiten für den täglichen Bedarf, Cafés und Fachgeschäfte liegt in fußläufiger Entfernung, während das Alstertal-Einkaufszentrum (AEZ) nur wenige Minuten entfernt ist und mit über 240 Geschäften, Restaurants und Services keine Wünsche offenlässt."
+    },
+    {
+     "t": "p",
+     "text": "Für Familien ist die Lage ein echter Glücksgriff: Kindergärten sowie Grundschulen liegen in unmittelbarer Nähe, weiterführende Schulen und Gymnasien sind bequem erreichbar. Kurze Wege, beste Bildung und Betreuung."
+    },
+    {
+     "t": "p",
+     "text": "Die Anbindung an den öffentlichen Nahverkehr ist exzellent. Der S-Bahnhof Poppenbüttel führt in wenigen Minuten ins Zentrum Hamburgs oder zum Flughafen. Zusätzlich sorgen mehrere Buslinien für flexible Verbindungen in die gesamte Stadt."
+    },
+    {
+     "t": "p",
+     "text": "Doch das wahre Highlight ist die Umgebung: Parks, Spazier- und Radwege entlang des Alstertals schenken Natur und Erholung direkt vor der Haustür. Dieses Grundstück vereint das Beste aus beiden Welten – die Ruhe eines gewachsenen Wohngebiets und die Nähe zu urbanem Leben."
+    },
+    {
+     "t": "p",
+     "text": "Hier wird das individuelle Traumhaus zur Realität: Großzügige Architektur, lichtdurchflutete Räume und ein Garten, der Platz für Erholung und gesellige Stunden bietet. Mit dieser Adresse wird nicht nur ein Zuhause geschaffen, sondern eine Wohlfühloase für die ganze Familie – mitten in Hamburgs begehrter Wohnlage."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Baugrundstück"
+    ],
+    [
+     "Grundstück",
+     "ca. 630 m² (finale Größe nach Realteilung)"
+    ],
+    [
+     "Bauplanung",
+     "Baustufenplan Sasel (W1o)"
+    ],
+    [
+     "Bebauung",
+     "nach § 34 BauGB"
+    ],
+    [
+     "Erschließung",
+     "erschlossen"
+    ],
+    [
+     "Kaufpreis",
+     "499.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/sasel-grundstueck/01",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "eidelstedt-wohnung",
+   "status": "angebot",
+   "order": 8,
+   "titel": "Schöne Erdgeschosswohnung mit Souterrain im Eidelstedter Zentrum",
+   "untertitel": null,
+   "ort": "Eidelstedt",
+   "region": "Hamburg",
+   "plz": "22523",
+   "typ": "Eigentumswohnung",
+   "preis": "399.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 84 m²",
+   "flaecheLabel": "Wohnfläche",
+   "grundstueck": null,
+   "zimmer": "4",
+   "baujahr": "2010",
+   "teaser": "Erdgeschosswohnung mit Souterrain und Terrasse im Eidelstedter Zentrum.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Diese schöne Souterrainwohnung befindet sich in einem Mehrfamilienhaus, dass im Jahr 2010 in massiver Bauweise errichtet wurde. Zusammen mit einem weiteren Gebäude setzt sich die Eigentümergemeinschaft aus insgesamt 9 Wohneinheiten zusammen. Die Wohnfläche beträgt ca. 84 m², welche sich auf 4 Zimmer und über zwei Ebenen verteilt."
+    },
+    {
+     "t": "p",
+     "text": "Im Erdgeschoss befindet sich neben dem Eingangsbereich, eine hochwertige und stilvolle Einbauküche. Mit einer schönen Kochinsel ausgestattet, schafft die Küche ein schönes Ambiente für einzigartige Kochmomente. Es folgt der großzügige Wohn-Essbereich. Dieser bietet viel Platz und sorgt mit einer Vielzahl von Terrassentüren für eine helle und sonnige Atmosphäre. Der Wohn-Essbereich als auch die Küche sind von einer geräumigen Terrasse umgeben. Diese ist grün gestaltet und ein schöner Bambus ringsum sorgt für Sichtschutz. Für den nötigen Komfort befindet sich ein Gäste-WC im Erdgeschoss."
+    },
+    {
+     "t": "p",
+     "text": "Eine schöne Holztreppe führt ins Souterrain. Hier befinden sich drei Zimmer, welche individuell genutzt werden können. Ausgestattet mit einem Fenster, werden die Zimmer aktuell als Schlafzimmer, Gästezimmer und Ankleidezimmer genutzt. Besonders im Sommer erweisen sich die Zimmer als vorteilhaft, weil sie eine kühle Temperatur bewahren. Angrenzend befindet sich das Badezimmer. Dieses ist mit einer Eckbadewanne und einer zusätzlichen Kammer für Stauraum ausgestattet. Der gesamte Bereich im Souterrain ist 2,50m hoch und so wie auch das Erdgeschoss mit einer Fußbodenheizung versehen."
+    },
+    {
+     "t": "p",
+     "text": "Dieses attraktive Angebot wird durch einen Stellplatz direkt neben der Terrasse abgerundet."
+    }
+   ],
+   "ausstattung": [
+    "Dreifachverglaste Kunststofffenster im Erdgeschoss",
+    "Zweifachverglaste Isolierglasfenster aus Kunststoff im Souterrain",
+    "Hochwertige und stilvolle Einbauküche",
+    "Fußbodenheizung im Erdgeschoss und im Souterrain",
+    "Außenrollläden im Erdgeschoss",
+    "Großzügige Terrasse um die Wohnung herum",
+    "Gäste-WC im Erdgeschoss"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Eigentumswohnung befindet sich nahe dem Zentrum von Eidelstedt. Eidelstedt gehört zum Hamburger Stadtteil Eimsbüttel und verzeichnet rund 30.000 Einwohner."
+    },
+    {
+     "t": "p",
+     "text": "Die begehrte Lage der Wohnung ist einzigartig. Durch die Nähe zum Zentrum von Eidelstedt befindet sich alles Wichtige in unmittelbarer Umgebung. Einkaufsmöglichkeiten, Restaurants und Ärzte sind am Eidelstedter Marktplatz in rund 600 m Entfernung vorzufinden. Der Bahnhof „Eidelstedt Zentrum“ ist lediglich 400 m entfernt. Auch Bushaltestellen gibt es direkt vor der Tür. Schulen, Sportstätten und Kindergärten sind in einem Umkreis von rund 1000 m vorhanden. Die Autobahnen A7 und A23 sind in kurzer Zeit zu erreichen, der Flughafen in ca. 20 Minuten und die Innenstadt von Hamburg ist ca. 30 Autominuten entfernt."
+    },
+    {
+     "t": "p",
+     "text": "Neben der tollen Infrastruktur bietet die Natur mit dem nahe gelegenen Krupunder See eine schöne Möglichkeit sich eine Auszeit vom Alltag zu nehmen. Ob eine Radtour, ein Spaziergang oder eine frische Abkühlung im Sommer."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Eigentumswohnung"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 84 m²"
+    ],
+    [
+     "Baujahr",
+     "2010"
+    ],
+    [
+     "Zimmer",
+     "4"
+    ],
+    [
+     "Badezimmer",
+     "1"
+    ],
+    [
+     "Bezugsfrei ab",
+     "Nach Absprache"
+    ],
+    [
+     "Energieträger",
+     "Öl"
+    ],
+    [
+     "Energieausweis",
+     "Liegt vor"
+    ],
+    [
+     "Energieausweistyp",
+     "Energieverbrauchsausweis"
+    ],
+    [
+     "Energieeffizienzklasse",
+     "C"
+    ],
+    [
+     "Endenergieverbrauch",
+     "80,30 kWh/(m²·a)"
+    ],
+    [
+     "Kaufpreis",
+     "399.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/eidelstedt-wohnung/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/eidelstedt-wohnung/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/eidelstedt-wohnung/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/eidelstedt-wohnung/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/eidelstedt-wohnung/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/eidelstedt-wohnung/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/eidelstedt-wohnung/07",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "doemitz-anlageobjekt",
+   "status": "angebot",
+   "order": 9,
+   "titel": "Lukratives Investment",
+   "untertitel": "Rendite 13,52% · Faktor 7,4",
+   "ort": "Dömitz",
+   "region": "Mecklenburg-Vorpommern",
+   "plz": "19303",
+   "typ": "Anlageimmobilie – Gewerbe-/Wohnhaus",
+   "preis": "380.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 730 m²",
+   "flaecheLabel": "Fläche",
+   "grundstueck": "ca. 1.200 m²",
+   "zimmer": "19",
+   "baujahr": "1971",
+   "teaser": "Wohn- und Gewerbehaus mit 4 Einheiten an der Elbe – kalkulierte Rendite 13,52 % laut Exposé.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Diese schöne Gewerbe- & Wohnimmobilie wurde im Jahr 1971 in massiver Bauweise auf einem ca. 1200 m² großen Grundstück errichtet. Die Gesamtfläche beträgt ca. 730 m², welche sich auf vier Einheiten, davon zwei Gewerbe- und zwei Wohneinheiten verteilt. Die Gewerbeeinheiten sind nicht vermietet, hier wird von einer kalkulatorischen Miete ausgegangen, da aktuell Gespräche mit potenziellen Mietern erfolgen. Die Wohneinheiten sind vermietet. Es kann von einer Jahresnettokaltmiete von insgesamt 51.384€ ausgegangen werden."
+    },
+    {
+     "t": "p",
+     "text": "Die erste Wohneinheit befindet sich im Erdgeschoss, umfasst ca. 115 m² und ist seit dem 01.03.2016 vermietet. Die Nettokaltmiete beträgt 242€ pro Monat. Die zweite Wohneinheit befindet sich im Dachgeschoss, umfasst ca. 155 m² und ist seit dem 01.08.2015 vermietet. Die Nettokaltmiete beträgt 440€ pro Monat. Beide Mieten wurden seit dem Vermietungsstart nicht mehr angepasst und bieten Potenzial."
+    },
+    {
+     "t": "p",
+     "text": "Bei den zwei Gewerbeeinheiten handelt es sich um eine Gastronomiefläche im Erdgeschoss, welche renovierungsbedürftig ist und eine Spielhalle im Dachgeschoss. Sowohl die Gastronomiefläche, als auch die Spielhalle haben jeweils eine Fläche von ca. 230 m². Es wird von einer Nettokaltmiete von insgesamt 3.600€ pro Monat ausgegangen, da zu diesen Konditionen aktuell Gespräche mit potenziellen Mieter erfolgen."
+    },
+    {
+     "t": "p",
+     "text": "Die Gastronomiefläche muss saniert werden. Die Spielhalle kann sofort betrieben werden. Für die Spielhalle besteht laut dem zuständigen Ordnungsamt eine Konzession für 12 Geldspielgeräte. Diese kann auch durch einen neuen Eigentümer betrieben werden und entspricht den Vorgaben des neuen Glücksspielstaatsvertrages, der am 01.07.2021 in Kraft getreten ist. Auf dem Gelände befinden sich 15 freie Stellplätze, welche genügend Parkmöglichkeiten bieten."
+    },
+    {
+     "t": "p",
+     "text": "Mit einer kalkulatorischen Jahresnettokaltmete von 51.384€ bietet die Immobilie eine lukrative Rendite von 13,52% p.a. und einen attraktiven Faktor von 7,4."
+    },
+    {
+     "t": "p",
+     "text": "Dömitz gilt als beliebter Erholungsort für Touristen, daher wäre es denkbar und lukrativ das Mehrfamilienhaus zu einem möglichen Hotel für Touristen umzugestalten. Die Wohneinheiten bieten hierfür genügend Zimmer."
+    },
+    {
+     "t": "p",
+     "text": "In den letzten Jahren wurden Sanierungen vorgenommen, welche im Abschnitt Details näher erläutert werden."
+    }
+   ],
+   "ausstattung": [
+    "Mehrfamilienhaus mit 4 Einheiten",
+    "2 Gewerbeeinheiten und 2 Wohneinheiten",
+    "Wohneinheiten vermietet, Gewerbeeinheiten nicht",
+    "Jahresnettokaltmiete 51.384€",
+    "Rendite 13,52%",
+    "Faktor 7,4",
+    "15 freie Stellplätze auf dem Grundstück",
+    "Folgende Sanierungen wurden in den letzten Jahren vorgenommen:",
+    "– Neue Gastherme im Wohnbereich 2020",
+    "– Neue Außentreppe und neuer Eingangsbereich 2021",
+    "– Neue Eingangs- und Notausgangstür im Gewerbebereich 2021",
+    "– Gesamtes Objekt neu verputzt und gestrichen 2021"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Die angebotene Immobilie präsentiert sich zentral und in Bestlage der schönen Stadt Dömitz in Mecklenburg-Vorpommern. Umgeben von Restaurants, Cafés und jeglichen Einkaufsmöglichkeiten, liegt die Immobilie in einer privilegierten Gegend."
+    },
+    {
+     "t": "p",
+     "text": "Dömitz ist eine charmante Kleinstadt im äußersten Südwesten Mecklenburg-Vorpommerns und besticht durch ihre außergewöhnliche Lage direkt an der Elbe. Eingebettet in die weitläufige Flusslandschaft des UNESCO-Biosphärenreservats „Flusslandschaft Elbe“, bietet Dömitz eine seltene Kombination aus naturnaher Lebensqualität, historischer Bedeutung und hoher Ruhe- und Erholungsqualität."
+    },
+    {
+     "t": "p",
+     "text": "Ein besonderes Wahrzeichen der Stadt ist die imposante Festung Dömitz, eine der bedeutendsten erhaltenen Festungsanlagen Norddeutschlands. Sie prägt nicht nur das Stadtbild, sondern unterstreicht auch den historischen Charakter des Standortes. Die liebevoll erhaltene Altstadt mit kleinen Gassen, regionaler Gastronomie und Blickbeziehungen zur Elbe verleiht Dömitz eine authentische und lebenswerte Atmosphäre."
+    },
+    {
+     "t": "p",
+     "text": "Die Lage am Elberadweg, einem der beliebtesten Radfernwege Europas, macht Dömitz zu einem attraktiven Anziehungspunkt für Touristen, Naturfreunde und Aktivurlauber. Wassersport, Radfahren, Wandern und Vogelbeobachtung gehören hier zum Alltag – ein klarer Standortvorteil für alle, die naturnah wohnen oder investieren möchten."
+    },
+    {
+     "t": "p",
+     "text": "Trotz ihrer ruhigen Lage verfügt die Stadt über eine solide Grundversorgung mit Einkaufsmöglichkeiten, medizinischer Betreuung, Schulen und Kindertagesstätten. Die Anbindung an die Bundesstraße B195 sowie die Nähe zu Niedersachsen und Brandenburg ermöglichen eine gute regionale Erreichbarkeit. Die Städte Ludwigslust, Hitzacker (Elbe) und Dannenberg sind in kurzer Zeit erreichbar."
+    },
+    {
+     "t": "p",
+     "text": "Dömitz überzeugt durch hohe Lebensqualität, ein entschleunigtes Umfeld und ein starkes Gemeinschaftsgefühl. Die Stadt eignet sich gleichermaßen als Wohnstandort für Familien, Ruhesuchende und Naturbegeisterte wie auch als attraktiver Standort für Ferienimmobilien und Kapitalanlagen im Bereich Tourismus und Erholung."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Anlageimmobilie – Gewerbe / Haus"
+    ],
+    [
+     "Fläche",
+     "ca. 730 m²"
+    ],
+    [
+     "Grundstück",
+     "ca. 1200 m²"
+    ],
+    [
+     "Baujahr",
+     "1971"
+    ],
+    [
+     "Zimmer",
+     "19"
+    ],
+    [
+     "Badezimmer",
+     "2"
+    ],
+    [
+     "Lieferbar ab",
+     "nach Absprache"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Energieausweis",
+     "Energiebedarfsausweis"
+    ],
+    [
+     "Einheiten",
+     "4"
+    ],
+    [
+     "Faktor",
+     "7,4"
+    ],
+    [
+     "Mietrendite",
+     "13,52%"
+    ],
+    [
+     "Kaufpreis",
+     "380.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 7,14 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/doemitz-anlageobjekt/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/doemitz-anlageobjekt/02",
+     "w": 1600,
+     "h": 1198
+    },
+    {
+     "src": "img/objekte/doemitz-anlageobjekt/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/doemitz-anlageobjekt/04",
+     "w": 1600,
+     "h": 1198
+    },
+    {
+     "src": "img/objekte/doemitz-anlageobjekt/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/doemitz-anlageobjekt/06",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "city-nord-buero",
+   "status": "angebot",
+   "order": 10,
+   "titel": "Modernes Büro-Loft – Kreativ, Flexibel & Urban",
+   "untertitel": null,
+   "ort": "City Nord",
+   "region": "Hamburg",
+   "plz": "22297",
+   "typ": "Büroetage (Miete)",
+   "preis": "4.250 € / Monat",
+   "preisLabel": "Nettokaltmiete",
+   "flaeche": "ca. 400 m²",
+   "flaecheLabel": "Bürofläche",
+   "grundstueck": null,
+   "zimmer": null,
+   "baujahr": "1980",
+   "teaser": "Lichtdurchflutetes Büro-Loft im 6. OG mit 24/7-Zugang, provisionsfrei für Mieter.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Modernes Büro-Loft in Hamburg Winterhude/Alsterdorf"
+    },
+    {
+     "t": "p",
+     "text": "Urban. Kreativ. Flexibel. – Dein neuer Arbeitsplatz mit Stil"
+    },
+    {
+     "t": "p",
+     "text": "Willkommen in deinem zukünftigen Büro, das mehr, als nur ein Arbeitsplatz ist. Dieses einzigartige Loft im 6. Obergeschoss verbindet industriellen Charme mit urbaner Leichtigkeit – ein Raum, der inspiriert, motiviert und Kreativität zum Fließen bringt."
+    },
+    {
+     "t": "p",
+     "text": "Mit rund 400 m² lichtdurchfluteter Bürofläche plus optionaler 65 m² Lager- und Rückzugsbereich bietet dieses Loft die ideale Basis für modernes Arbeiten – ob Agentur, Start-up oder kleines Team."
+    },
+    {
+     "t": "p",
+     "text": "Die Highlights auf einen Blick"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Flexible Raumgestaltung: Großzügige Open-Space-Flächen für Zusammenarbeit oder separate Ruhezonen – ganz nach deinem Konzept.",
+      "Inklusive: Heizung & Frischluftfilteranlage.",
+      "24/7 Zugang: Arbeite im Rhythmus deines Teams – absolute Freiheit.",
+      "Sicher & modern: Videogesicherter Zugang und hochwertige Ausstattung.",
+      "Networking & Austausch: Gemeinschaftsküche mit Kaffeevollautomat sowie Ruhe- und Wartebereiche.",
+      "Parken leicht gemacht: Außen- und Tiefgaragenstellplätze für nur 50 €/Monat."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Die Flächen im Detail"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Bürofläche: ca. 400 m² (lichtdurchflutet, offen und wandelbar)",
+      "Zusatzfläche: Optional ca. 65 m² Lager & Rückzugsbüro",
+      "Eigene Sanitäreinheiten im Bürobereich für Privatsphäre und Komfort",
+      "Ausstattung: EDV-Datenverkabelung, moderner Laminatboden, Sonnenschutz"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Konditionen"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Miete: ab 4.250,00€ pro Monat (zzgl. Nebenkosten 1500,00€, Strom und MwSt.)",
+      "Verfügbarkeit: ab 01/2026",
+      "Optionale Zusatzflächen & Stellplätze: flexibel nach Bedarf"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Dieses Büro-Loft ist nicht einfach nur eine Fläche – es ist ein Statement. Ein Ort, an dem Kreativität auf Effizienz trifft und Teams Raum für Wachstum und Inspiration finden."
+    },
+    {
+     "t": "p",
+     "text": "Jetzt Besichtigungstermin sichern und den Grundstein für die Zukunft deines Unternehmens legen!"
+    }
+   ],
+   "ausstattung": [
+    "400 m² Bürofläche",
+    "Optionaler 65 m² Lager- und Rückzugsbereich",
+    "Flexible Raumgestaltung",
+    "24/7 Zugang zum Büro",
+    "Videogesicherter Zugang sowie hochwertige Ausstattung",
+    "Frischluftfilteranlage",
+    "Gemeinschaftsküche mit Kaffeevollautomat sowie Ruhe- und Wartebereich",
+    "Außen- und Tiefgaragenstellplätze für nur 50€/Monat",
+    "Eigene Sanitäreinheit",
+    "EDV-Datenverkabelung",
+    "Moderner Laminatboden",
+    "Sonnenschutz"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Attraktive Lage in Hamburg – Hervorragende Verkehrsanbindung"
+    },
+    {
+     "t": "p",
+     "text": "Im gefragten Stadtteil Winterhude/Alsterdorf, direkt in der City Nord, befindet sich dieses moderne Büro-Loft – eingebettet zwischen namhaften Großunternehmen und dem idyllischen Stadtpark. Die zentrale Lage vereint Urbanität, Natur und optimale Erreichbarkeit: Ob Innenstadt, Flughafen oder Erholung im Grünen – alles ist nur wenige Minuten entfernt."
+    },
+    {
+     "t": "h",
+     "text": "Entfernungen"
+    },
+    {
+     "t": "p",
+     "text": "A7, Ausfahrt Hamburg-Schnelsen-Nord: ca. 12 Minuten"
+    },
+    {
+     "t": "p",
+     "text": "Innenstadt Hamburg: ca. 17 Minuten (mit U- oder S-Bahn)"
+    },
+    {
+     "t": "p",
+     "text": "Flughafen Hamburg: ca. 6 Minuten"
+    },
+    {
+     "t": "h",
+     "text": "ÖPNV-Anbindung"
+    },
+    {
+     "t": "p",
+     "text": "Bushaltestelle: ca. 200 m"
+    },
+    {
+     "t": "p",
+     "text": "U-Bahn: ca. 700 m"
+    },
+    {
+     "t": "p",
+     "text": "S-Bahn: ca. 800 m"
+    },
+    {
+     "t": "p",
+     "text": "Dieses Loft bietet die ideale Kombination aus repräsentativem Standort und kurzen Wegen – perfekt für Unternehmen, die Wert auf eine inspirierende Arbeitsumgebung und hervorragende Erreichbarkeit legen."
+    },
+    {
+     "t": "p",
+     "text": "Für Pausen bietet sich der Stadtpark in unmittelbarer Nähe an."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Büroetage"
+    ],
+    [
+     "Bürofläche",
+     "ca. 400 m²"
+    ],
+    [
+     "Optionale Fläche",
+     "ca. 65 m²"
+    ],
+    [
+     "Baujahr",
+     "1980"
+    ],
+    [
+     "WC",
+     "2"
+    ],
+    [
+     "Verfügbar ab",
+     "01.01.2026"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Nettokaltmiete",
+     "4.250 €"
+    ],
+    [
+     "Nebenkosten",
+     "1.500 €"
+    ],
+    [
+     "Strom & Internet",
+     "nicht enthalten"
+    ],
+    [
+     "Kaution",
+     "12.750 €"
+    ],
+    [
+     "Provision",
+     "provisionsfrei für Mieter"
+    ]
+   ],
+   "provision": "provisionsfrei für Mieter",
+   "bilder": [
+    {
+     "src": "img/objekte/city-nord-buero/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/city-nord-buero/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/city-nord-buero/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/city-nord-buero/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/city-nord-buero/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/city-nord-buero/06",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/city-nord-buero/07",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  },
+  {
+   "slug": "hummelsbuettel-wohnung",
+   "status": "angebot",
+   "order": 11,
+   "titel": "Ihr Rohdiamant im Grünen",
+   "untertitel": null,
+   "ort": "Hummelsbüttel",
+   "region": "Hamburg",
+   "plz": "22399",
+   "typ": "Eigentumswohnung",
+   "preis": "289.000 €",
+   "preisLabel": "Kaufpreis",
+   "flaeche": "ca. 69 m²",
+   "flaecheLabel": "Wohnfläche",
+   "grundstueck": null,
+   "zimmer": "3",
+   "baujahr": "1971",
+   "teaser": "3-Zimmer-Wohnung im Grünen mit Balkon – ein „Rohdiamant“ mit Gestaltungspotenzial.",
+   "beschreibung": [
+    {
+     "t": "p",
+     "text": "Manche Wohnungen erzählen auf den ersten Blick schon die ganze Geschichte. Diese hier lässt bewusst Raum für eigene Visionen."
+    },
+    {
+     "t": "p",
+     "text": "Ein gepflegtes Treppenhaus mit klassischem Terrazzoboden führt zu dieser 3-Zimmer-Wohnung mit ca. 69 m² im Erdgeschoss. Kein Aufzug nötig, dafür ein unkomplizierter Alltag mit direktem Zugang zum Grün. Der lichtdurchflutete Wohnbereich bietet einen schönen Blick auf satte Baumkronen, der Balkon lädt zum Verweilen ein."
+    },
+    {
+     "t": "p",
+     "text": "Zwei separate Schlafräume mit großzügigen Fenstern und ruhigen Proportionen – ob Elternschlafzimmer, Kinderzimmer oder Homeoffice, können frei gestaltet werden."
+    },
+    {
+     "t": "p",
+     "text": "Das Badezimmer mit separatem WC weist eine solide Grundausstattung auf, mit Wanne, Waschbecken und beleuchtetem Spiegelschrank. Mit moderner Fliesenoptik und cleverem Licht wird daraus schnell ein kleines Wellness-Refugium."
+    },
+    {
+     "t": "p",
+     "text": "Hier liegt die größte Chance: Die Küche steht komplett zur Neugestaltung frei. Der L-förmige Grundriss bringt bereits eine kluge Aufteilung mit reichlich Platz mit. Eine moderne Einbauküche nach eigenem Geschmack hebt hier spürbar den Gesamtwert der Wohnung."
+    },
+    {
+     "t": "p",
+     "text": "Für wen eignet sich die Wohnung? Für Eigennutzer, die eine Wohnung mit Charakter suchen, die sie mit eigenen Ideen füllen können oder Kapitalanleger die mit wirkungsvollen Investitionen die Mietrendite und den Wiederverkaufswert massiv steigern können."
+    },
+    {
+     "t": "p",
+     "text": "Diese Wohnung ist kein fertiges Produkt – sie ist ein Angebot. Ein Angebot an Sie, auf ca. 69 m² etwas Eigenes entstehen zu lassen."
+    },
+    {
+     "t": "p",
+     "text": "Vereinbaren Sie jetzt einen Besichtigungstermin."
+    }
+   ],
+   "ausstattung": [
+    "Gepflegtes Mehrfamilienhaus aus dem Jahr 1971",
+    "Begehrte, grüne und gut angebundene Lage in Hummelsbüttel",
+    "Ca. 69 m² Wohnfläche",
+    "Drei schöne Zimmer, zwei gut geschnittene Schlafzimmer",
+    "Große Küche mit Potenzial",
+    "Ein Badezimmer mit separatem WC",
+    "Heller Wohnbereich mit Blick ins Grüne",
+    "Praktische Abstellkammer",
+    "Westlich ausgerichteter Balkon",
+    "Eigener Kellerraum",
+    "Eigener freier Stellplatz"
+   ],
+   "lage": [
+    {
+     "t": "p",
+     "text": "Hummelsbüttel gehört zu den grünen Wohnlagen im Hamburger Norden und überzeugt durch seinen gewachsenen Charakter. Gepflegte Wohnstraßen sowie großzügige Grünflächen prägen das Bild des Stadtteils. Die Umgebung verbindet eine angenehme Ruhe mit kurzen Wegen und einer guten Erreichbarkeit der Hamburger Innenstadt sowie des Flughafens."
+    },
+    {
+     "t": "p",
+     "text": "Der Hummelsbütteler Markt bildet den zentralen Anlaufpunkt für den Alltag. Supermärkte, Bäckereien, Apotheken, Arztpraxen und kleinere Fachgeschäfte befinden sich in der Nähe. Für ein umfangreicheres Einkaufsangebot ist das Alstertal-Einkaufszentrum (AEZ) in Poppenbüttel schnell erreichbar. Mit über 240 Geschäften bietet es eine große Auswahl an Mode, Gastronomie, Dienstleistungen und Einkaufsmöglichkeiten."
+    },
+    {
+     "t": "p",
+     "text": "Auch Schulen und Betreuungseinrichtungen sind gut erreichbar. Das Gymnasium Hummelsbüttel, die Grundschule Grützmühlenweg, die Stadtteilschule Poppenbüttel sowie mehrere Kindertagesstätten befinden sich im direkten Umfeld. Ergänzt wird die Infrastruktur durch zahlreiche Ärzte und medizinische Einrichtungen in Hummelsbüttel und den angrenzenden Stadtteilen."
+    },
+    {
+     "t": "p",
+     "text": "Die Anbindung an den öffentlichen Nahverkehr ist besonders komfortabel. Die Bushaltestellen Lentersweg und Hummelsbütteler Hauptstraße liegen nur wenige Gehminuten entfernt und werden unter anderem von den Linien 172, 174, 179, 193 und 607 angefahren. Die U-Bahn-Station Fuhlsbüttel Nord (U1) ist ebenfalls fußläufig erreichbar und bietet eine direkte Verbindung in die Hamburger Innenstadt. Den Hamburger Hauptbahnhof erreicht man mit der U1 in etwa 25 Minuten, der Jungfernstieg ist ebenfalls ohne Umstieg erreichbar. Die S-Bahn-Station Poppenbüttel (S1) bietet zusätzliche Verbindungen Richtung Innenstadt, Flughafen und Hamburger Westen."
+    },
+    {
+     "t": "p",
+     "text": "Mit dem Auto bestehen über den Ring 3, die Langenhorner Chaussee und weitere Hauptverkehrsachsen schnelle Verbindungen in alle Richtungen. Der Flughafen Hamburg ist in wenigen Fahrminuten erreichbar, ebenso die Autobahnanschlüsse der A7."
+    }
+   ],
+   "infos": [
+    [
+     "Typ",
+     "Eigentumswohnung"
+    ],
+    [
+     "Wohnfläche",
+     "ca. 69 m²"
+    ],
+    [
+     "Baujahr",
+     "1971"
+    ],
+    [
+     "Zimmer",
+     "3"
+    ],
+    [
+     "Badezimmer",
+     "1"
+    ],
+    [
+     "Bezugsfrei ab",
+     "Sofort"
+    ],
+    [
+     "Energieträger",
+     "Gas"
+    ],
+    [
+     "Energieausweis",
+     "Liegt vor"
+    ],
+    [
+     "Energieausweistyp",
+     "Energieverbrauchsausweis"
+    ],
+    [
+     "Energieeffizienzklasse",
+     "E"
+    ],
+    [
+     "Endenergieverbrauch",
+     "144 kWh/(m²·a)"
+    ],
+    [
+     "Kaufpreis",
+     "289.000 €"
+    ],
+    [
+     "Provision",
+     "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises"
+    ]
+   ],
+   "provision": "Käuferprovision beträgt 3,57 % (inkl. MwSt.) des beurkundeten Kaufpreises",
+   "bilder": [
+    {
+     "src": "img/objekte/hummelsbuettel-wohnung/01",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/hummelsbuettel-wohnung/02",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/hummelsbuettel-wohnung/03",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/hummelsbuettel-wohnung/04",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/hummelsbuettel-wohnung/05",
+     "w": 1600,
+     "h": 1067
+    },
+    {
+     "src": "img/objekte/hummelsbuettel-wohnung/06",
+     "w": 1600,
+     "h": 1067
+    }
+   ]
+  }
+ ],
+ "vermittelt": [
+  {
+   "slug": "grebs-niendorf",
+   "ort": "Grebs-Niendorf",
+   "region": "Mecklenburg-Vorpommern",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 241 m²",
+   "zimmer": "4",
+   "status": "verkauft",
+   "titel": "Luxusdomizil in der Natur",
+   "bild": {
+    "src": "img/vermittelt/grebs-niendorf",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "schwarzenbek",
+   "ort": "Schwarzenbek",
+   "region": "Schleswig-Holstein",
+   "typ": "Baugrundstück für 4 Doppelhäuser",
+   "flaeche": "ca. 2.315 m² Grundstück",
+   "zimmer": null,
+   "status": "verkauft",
+   "titel": "Baugrundstück für acht Wohneinheiten",
+   "bild": {
+    "src": "img/vermittelt/schwarzenbek",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "lemsahl-mellingstedt-einfamilienhaus",
+   "ort": "Lemsahl-Mellingstedt",
+   "region": "Hamburg",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 198 m²",
+   "zimmer": "6",
+   "status": "verkauft",
+   "titel": "Groß, vielseitig, energieeffizient",
+   "bild": {
+    "src": "img/vermittelt/lemsahl-mellingstedt-einfamilienhaus",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "norderstedt-doppelhaushaelfte",
+   "ort": "Norderstedt",
+   "region": "Schleswig-Holstein",
+   "typ": "Doppelhaushälfte",
+   "flaeche": "ca. 124 m²",
+   "zimmer": "5",
+   "status": "verkauft",
+   "titel": "Wohlfühloase – energieeffizient, ruhig, zentral",
+   "bild": {
+    "src": "img/vermittelt/norderstedt-doppelhaushaelfte",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "geesthacht",
+   "ort": "Geesthacht",
+   "region": "Schleswig-Holstein",
+   "typ": "Doppelhaushälfte",
+   "flaeche": "ca. 120 m²",
+   "zimmer": "5",
+   "status": "verkauft",
+   "titel": "Ein gemütliches Zuhause",
+   "bild": {
+    "src": "img/vermittelt/geesthacht",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "norderstedt-bestlage",
+   "ort": "Norderstedt",
+   "region": "Schleswig-Holstein",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 192 m²",
+   "zimmer": "5",
+   "status": "verkauft",
+   "titel": "Schmuckstück in Bestlage",
+   "bild": {
+    "src": "img/vermittelt/norderstedt-bestlage",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "bramfeld",
+   "ort": "Bramfeld",
+   "region": "Hamburg",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 136 m²",
+   "zimmer": "5",
+   "status": "verkauft",
+   "titel": null,
+   "bild": {
+    "src": "img/vermittelt/bramfeld",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "rahlstedt",
+   "ort": "Rahlstedt",
+   "region": "Hamburg",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 121 m²",
+   "zimmer": "5",
+   "status": "verkauft",
+   "titel": "Eine Wohlfühloase in ruhiger Lage",
+   "bild": {
+    "src": "img/vermittelt/rahlstedt",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "norderstedt",
+   "ort": "Norderstedt",
+   "region": "Schleswig-Holstein",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 164 m²",
+   "zimmer": "4",
+   "status": "verkauft",
+   "titel": "Großzügig – zentral – ruhig",
+   "bild": {
+    "src": "img/vermittelt/norderstedt",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "norderstedt-garstedt",
+   "ort": "Norderstedt-Garstedt",
+   "region": "Schleswig-Holstein",
+   "typ": "Doppelhaushälfte",
+   "flaeche": "ca. 135 m²",
+   "zimmer": "5",
+   "status": "vermietet",
+   "titel": "Großzügig & neuwertig",
+   "bild": {
+    "src": "img/vermittelt/norderstedt-garstedt",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "bramfeld-reihenhaus",
+   "ort": "Bramfeld",
+   "region": "Hamburg",
+   "typ": "Mittelreihenhaus",
+   "flaeche": "ca. 74 m²",
+   "zimmer": "4",
+   "status": "verkauft",
+   "titel": "Familienfreundliches Stadthaus",
+   "bild": {
+    "src": "img/vermittelt/bramfeld-reihenhaus",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "norderstedt-harksheide",
+   "ort": "Norderstedt-Harksheide",
+   "region": "Schleswig-Holstein",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 120 m²",
+   "zimmer": "4",
+   "status": "verkauft",
+   "titel": null,
+   "bild": {
+    "src": "img/vermittelt/norderstedt-harksheide",
+    "w": 1200,
+    "h": 800
+   }
+  },
+  {
+   "slug": "rellingen",
+   "ort": "Rellingen",
+   "region": "Schleswig-Holstein",
+   "typ": "Einfamilienhaus",
+   "flaeche": "ca. 153 m²",
+   "zimmer": "4",
+   "status": "verkauft",
+   "titel": "Stilvoll & familienfreundlich",
+   "bild": {
+    "src": "img/vermittelt/rellingen",
+    "w": 1200,
+    "h": 800
+   }
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+---
+import { STIMMEN } from "../data/leistungen";
+import Icon from "./Icon.astro";
+---
+<div class="grid g3 stimmen">
+  {STIMMEN.map((s, i) => (
+    <figure class="st reveal" style={`--d:${i * 120}ms`}>
+      <Icon name="quote" size={30} />
+      <blockquote><p>„{s.text}“</p></blockquote>
+      <figcaption>— {s.name}</figcaption>
+    </figure>
+  ))}
+</div>
+<p class="small text-center quelle">Kundenstimmen, wie sie auf der bisherigen Website von Henrick Jung Immobilien veröffentlicht waren.</p>
+<style>
+  .st { margin: 0; padding: 36px 32px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--r-lg); display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,.03); }
+  .st :global(.icon) { color: var(--champagner-hell); }
+  blockquote { margin: 0; }
+  blockquote p { font-family: var(--serif); font-size: 1.2rem; line-height: 1.5; color: var(--weiss); margin: 0; }
+  figcaption { margin-top: auto; color: var(--champagner-hell); font-size: 14px; letter-spacing: .08em; }
+  .quelle { margin: 32px auto 0; color: #a8a8a8; }
+</style>

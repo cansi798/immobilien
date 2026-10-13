@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RoofLine from "../components/RoofLine.astro";
+import { u } from "../consts";
+---
+<BaseLayout title="Seite nicht gefunden | Henrick Jung Immobilien" description="Die angeforderte Seite wurde nicht gefunden." noindex>
+  <section class="section text-center">
+    <div class="container" style="display:grid;justify-items:center">
+      <RoofLine width={200} />
+      <p class="eyebrow">Fehler 404</p>
+      <h1>Diese Tür ist leider <em>verschlossen</em>.</h1>
+      <p>Die gesuchte Seite gibt es nicht (mehr). Vielleicht finden Sie hier, was Sie suchen:</p>
+      <div class="btns" style="justify-content:center"><a class="btn" href={u("")}>Zur Startseite</a><a class="btn btn--line" href={u("immobilien/")}>Immobilien</a><a class="btn btn--line" href={u("kontakt/")}>Kontakt</a></div>
+    </div>
+  </section>
+</BaseLayout>

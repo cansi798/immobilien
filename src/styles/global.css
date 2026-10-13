@@ -1,0 +1,205 @@
+/* ============================================================
+   HENRICK JUNG IMMOBILIEN – Designsystem
+   Farben aus dem Logo abgeleitet: Tiefschwarz + Silberverlauf,
+   ergänzt um einen warmen Champagner-Ton als edle Akzentfarbe.
+   Schrift: Playfair Display (wie die Logo-Serife) + Inter.
+   Beide Schriften lokal eingebunden (keine externen Anfragen).
+   ============================================================ */
+@import "@fontsource-variable/playfair-display/index.css";
+@import "@fontsource-variable/inter/index.css";
+
+:root {
+  --ink: #141414;          /* Logo-Schwarz */
+  --ink-2: #222222;
+  --graphit: #3a3a3a;
+  --stein: #5c5c5c;        /* Fließtext sekundär – 6,7:1 auf Weiß */
+  --silber-500: #9a9a9a;   /* nur Deko */
+  --silber-300: #cfcfcf;
+  --silber-100: #ececec;
+  --papier: #f7f5f1;       /* warmes Off-White */
+  --sand: #efebe4;
+  --weiss: #ffffff;
+  --champagner: #b59a6a;   /* Akzent (Linien, Flächen) */
+  --champagner-hell: #d9c7a5;
+  --champagner-text: #7a6338; /* Akzent für Text auf Hell – 5,6:1 */
+  --linie: #e4e0d8;
+
+  --serif: "Playfair Display Variable", "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  --r-sm: 4px;
+  --r: 10px;
+  --r-lg: 18px;
+  --shadow-sm: 0 2px 10px rgba(20, 20, 20, .06);
+  --shadow: 0 10px 30px rgba(20, 20, 20, .08);
+  --shadow-lg: 0 24px 60px rgba(20, 20, 20, .14);
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --t: 240ms var(--ease);
+
+  --max: 1240px;
+  --text: 680px;
+  --header-h: 84px;
+  --stickybar-h: 66px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  background: var(--weiss);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+button { font: inherit; cursor: pointer; color: inherit; }
+:focus-visible { outline: 2px solid var(--champagner-text); outline-offset: 3px; border-radius: 2px; }
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 300;
+  background: var(--ink); color: var(--weiss); padding: 10px 16px; border-radius: var(--r);
+}
+.skip:focus { top: 12px; }
+
+/* ---------- Typografie ---------- */
+h1, h2, h3, .serif {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 .5em;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.2rem, 5.2vw, 4.1rem); }
+h2 { font-size: clamp(1.85rem, 3.6vw, 2.9rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.25; }
+h1 em, h2 em { font-style: italic; color: var(--champagner-text); }
+p { margin: 0 0 1em; max-width: var(--text); }
+.lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--graphit); }
+.small, small { font-size: 14px; color: var(--stein); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--sans);
+  font-size: 12.5px; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--champagner-text);
+  margin-bottom: 18px;
+}
+/* feine Linie wie im Logo („— IMMOBILIEN —“) */
+.eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+.center .eyebrow::after { content: ""; width: 34px; height: 1px; background: currentColor; }
+.dark .eyebrow, .on-dark .eyebrow { color: var(--champagner-hell); }
+
+/* ---------- Layout ---------- */
+.container { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 768px) { .container { padding-inline: 32px; } }
+.section { padding-block: 72px; }
+@media (min-width: 900px) { .section { padding-block: 120px; } }
+.section--papier { background: var(--papier); }
+.section--sand { background: var(--sand); }
+.dark { background: var(--ink); color: #e9e9e9; }
+.dark h1, .dark h2, .dark h3 { color: var(--weiss); }
+.dark p { color: #c9c9c9; }
+.dark h2 em { color: var(--champagner-hell); }
+.head { max-width: 760px; margin-bottom: 48px; }
+.head.center { margin-inline: auto; text-align: center; }
+.head.center p { margin-inline: auto; }
+.grid { display: grid; gap: 24px; }
+@media (min-width: 720px) { .g2 { grid-template-columns: repeat(2, 1fr); } .g3 { grid-template-columns: repeat(2, 1fr); } .g4 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- Buttons ---------- */
+.btn {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 14px 28px;
+  border-radius: 999px; border: 1px solid var(--ink);
+  background: var(--ink); color: var(--weiss);
+  font-family: var(--sans); font-weight: 600; font-size: 15.5px; letter-spacing: .01em;
+  text-decoration: none; line-height: 1.2; text-align: center;
+  transition: color var(--t), border-color var(--t), transform var(--t);
+}
+/* edler Füll-Effekt beim Hover */
+.btn::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--champagner);
+  transform: translateY(101%); transition: transform 420ms var(--ease);
+}
+.btn:hover::before { transform: translateY(0); }
+.btn:hover { color: var(--ink); border-color: var(--champagner); }
+.btn--hell { background: var(--weiss); color: var(--ink); border-color: var(--weiss); }
+.btn--line { background: transparent; color: var(--ink); border-color: var(--silber-300); }
+.btn--line-hell { background: transparent; color: var(--weiss); border-color: rgba(255,255,255,.55); }
+.btn--line-hell:hover { color: var(--ink); }
+.btn .icon { flex: none; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink);
+}
+.link-arrow .icon { transition: transform var(--t); }
+.link-arrow:hover .icon { transform: translateX(5px); }
+.dark .link-arrow { color: var(--weiss); }
+
+/* ---------- Icons ---------- */
+.icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Bilder ---------- */
+.pic { position: relative; overflow: hidden; background: var(--sand); }
+.pic img { width: 100%; height: 100%; object-fit: cover; }
+.pic--r { border-radius: var(--r-lg); }
+.zoom img { transition: transform 1.2s var(--ease); }
+.zoom:hover img, a:hover .zoom img { transform: scale(1.045); }
+
+/* ---------- Karten ---------- */
+.card {
+  background: var(--weiss); border: 1px solid var(--linie);
+  border-radius: var(--r-lg); padding: 32px;
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+
+.check { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.check li { display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start; }
+.check li::before {
+  content: ""; width: 22px; height: 22px; margin-top: 3px; border-radius: 50%;
+  background: var(--sand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a6338' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat;
+}
+
+/* ---------- Animationen (nur mit JS, nur ohne reduced motion) ---------- */
+html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 900ms var(--ease), transform 900ms var(--ease); transition-delay: var(--d, 0ms); }
+html.js .reveal.is-visible { opacity: 1; transform: none; }
+/* Bild-Reveal: Vorhang zieht sich nach oben zurück (keine clip-path am Ziel – sonst feuert der IntersectionObserver nicht) */
+html.js .reveal-img::after { content: ""; position: absolute; inset: 0; z-index: 2; background: var(--curtain, var(--sand)); transform-origin: top; transition: transform 1.3s var(--ease); transition-delay: var(--d, 0ms); pointer-events: none; }
+html.js .reveal-img.is-visible::after { transform: scaleY(0); }
+html.js .reveal-img img { transform: scale(1.12); transition: transform 1.8s var(--ease); }
+html.js .reveal-img.is-visible img { transform: scale(1); }
+/* gezeichnete Linien (Dach-Motiv) */
+html.js .draw path, html.js .draw line, html.js .draw rect { stroke-dasharray: var(--len, 600); stroke-dashoffset: var(--len, 600); transition: stroke-dashoffset 2.2s var(--ease); transition-delay: var(--d, 0ms); }
+html.js .draw.is-visible path, html.js .draw.is-visible line, html.js .draw.is-visible rect { stroke-dashoffset: 0; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.text-center { text-align: center; }
+
+@media (max-width: 1023px) { body { padding-bottom: calc(var(--stickybar-h) + env(safe-area-inset-bottom)); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html.js .reveal { opacity: 1; transform: none; }
+  html.js .reveal-img::after { display: none; }
+  html.js .reveal-img img { transform: none; }
+  html.js .draw path, html.js .draw line, html.js .draw rect { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 520px) {
+  .eyebrow { letter-spacing: .16em; gap: 10px; }
+  .center .eyebrow::before, .center .eyebrow::after { width: 18px; }
+}

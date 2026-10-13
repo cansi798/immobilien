@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Img from "../components/Img.astro";
+import Icon from "../components/Icon.astro";
+import Stimmen from "../components/Stimmen.astro";
+import KontaktBand from "../components/KontaktBand.astro";
+import { SITE, u, bild } from "../consts";
+import { VORTEILE } from "../data/leistungen";
+import b from "../data/bilder.json";
+const p = b.portrait[0];
+// „Meine Geschichte“ – Inhalt der bisherigen Seite, sprachlich leicht geglättet.
+const kapitel = [
+  { titel: "Herausforderungen annehmen", text: "In der Steppe Sibiriens bei −40 Grad geboren, lernte ich schon als Säugling, mit Herausforderungen umzugehen. Kampfgeist, Biss und Durchsetzungsvermögen entwickelte ich im frühen Kindesalter durch den Sieg über eine Krebserkrankung. Sie lehrte mich, das Leben und das, was ich tue, zu genießen." },
+  { titel: "Menschen verstehen", text: "Diese Eigenschaften kamen mir in meiner Laufbahn als gelernter Bankkaufmann, studierter Wirtschaftspsychologe und Gründer einer Online-Plattform zugute. Dabei sammelte ich früh Erfahrung im Umgang mit Privat- und Geschäftskunden. Bedürfnisse erkennen und passende Lösungen liefern liegt daher in meiner Natur." },
+  { titel: "Weitblick bewahren", text: "Offen für neue Wege zu sein und Weitblick zu wahren, lernte ich auf meiner Weltreise. Von der Holzhütte am Strand von Hawaii bis zum Luxushotel in Singapur durfte ich die gegensätzlichsten Lebensformen auf vier Kontinenten kennenlernen – und mein Interesse für die unterschiedlichsten Immobilien entdecken." },
+  { titel: "Immobilien mit Leidenschaft", text: "Seit einigen Jahren konzentriere ich mich erfolgreich auf die Vermittlung von Immobilien. Zertifiziert von der Industrie- und Handelskammer (IHK) sowie der Europäischen Immobilien Akademie (EIA), zählt für mich nicht nur die fachliche Kompetenz, sondern vor allem die menschliche." },
+  { titel: "Vom ersten Anruf bis zur Schlüsselübergabe", text: "Ich nehme meine Kunden an die Hand und führe sie durch den gesamten Kauf- bzw. Verkaufsprozess. Stets erreichbar sehe ich mich als Partner meiner Kunden – denn gewinnt mein Kunde, gewinne auch ich." },
+  { titel: "Partnerschaft leben", text: "Wie man in einer Partnerschaft gewinnt, weiß ich sehr gut: Neben dem Beruf führe ich eine glückliche Ehe und bin stolzer Vater von zwei wunderbaren Töchtern." },
+];
+const schema = { "@context": "https://schema.org", "@type": "Person", name: SITE.owner, jobTitle: "Zertifizierter Immobilienmakler (IHK & EIA)", worksFor: { "@type": "RealEstateAgent", name: SITE.name }, image: new URL(u(`${p.src}-1000.webp`), Astro.site).href };
+---
+<BaseLayout title="Über mich – Henrick Jung | Immobilienmakler in Hamburg" description="Henrick Jung, zertifizierter Immobilienmakler (IHK & EIA), Bankkaufmann und Wirtschaftspsychologe: Meine Geschichte und meine Unternehmensphilosophie." schema={schema}>
+  <PageHero eyebrow="Über mich & meine Unternehmensphilosophie" title="Immobilienmakler <em>aus Leidenschaft</em>" lead="Die Freude am Umgang mit Menschen ist das Fundament meiner Arbeit. Ich genieße, was ich tue – ob Kauf, Verkauf oder Vermietung: Mein Kunde steht immer im Mittelpunkt." bild={{ ...p, alt: "Henrick Jung vor einem Wohnhaus in Hamburg" }} crumbs={[{ label: "Über mich" }]}>
+    <ul class="badges">
+      <li><Icon name="award" size={20} /> Zertifiziert (IHK & EIA)</li>
+      <li><Icon name="doc" size={20} /> Bankkaufmann</li>
+      <li><Icon name="user" size={20} /> Wirtschaftspsychologe</li>
+    </ul>
+  </PageHero>
+
+  <section class="section">
+    <div class="container story">
+      <div class="story__head">
+        <p class="eyebrow reveal">Meine Geschichte</p>
+        <h2 class="reveal">Was mich <em>antreibt</em></h2>
+        <div class="story__pic pic pic--r reveal-img" data-parallax="0.05"><Img {...bild("img/stimmung-garten")} alt="Garten einer Doppelhaushälfte in Hamburg-Lemsahl-Mellingstedt" sizes="(min-width: 1024px) 400px, 100vw" /></div>
+      </div>
+      <ol class="tl">
+        {kapitel.map((k, i) => (
+          <li class="tl__item reveal" style={`--d:${(i % 2) * 80}ms`}>
+            <span class="tl__dot" aria-hidden="true"></span>
+            <h3>{k.titel}</h3>
+            <p>{k.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--papier">
+    <div class="container brief">
+      <p class="eyebrow reveal center-e">Persönlich</p>
+      <blockquote class="reveal">
+        <p>„Mit mir haben Sie einen starken Makler an Ihrer Seite, auf den Sie sich verlassen können. Lassen Sie uns den spannenden Weg gemeinsam beschreiten.“</p>
+      </blockquote>
+      <p class="sign reveal">Herzlichst, Ihr Henrick Jung<small>{SITE.role} · {SITE.zert}</small></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="head center"><p class="eyebrow reveal">Meine Vorteile für Sie</p><h2 class="reveal">Worauf Sie <em>bauen</em> können</h2></div>
+      <div class="grid g3">
+        {VORTEILE.map((v, i) => (
+          <div class="card reveal" style={`--d:${i * 120}ms`}><Icon name={v.icon} size={30} class="icon akz" /><h3>{v.titel}</h3><p>{v.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container"><div class="head center"><p class="eyebrow reveal">Bewertungen</p><h2 class="reveal">Was Kunden <em>sagen</em></h2></div><Stimmen /></div>
+  </section>
+  <KontaktBand />
+</BaseLayout>
+<style>
+  :global(.ph__bild img) { object-position: 50% 12%; }
+  .badges { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .badges li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid var(--linie); border-radius: 999px; background: var(--weiss); font-size: 14.5px; }
+  .badges :global(.icon) { color: var(--champagner-text); }
+  .story { display: grid; gap: 48px; }
+  @media (min-width: 1024px) { .story { grid-template-columns: 400px 1fr; gap: 96px; align-items: start; } .story__head { position: sticky; top: calc(var(--header-h) + 32px); } }
+  .story__pic { aspect-ratio: 4 / 3; margin-top: 24px; }
+  .story__pic :global(img) { transform: scale(1.12); }
+  .tl { list-style: none; margin: 0; padding: 0 0 0 32px; border-left: 1px solid var(--champagner-hell); display: grid; gap: 48px; }
+  .tl__item { position: relative; }
+  .tl__dot { position: absolute; left: -39px; top: 8px; width: 13px; height: 13px; border-radius: 50%; background: var(--weiss); border: 1px solid var(--champagner); }
+  .tl__item p { color: var(--graphit); margin: 0; }
+  .brief { max-width: 900px; text-align: center; }
+  .center-e { justify-content: center; }
+  .center-e::after { content: ""; width: 34px; height: 1px; background: currentColor; }
+  blockquote { margin: 0; }
+  blockquote p { font-family: var(--serif); font-size: clamp(1.5rem, 3.2vw, 2.3rem); line-height: 1.35; color: var(--ink); max-width: none; }
+  .sign { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--ink); display: grid; margin: 24px auto 0; }
+  .sign small { font-family: var(--sans); font-style: normal; font-size: 14px; }
+  :global(.akz) { color: var(--champagner-text); margin-bottom: 16px; }
+</style>

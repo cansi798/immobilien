@@ -1,0 +1,26 @@
+---
+// Responsives WebP-Bild mit srcset, fester Breite/Höhe (kein Layout-Springen) und Lazy-Loading.
+import { u, widthsFor } from "../consts";
+interface Props {
+  src: string;        // Basis ohne -<breite>.webp, z. B. "img/objekte/x/01"
+  alt: string;
+  w: number; h: number; // Maße der großen Variante
+  sizes?: string;
+  eager?: boolean;
+  class?: string;
+}
+const { src, alt, w, h, sizes = "100vw", eager = false, class: cls } = Astro.props;
+const [s, l] = widthsFor(src);
+const hs = Math.round((h * s) / w);
+---
+<img
+  class={cls}
+  src={u(`${src}-${s}.webp`)}
+  srcset={`${u(`${src}-${s}.webp`)} ${s}w, ${u(`${src}-${l}.webp`)} ${l}w`}
+  sizes={sizes}
+  width={s} height={hs}
+  alt={alt}
+  loading={eager ? "eager" : "lazy"}
+  decoding="async"
+  fetchpriority={eager ? "high" : undefined}
+/>

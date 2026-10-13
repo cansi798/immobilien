@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import Steps from "../../components/Steps.astro";
+import Faq from "../../components/Faq.astro";
+import Icon from "../../components/Icon.astro";
+import ObjektCard from "../../components/ObjektCard.astro";
+import Stimmen from "../../components/Stimmen.astro";
+import KontaktBand from "../../components/KontaktBand.astro";
+import { LEISTUNGEN, type Leistung } from "../../data/leistungen";
+import { u, bild, SITE } from "../../consts";
+import daten from "../../data/objekte.json";
+
+export function getStaticPaths() {
+  return LEISTUNGEN.map((l) => ({ params: { slug: l.slug }, props: { l } }));
+}
+const { l } = Astro.props as { l: Leistung };
+const b = bild(l.bild);
+const andere = LEISTUNGEN.filter((x) => x.slug !== l.slug);
+const beispiele = l.slug === "verkaufen"
+  ? ["geesthacht-mehrfamilienhaus", "norderstedt-anlageobjekt", "lemsahl-mellingstedt-doppelhaushaelfte"]
+  : l.slug === "vermieten" ? ["city-nord-buero"] : l.slug === "kaufen" ? ["poppenbuettel", "langenhorn-wohnung", "eidelstedt-wohnung"] : [];
+const objs = beispiele.map((s) => daten.angebote.find((o) => o.slug === s)!);
+const schema = { "@context": "https://schema.org", "@type": "Service", name: `${l.titel} – ${SITE.name}`, serviceType: l.titel, provider: { "@type": "RealEstateAgent", name: SITE.name }, areaServed: "Hamburg und Umland", description: l.description };
+---
+<BaseLayout title={`${l.titel} | Henrick Jung Immobilien Hamburg`} description={l.description} schema={schema}>
+  <PageHero eyebrow={l.claim} title={l.h1} lead={l.lead} bild={{ ...b, alt: l.bildAlt }} crumbs={[{ label: "Leistungen", href: u("leistungen/") }, { label: l.titel }]}>
+    <div class="btns">
+      <a class="btn" href={u(`kontakt/?anliegen=${l.slug}`)}>Anfrage stellen</a>
+      <a class="btn btn--line" href={`tel:${SITE.phoneTel}`}><Icon name="phone" size={18} /> {SITE.phoneDisplay}</a>
+    </div>
+  </PageHero>
+
+  {l.zielgruppen && (
+    <section class="section">
+      <div class="container">
+        <div class="head center"><p class="eyebrow reveal">Für wen?</p><h2 class="reveal" style="--d:80ms">Privat oder <em>gewerblich</em> – ich bin für Sie da</h2></div>
+        <div class="grid g2">
+          {l.zielgruppen.map((z, i) => (
+            <div class="card zg reveal" style={`--d:${i * 120}ms`}>
+              <span class="zg__ico"><Icon name={i === 0 ? "home" : "building"} size={26} /></span>
+              <h3>{z.titel}</h3><p>{z.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class:list={["section", { "section--papier": !!l.zielgruppen }]}>
+    <div class="container umf">
+      <div>
+        <p class="eyebrow reveal">Leistungsumfang</p>
+        <h2 class="reveal" style="--d:80ms">{l.slug === "beraten" ? "Typische Fragen meiner Kunden" : "Darauf können Sie sich verlassen"}</h2>
+        <p class="reveal" style="--d:140ms">{l.kurz}</p>
+      </div>
+      <ul class="check reveal" style="--d:120ms">{l.umfang.map((x) => <li>{x}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="head center"><p class="eyebrow reveal">Ablauf</p><h2 class="reveal" style="--d:80ms">So gehen wir <em>gemeinsam</em> vor</h2></div>
+      <Steps items={l.ablauf} />
+    </div>
+  </section>
+
+  {objs.length > 0 && (
+    <section class="section section--papier">
+      <div class="container">
+        <div class="head"><p class="eyebrow reveal">Beispiele aus meiner Vermarktung</p><h2 class="reveal" style="--d:80ms">Immobilien, die ich <em>begleite</em></h2><p class="reveal small">Angebote können sich ändern – bitte Verfügbarkeit anfragen.</p></div>
+        <div class="grid g3">{objs.map((o, i) => <ObjektCard o={o} d={i * 120} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="section dark">
+    <div class="container"><div class="head center"><p class="eyebrow reveal">Bewertungen</p><h2 class="reveal">Was Kunden <em>sagen</em></h2></div><Stimmen /></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="head center"><p class="eyebrow reveal">Häufige Fragen</p><h2 class="reveal">Fragen zum Thema <em>{l.titel}</em></h2></div>
+      <Faq items={l.faq} />
+    </div>
+  </section>
+
+  <section class="section section--papier">
+    <div class="container">
+      <div class="head"><p class="eyebrow">Weitere Leistungen</p></div>
+      <div class="grid g3">
+        {andere.map((a, i) => (
+          <a class="card reveal" style={`--d:${i * 100}ms`} href={u(`leistungen/${a.slug}/`)}>
+            <Icon name={a.icon} size={28} class="icon ico-akz" />
+            <h3>{a.titel}</h3><p>{a.kurz}</p>
+            <span class="link-arrow">Mehr erfahren <Icon name="arrow" size={20} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <KontaktBand />
+</BaseLayout>
+<style>
+  .zg__ico { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--sand); color: var(--champagner-text); margin-bottom: 20px; }
+  .umf { display: grid; gap: 40px; }
+  @media (min-width: 900px) { .umf { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; } }
+  :global(.ico-akz) { color: var(--champagner-text); margin-bottom: 16px; }
+</style>

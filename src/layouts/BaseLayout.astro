@@ -1,0 +1,121 @@
+---
+// Grundgerüst: SEO-Head (Meta, OG, Schema.org RealEstateAgent), Header, Footer, Animationen.
+import "../styles/global.css";
+import IconSprite from "../components/IconSprite.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyBar from "../components/StickyBar.astro";
+import { SITE, u } from "../consts";
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  transparentHeader?: boolean;
+  ogImage?: string;
+  schema?: Record<string, unknown>;
+}
+const { title, description, noindex = false, transparentHeader = false, ogImage, schema } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const og = new URL(ogImage ? u(ogImage) : u("assets/og-image.jpg"), Astro.site);
+const home = new URL(u(""), Astro.site).href;
+
+const agent = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "@id": home + "#makler",
+  name: SITE.name,
+  url: home,
+  image: og.href,
+  logo: new URL(u("assets/logo-dunkel.png"), Astro.site).href,
+  telephone: SITE.phoneTel,
+  email: SITE.email,
+  address: { "@type": "PostalAddress", streetAddress: "Mexikoring 27-29", postalCode: SITE.zip, addressLocality: SITE.city, addressCountry: "DE" },
+  founder: { "@type": "Person", name: SITE.owner, jobTitle: "Zertifizierter Immobilienmakler (IHK & EIA)" },
+  areaServed: [{ "@type": "City", name: "Hamburg" }, { "@type": "State", name: "Schleswig-Holstein" }],
+  openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" }],
+  sameAs: [SITE.instagram],
+};
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={u("sitemap.xml")} />
+    <link rel="icon" href={u("favicon.ico")} sizes="48x48" />
+    <link rel="icon" href={u("assets/favicon-32.png")} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={u("assets/favicon-180.png")} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={og} />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#141414" />
+    <script type="application/ld+json" set:html={JSON.stringify(agent)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt springen</a>
+    <IconSprite />
+    <Header transparent={transparentHeader} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <StickyBar />
+    <script>
+      // Scroll-Animationen: nur Zusatzschicht. Ohne JS fehlt html.js → alles sichtbar.
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const els = document.querySelectorAll(".reveal, .reveal-img, .draw, .reveal-steps, [data-count]");
+      const show = (el: Element) => {
+        el.classList.add("is-visible");
+        const t = el as HTMLElement;
+        if (t.dataset.count && !reduce) {
+          const end = Number(t.dataset.count); const start = performance.now(); const dur = 1400;
+          const step = (now: number) => {
+            const p = Math.min(1, (now - start) / dur);
+            t.textContent = String(Math.round(end * (1 - Math.pow(1 - p, 3))));
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }
+      };
+      if ("IntersectionObserver" in window && !reduce) {
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add("is-visible"));
+      }
+
+      // Sanfte Parallax-Bewegung großer Bilder (nur Desktop, nur ohne reduced motion)
+      const px = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
+      if (px.length && !reduce && matchMedia("(min-width: 900px)").matches) {
+        let ticking = false;
+        const run = () => {
+          const vh = innerHeight;
+          for (const el of px) {
+            const r = el.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > vh) continue;
+            const f = Number(el.dataset.parallax) || 0.08;
+            const max = r.height * 0.05; // Bild ist um 12 % skaliert → max. 5 % Versatz ohne sichtbaren Rand
+            const off = Math.max(-max, Math.min(max, (r.top + r.height / 2 - vh / 2) * -f));
+            (el.firstElementChild as HTMLElement).style.transform = `translate3d(0, ${off.toFixed(1)}px, 0) scale(1.12)`;
+          }
+          ticking = false;
+        };
+        addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(run); } }, { passive: true });
+        run();
+      }
+    </script>
+  </body>
+</html>

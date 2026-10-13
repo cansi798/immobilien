@@ -1,0 +1,42 @@
+---
+// Abschluss-CTA mit Foto von Henrick Jung, Telefon & E-Mail.
+import { SITE, u } from "../consts";
+import Icon from "./Icon.astro";
+import Img from "./Img.astro";
+import b from "../data/bilder.json";
+import RoofLine from "./RoofLine.astro";
+interface Props { titel?: string; text?: string; }
+const { titel = "Lassen Sie uns <em>sprechen</em>.", text = "Ob Kauf, Verkauf oder Vermietung – ich freue mich auf Ihren Anruf und nehme mir Zeit für Ihr Anliegen." } = Astro.props;
+const p = b.portrait[0];
+---
+<section class="kb section section--papier">
+  <div class="container kb__inner">
+    <div class="kb__pic pic pic--r reveal-img"><Img src={p.src} w={p.w} h={p.h} alt="Henrick Jung, Immobilienmakler in Hamburg" sizes="(min-width: 900px) 360px, 70vw" /></div>
+    <div class="kb__text">
+      <RoofLine width={150} class="kb__roof" />
+      <h2 class="reveal" set:html={titel} />
+      <p class="lead reveal" style="--d:100ms">{text}</p>
+      <ul class="kb__list reveal" style="--d:180ms">
+        <li><Icon name="phone" size={20} /><a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a><span class="small">Büro</span></li>
+        <li><Icon name="phone" size={20} /><a href={`tel:${SITE.mobileTel}`}>{SITE.mobileDisplay}</a><span class="small">Mobil</span></li>
+        <li><Icon name="mail" size={20} /><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        <li><Icon name="clock" size={20} /><span>{SITE.hoursShort}</span></li>
+      </ul>
+      <div class="btns reveal" style="--d:260ms">
+        <a class="btn" href={`tel:${SITE.phoneTel}`}><Icon name="phone" size={18} /> Jetzt anrufen</a>
+        <a class="btn btn--line" href={u("kontakt/")}>Anfrage schreiben</a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .kb__inner { display: grid; gap: 40px; align-items: center; }
+  @media (min-width: 900px) { .kb__inner { grid-template-columns: 360px 1fr; gap: 80px; } }
+  .kb__pic { aspect-ratio: 4 / 5; max-width: 360px; width: 100%; }
+  :global(.kb__roof) { margin-bottom: 16px; }
+  .kb__list { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 12px; }
+  .kb__list li { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .kb__list :global(.icon) { color: var(--champagner-text); flex: none; }
+  .kb__list a { font-weight: 600; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .kb__list a:hover { text-decoration: underline; }
+</style>
