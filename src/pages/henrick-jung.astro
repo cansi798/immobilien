@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import Img from "../components/Img.astro";
 import Icon from "../components/Icon.astro";
 import Stimmen from "../components/Stimmen.astro";
-import KontaktBand from "../components/KontaktBand.astro";
+import Finale from "../components/Finale.astro";
 import { SITE, u, bild } from "../consts";
 import { VORTEILE } from "../data/leistungen";
 import b from "../data/bilder.json";
@@ -72,7 +72,7 @@ const schema = { "@context": "https://schema.org", "@type": "Person", name: SITE
   <section class="section dark">
     <div class="container"><div class="head center"><p class="eyebrow reveal">Bewertungen</p><h2 class="reveal">Was Kunden <em>sagen</em></h2></div><Stimmen /></div>
   </section>
-  <KontaktBand />
+  <Finale />
 </BaseLayout>
 <style>
   :global(.ph__bild img) { object-position: 50% 12%; }

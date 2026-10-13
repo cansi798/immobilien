@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
-import Steps from "../../components/Steps.astro";
+import WegSteps from "../../components/WegSteps.astro";
 import Faq from "../../components/Faq.astro";
 import Icon from "../../components/Icon.astro";
 import ObjektCard from "../../components/ObjektCard.astro";
 import Stimmen from "../../components/Stimmen.astro";
-import KontaktBand from "../../components/KontaktBand.astro";
+import Finale from "../../components/Finale.astro";
 import { LEISTUNGEN, type Leistung } from "../../data/leistungen";
 import { u, bild, SITE } from "../../consts";
 import daten from "../../data/objekte.json";
@@ -58,12 +58,7 @@ const schema = { "@context": "https://schema.org", "@type": "Service", name: `${
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="head center"><p class="eyebrow reveal">Ablauf</p><h2 class="reveal" style="--d:80ms">So gehen wir <em>gemeinsam</em> vor</h2></div>
-      <Steps items={l.ablauf} />
-    </div>
-  </section>
+  <WegSteps items={l.ablauf} eyebrow={`Ablauf · ${l.titel}`} text="So gehen wir gemeinsam vor – mit klarem Ablauf und einer festen Ansprechperson." cta={{ href: u(`kontakt/?anliegen=${l.slug}`), label: "Anfrage stellen" }} />
 
   {objs.length > 0 && (
     <section class="section section--papier">
@@ -100,7 +95,7 @@ const schema = { "@context": "https://schema.org", "@type": "Service", name: `${
     </div>
   </section>
 
-  <KontaktBand />
+  <Finale />
 </BaseLayout>
 <style>
   .zg__ico { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--sand); color: var(--champagner-text); margin-bottom: 20px; }

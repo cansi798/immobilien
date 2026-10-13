@@ -102,7 +102,7 @@ p { margin: 0 0 1em; max-width: var(--text); }
 @media (min-width: 900px) { .section { padding-block: 120px; } }
 .section--papier { background: var(--papier); }
 .section--sand { background: var(--sand); }
-.dark { background: var(--ink); color: #e9e9e9; }
+.dark { background: var(--nacht, #0d1524); color: #e6e8ee; }
 .dark h1, .dark h2, .dark h3 { color: var(--weiss); }
 .dark p { color: #c9c9c9; }
 .dark h2 em { color: var(--champagner-hell); }
@@ -202,4 +202,79 @@ html.js .draw.is-visible path, html.js .draw.is-visible line, html.js .draw.is-v
 @media (max-width: 520px) {
   .eyebrow { letter-spacing: .16em; gap: 10px; }
   .center .eyebrow::before, .center .eyebrow::after { width: 18px; }
+}
+
+/* ============================================================
+   V2 – mutigere Markenwelt (Feedback Can Siebert, 13.10.2026)
+   Zweite Fläche Nachtblau, Champagner-Glanz, Tageszeit-Stimmung,
+   Seitenübergänge, Cursor, Neigung, Laufband.
+   ============================================================ */
+:root {
+  --nacht: #0d1524;
+  --nacht-2: #15213a;
+  --nacht-3: #22314f;
+  --glanz: linear-gradient(115deg, #a8895a 0%, #e9d8b4 38%, #b59a6a 62%, #f1e4c6 100%);
+  /* Tageszeit 0 = Morgen … 1 = Abend (per JS aus der Scrollposition) */
+  --tod: 0;
+  --morgen: #f8f1e5;
+  --abend: #e7e8ef;
+  --stimmung: color-mix(in oklab, var(--morgen) calc((1 - var(--tod)) * 100%), var(--abend));
+}
+.section--papier { background: var(--stimmung); transition: background-color .4s linear; }
+.nacht { background: var(--nacht); color: #e6e8ee; }
+.nacht h1, .nacht h2, .nacht h3 { color: var(--weiss); }
+.nacht p { color: #c3c8d4; }
+.nacht h2 em, .nacht h1 em { color: transparent; background: var(--glanz); -webkit-background-clip: text; background-clip: text; }
+.nacht .eyebrow { color: var(--champagner-hell); }
+.glanz-text { color: transparent; background: var(--glanz); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; animation: glanz 6s linear infinite; }
+@keyframes glanz { to { background-position: -200% 0; } }
+
+.mega { font-family: var(--serif); font-weight: 400; font-size: clamp(3rem, 11vw, 10.5rem); line-height: .92; letter-spacing: -.035em; color: var(--ink); margin: 0; }
+.mega em { font-style: italic; }
+/* Wort mit Fotofüllung */
+.foto-wort { color: var(--graphit); background-size: cover; background-position: 50% 50%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: pan 18s ease-in-out infinite alternate; }
+@keyframes pan { from { background-position: 30% 40%; } to { background-position: 70% 60%; } }
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) { .foto-wort { -webkit-text-fill-color: currentColor; background: none; } }
+
+/* Schlüssel dreht sich */
+.key-turn .icon { transition: transform .7s cubic-bezier(.5, -0.4, .3, 1.5); }
+.key-turn:hover .icon, .key-turn:focus-visible .icon, .key-turn.turn .icon { transform: rotate(-90deg); }
+
+/* Seitenübergänge (native Cross-Document View Transitions, kein JS) */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: vt-out .35s var(--ease) both; }
+::view-transition-new(root) { animation: vt-in .5s var(--ease) both; }
+::view-transition-group(*) { animation-duration: .6s; animation-timing-function: var(--ease); }
+@keyframes vt-out { to { opacity: 0; transform: translateY(-12px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(16px); } }
+.hdr { view-transition-name: kopf; }
+
+/* Cursor-Follower (nur feiner Zeiger) */
+.cursor { position: fixed; left: 0; top: 0; z-index: 200; pointer-events: none; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--champagner); mix-blend-mode: multiply; transition: width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background .35s, opacity .3s; display: grid; place-items: center; opacity: 0; will-change: transform; }
+.cursor span { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); opacity: 0; transition: opacity .25s; }
+.cursor.on { opacity: 1; }
+.cursor.big { width: 96px; height: 96px; margin: -48px 0 0 -48px; background: rgba(233, 216, 180, .92); mix-blend-mode: normal; }
+.cursor.big span { opacity: 1; }
+@media (hover: none), (pointer: coarse) { .cursor { display: none; } }
+
+/* Laufband */
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.marquee__track { display: flex; gap: 20px; width: max-content; animation: lauf 60s linear infinite; }
+.marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
+@keyframes lauf { to { transform: translateX(calc(-50% - 10px)); } }
+
+/* Tageszeit-Anzeige (Desktop) */
+.tageszeit { position: fixed; right: 18px; top: 50%; z-index: 80; height: 180px; width: 22px; transform: translateY(-50%); pointer-events: none; display: none; }
+.tageszeit::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--champagner-hell), var(--nacht-3)); }
+.tageszeit i { position: absolute; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; top: calc(var(--tod) * 100% - 6px); background: color-mix(in oklab, #f2c879 calc((1 - var(--tod)) * 100%), #9fb2d9); box-shadow: 0 0 0 4px color-mix(in oklab, rgba(242,200,121,.25) calc((1 - var(--tod)) * 100%), rgba(159,178,217,.25)); }
+.tageszeit b { position: absolute; right: 22px; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--stein); white-space: nowrap; }
+.tageszeit b:first-of-type { top: -6px; } .tageszeit b:last-of-type { bottom: -6px; }
+@media (min-width: 1200px) and (hover: hover) { .tageszeit { display: block; } }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .marquee__track { animation: none; flex-wrap: nowrap; }
+  .marquee { overflow-x: auto; }
+  .foto-wort, .glanz-text { animation: none; }
+  .cursor { display: none; }
 }

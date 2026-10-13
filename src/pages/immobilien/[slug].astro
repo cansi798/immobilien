@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Img from "../../components/Img.astro";
 import Icon from "../../components/Icon.astro";
 import ObjektCard from "../../components/ObjektCard.astro";
-import KontaktBand from "../../components/KontaktBand.astro";
+import Finale from "../../components/Finale.astro";
 import { u, SITE } from "../../consts";
 import daten from "../../data/objekte.json";
 
@@ -38,7 +38,7 @@ const big = (src: string) => u(`${src}-1600.webp`);
     </div>
     <div class="container">
       <div class="gal" data-gallery>
-        <a class="gal__main pic pic--r reveal-img" href={big(erst.src)} data-i="0"><Img src={erst.src} w={erst.w} h={erst.h} alt={`${o.typ} in ${o.ort} – Ansicht 1`} eager sizes="(min-width: 1024px) 66vw, 100vw" /></a>
+        <a class="gal__main pic pic--r" href={big(erst.src)} data-i="0" data-cursor="Galerie" style={`view-transition-name: obj-${o.slug}`}><Img src={erst.src} w={erst.w} h={erst.h} alt={`${o.typ} in ${o.ort} – Ansicht 1`} eager sizes="(min-width: 1024px) 66vw, 100vw" /></a>
         {rest.slice(0, 4).map((bb, i) => (
           <a class="gal__th pic pic--r reveal-img" style={`--d:${120 + i * 90}ms`} href={big(bb.src)} data-i={i + 1}>
             <Img src={bb.src} w={bb.w} h={bb.h} alt={`${o.typ} in ${o.ort} – Ansicht ${i + 2}`} sizes="(min-width: 1024px) 17vw, 50vw" />
@@ -90,7 +90,7 @@ const big = (src: string) => u(`${src}-1600.webp`);
       <div class="grid g3">{weitere.map((w, i) => <ObjektCard o={w} d={i * 110} />)}</div>
     </div>
   </section>
-  <KontaktBand />
+  <Finale />
 
   <dialog class="lb" id="lb" aria-label="Bildergalerie">
     <img alt="" />

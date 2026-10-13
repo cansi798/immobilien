@@ -1,0 +1,37 @@
+---
+// Abschluss-Szene „Willkommen zu Hause“: Nachtblau, Dachlinie zeichnet sich, Fenster leuchtet auf.
+import { SITE, u } from "../consts";
+import Icon from "./Icon.astro";
+---
+<section class="fi nacht" aria-label="Kontakt">
+  <div class="container fi__inner">
+    <svg class="fi__haus draw" viewBox="0 0 400 300" fill="none" aria-hidden="true" focusable="false">
+      <path d="M20 200 L200 60 L380 200" stroke="#d9c7a5" stroke-width="1.2" style="--len:520" />
+      <path d="M60 200 L200 92 L340 200" stroke="#d9c7a5" stroke-width=".8" opacity=".45" style="--len:420;--d:200ms" />
+      <path d="M262 108 V70 H286 V126" stroke="#d9c7a5" stroke-width="1.2" style="--len:110;--d:500ms" />
+      <path d="M90 200 V290 H310 V200" stroke="#d9c7a5" stroke-width="1" opacity=".5" style="--len:420;--d:700ms" />
+      <rect class="fi__fenster" x="182" y="140" width="36" height="36" stroke="#d9c7a5" stroke-width="1.2" style="--len:150;--d:900ms" />
+      <path d="M200 140 V176 M182 158 H218" stroke="#d9c7a5" stroke-width="1" style="--len:80;--d:1100ms" />
+    </svg>
+    <h2 class="fi__h reveal">Willkommen <em>zu Hause.</em></h2>
+    <p class="lead reveal" style="--d:120ms">Ob Kauf, Verkauf oder Vermietung – ich freue mich auf Ihren Anruf und nehme mir Zeit für Ihr Anliegen.</p>
+    <div class="btns fi__btns reveal" style="--d:200ms">
+      <a class="btn btn--hell" href={`tel:${SITE.phoneTel}`} data-magnet><Icon name="phone" size={18} /> {SITE.phoneDisplay}</a>
+      <a class="btn btn--line-hell" href={u("kontakt/")} data-magnet><Icon name="mail" size={18} /> Anfrage schreiben</a>
+    </div>
+    <p class="fi__meta reveal" style="--d:280ms">Mobil <a href={`tel:${SITE.mobileTel}`}>{SITE.mobileDisplay}</a> · <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · {SITE.hoursShort}</p>
+  </div>
+</section>
+<style>
+  .fi { position: relative; overflow: hidden; padding-block: 96px 120px; text-align: center; background: radial-gradient(ellipse 60% 50% at 50% 30%, var(--nacht-2), var(--nacht) 70%); }
+  .fi__inner { display: grid; justify-items: center; }
+  .fi__haus { width: min(420px, 80vw); height: auto; overflow: visible; margin-bottom: 8px; }
+  .fi__fenster { fill: rgba(242, 200, 121, 0); transition: fill 1.6s ease 1.8s, filter 1.6s ease 1.8s, stroke-dashoffset 2.2s var(--ease) .9s; }
+  :global(.draw.is-visible) .fi__fenster { fill: rgba(242, 200, 121, .9); filter: drop-shadow(0 0 18px rgba(242, 200, 121, .85)) drop-shadow(0 0 60px rgba(242, 200, 121, .45)); }
+  .fi__h { font-size: clamp(2.8rem, 8vw, 7rem); line-height: 1; letter-spacing: -.025em; margin-bottom: 20px; }
+  .fi .lead { margin-inline: auto; color: #cdd2dd; }
+  .fi__btns { justify-content: center; margin: 12px 0 28px; }
+  .fi__meta { font-size: 14.5px; color: #aab1c0; max-width: none; }
+  .fi__meta a { color: #e6e8ee; }
+  @media (prefers-reduced-motion: reduce) { .fi__fenster { fill: rgba(242, 200, 121, .9); } }
+</style>

@@ -1,0 +1,110 @@
+---
+// Masken-Hero: Das Objektfoto erscheint zuerst nur durch ein hausförmiges „Fenster“
+// (Dachform aus dem Logo). Beim Scrollen zoomt die Maske auf, bis das Foto
+// bildschirmfüllend ist. Nur GPU-Transforms (scale) → flüssig. Ohne JS bzw. bei
+// reduzierter Bewegung: statische Variante mit vollem Bild.
+import Img from "./Img.astro";
+import Icon from "./Icon.astro";
+import { SITE, u } from "../consts";
+import b from "../data/bilder.json";
+const hero = b.hero[0];
+const haus = "M300 480 L500 330 L590 397.5 L590 345 L625 345 L625 423.75 L700 480 L660 480 L660 680 L340 680 L340 480 Z";
+---
+<section class="hx" id="hx" aria-label="Willkommen">
+  <div class="hx__sticky">
+    <div class="hx__bild"><Img src={hero.src} w={hero.w} h={hero.h} alt="Garten und Terrasse eines von Henrick Jung vermarkteten Bungalows in Hamburg-Poppenbüttel" eager sizes="100vw" /></div>
+    <div class="hx__shade" aria-hidden="true"></div>
+    <svg class="hx__maske" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path fill-rule="evenodd" d={`M-2000 -2000 H3000 V3000 H-2000 Z ${haus}`} />
+    </svg>
+    <svg class="hx__linie" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path d={haus} fill="none" stroke="#b59a6a" stroke-width="1.6" vector-effect="non-scaling-stroke" />
+      <path d="M262 508 L500 330 L738 508" fill="none" stroke="#b59a6a" stroke-width="1" opacity=".5" vector-effect="non-scaling-stroke" />
+    </svg>
+
+    <div class="hx__start">
+      <p class="eyebrow hx__in" style="--d:100ms">{SITE.name} · Hamburg</p>
+      <h1 class="hx__h1">
+        <span class="hx__z1"><span class="w"><span style="--d:150ms">Wo</span></span> <span class="w"><span style="--d:260ms">Ihr</span></span> <span class="w"><span style="--d:370ms">neues</span></span></span>
+        <span class="hx__z2"><span class="w"><span style="--d:480ms">Kapitel</span></span> <span class="w"><em style="--d:600ms">beginnt.</em></span></span>
+      </h1>
+      <p class="hx__cue hx__in" style="--d:1100ms"><span class="hx__maus" aria-hidden="true"></span> Scrollen und eintreten</p>
+    </div>
+
+    <div class="hx__end">
+      <div class="container">
+        <p class="eyebrow">Immobilienmakler in Hamburg & Umland</p>
+        <p class="hx__claim">Persönlich. Ehrlich. <em>Mit Leidenschaft.</em></p>
+        <p class="lead">Ob Sie Ihr Zuhause verkaufen oder ein neues suchen: Ich begleite Sie persönlich und mit fundierter regionaler Marktkenntnis – vom ersten Anruf bis zur Schlüsselübergabe.</p>
+        <div class="btns">
+          <a class="btn btn--hell" href={u("leistungen/verkaufen/")} data-magnet><Icon name="building" size={18} /> Immobilie verkaufen</a>
+          <a class="btn btn--line-hell key-turn" href={u("immobilien/")} data-magnet><Icon name="key" size={18} /> Zuhause finden</a>
+        </div>
+        <ul class="hx__trust">
+          <li><Icon name="award" size={20} /> Zertifiziert (IHK & EIA)</li>
+          <li><Icon name="pin" size={20} /> {SITE.region}</li>
+          <li><Icon name="user" size={20} /> Ein persönlicher Ansprechpartner</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hx { --p: 0; --s: 1; position: relative; height: 260vh; }
+  .hx__sticky { position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h)); overflow: hidden; background: var(--nacht); }
+  .hx__bild { position: absolute; inset: 0; transform: scale(calc(1.28 - .28 * var(--p))); will-change: transform; }
+  .hx__bild :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .hx__shade { position: absolute; inset: 0; opacity: clamp(0, calc((var(--p) - .45) * 2.4), 1); background: linear-gradient(180deg, rgba(13,21,36,.25), rgba(13,21,36,.35) 40%, rgba(13,21,36,.88)), linear-gradient(90deg, rgba(13,21,36,.6), rgba(13,21,36,0) 70%); }
+  .hx__maske, .hx__linie { position: absolute; inset: 0; width: 100%; height: 100%; transform: scale(var(--s)); transform-origin: 50% 50.5%; will-change: transform; }
+  .hx__maske { overflow: visible; }
+  .hx__maske path { fill: var(--morgen); }
+  .hx__linie { opacity: clamp(0, calc(1 - var(--p) * 3), 1); }
+
+  .hx__start { position: absolute; inset: 0; display: grid; grid-template-rows: auto 1fr auto; padding: clamp(20px, 4vh, 48px) 20px 28px; text-align: center; opacity: clamp(0, calc(1 - var(--p) * 4.5), 1); transform: translateY(calc(var(--p) * -80px)); pointer-events: none; }
+  .hx__start .eyebrow { justify-self: center; }
+  .hx__start .eyebrow::after { content: ""; width: 34px; height: 1px; background: currentColor; }
+  .hx__h1 { margin: 0; display: grid; grid-template-rows: auto 1fr auto; align-items: center; font-weight: 400; font-size: clamp(2.9rem, 8.4vw, 8rem); line-height: .95; letter-spacing: -.03em; }
+  .hx__z1 { align-self: start; }
+  .hx__z2 { grid-row: 3; align-self: end; }
+  .hx__h1 em { font-style: italic; color: var(--champagner-text); }
+  .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; }
+  .w > * { display: inline-block; animation: rise 1.2s var(--ease) both; animation-delay: var(--d); }
+  .hx__in { animation: fade 1s var(--ease) both; animation-delay: var(--d); }
+  .hx__cue { display: inline-flex; align-items: center; gap: 12px; justify-self: center; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--stein); margin: 8px 0 0; }
+  .hx__maus { width: 22px; height: 34px; border: 1px solid var(--silber-500); border-radius: 12px; position: relative; }
+  .hx__maus::after { content: ""; position: absolute; left: 50%; top: 7px; width: 2px; height: 7px; margin-left: -1px; border-radius: 2px; background: var(--ink); animation: scrolly 1.8s ease-in-out infinite; }
+
+  .hx__end { position: absolute; inset: auto 0 0 0; padding-bottom: clamp(32px, 8vh, 96px); color: var(--weiss); opacity: clamp(0, calc((var(--p) - .6) * 3), 1); transform: translateY(calc((1 - var(--p)) * 40px)); visibility: hidden; }
+  .hx.is-end .hx__end { visibility: visible; }
+  .hx__end .eyebrow { color: var(--champagner-hell); }
+  .hx__claim { font-family: var(--serif); font-size: clamp(2.2rem, 6vw, 5.2rem); line-height: 1; letter-spacing: -.02em; color: var(--weiss); margin: 0 0 20px; max-width: 14ch; }
+  .hx__claim em { color: transparent; background: var(--glanz); -webkit-background-clip: text; background-clip: text; }
+  .hx__end .lead { color: #e5e7ec; max-width: 600px; }
+  .hx__trust { list-style: none; margin: 32px 0 0; padding: 20px 0 0; border-top: 1px solid rgba(255,255,255,.22); display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 14px; color: #e3e6ec; }
+  .hx__trust li { display: inline-flex; align-items: center; gap: 8px; }
+  .hx__trust :global(.icon) { color: var(--champagner-hell); }
+  @media (max-width: 719px) {
+    .hx { height: 220vh; }
+    .hx__h1 { font-size: 12.2vw; }
+    .hx__start { padding-top: 24px; padding-bottom: 92px; }
+    .hx__start .eyebrow { font-size: 11px; letter-spacing: .14em; }
+    .hx__start .eyebrow::before, .hx__start .eyebrow::after { display: none; }
+    .hx__end { padding-bottom: 100px; }
+    .hx__trust { display: none; }
+    .hx__end .lead { font-size: 1rem; }
+  }
+
+  /* Statische Variante: ohne JS oder bei reduzierter Bewegung */
+  :global(html:not(.js)) .hx, .hx.hx--static { height: auto; }
+  :global(html:not(.js)) .hx__sticky, .hx--static .hx__sticky { position: relative; top: 0; min-height: calc(100svh - var(--header-h)); height: auto; }
+  :global(html:not(.js)) .hx__maske, :global(html:not(.js)) .hx__linie, :global(html:not(.js)) .hx__start,
+  .hx--static .hx__maske, .hx--static .hx__linie, .hx--static .hx__start { display: none; }
+  :global(html:not(.js)) .hx__shade, .hx--static .hx__shade { opacity: 1; }
+  :global(html:not(.js)) .hx__bild, .hx--static .hx__bild { transform: none; }
+  :global(html:not(.js)) .hx__end, .hx--static .hx__end { opacity: 1; transform: none; visibility: visible; position: relative; padding-top: 30vh; }
+
+  @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes scrolly { 0% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(10px); } }
+</style>

@@ -71,17 +71,23 @@ const agent = {
     </main>
     <Footer />
     <StickyBar />
+    <div class="tageszeit" aria-hidden="true" title="Tageszeit: Morgen bis Abend"><i></i></div>
+    <div class="cursor" aria-hidden="true"><span></span></div>
     <script>
-      // Scroll-Animationen: nur Zusatzschicht. Ohne JS fehlt html.js → alles sichtbar.
+      // Alle Bewegungen in EINER rAF-Schleife. Ohne JS fehlt html.js → alles statisch sichtbar.
       const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const root = document.documentElement;
+
+      // 1) Einblenden + Zähler
       const els = document.querySelectorAll(".reveal, .reveal-img, .draw, .reveal-steps, [data-count]");
       const show = (el: Element) => {
         el.classList.add("is-visible");
         const t = el as HTMLElement;
         if (t.dataset.count && !reduce) {
-          const end = Number(t.dataset.count); const start = performance.now(); const dur = 1400;
+          const end = Number(t.dataset.count); const start = performance.now();
           const step = (now: number) => {
-            const p = Math.min(1, (now - start) / dur);
+            const p = Math.min(1, (now - start) / 1500);
             t.textContent = String(Math.round(end * (1 - Math.pow(1 - p, 3))));
             if (p < 1) requestAnimationFrame(step);
           };
@@ -91,30 +97,113 @@ const agent = {
       if ("IntersectionObserver" in window && !reduce) {
         const io = new IntersectionObserver((entries) => {
           for (const e of entries) if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
-        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
         els.forEach((el) => io.observe(el));
-      } else {
-        els.forEach((el) => el.classList.add("is-visible"));
-      }
+      } else els.forEach((el) => el.classList.add("is-visible"));
 
-      // Sanfte Parallax-Bewegung großer Bilder (nur Desktop, nur ohne reduced motion)
+      // 2) Scroll-gekoppelte Szenen
+      const hx = document.getElementById("hx");
+      const ws = document.querySelector<HTMLElement>(".ws");
+      const wsTrack = ws?.querySelector<HTMLElement>(".ws__track");
       const px = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
-      if (px.length && !reduce && matchMedia("(min-width: 900px)").matches) {
-        let ticking = false;
-        const run = () => {
-          const vh = innerHeight;
+      let hxTop = 0, hxH = 0, wsTop = 0, wsH = 0, wsDist = 0, docH = 1, vh = innerHeight;
+      const wsOn = () => !!ws && !reduce && innerWidth >= 820 && innerWidth > innerHeight;
+
+      const measure = () => {
+        vh = innerHeight;
+        if (ws && wsTrack) {
+          if (wsOn()) {
+            ws.classList.add("ws--h");
+            wsDist = Math.max(0, wsTrack.scrollWidth - innerWidth);
+            ws.style.height = `${wsDist + vh}px`;
+          } else { ws.classList.remove("ws--h"); ws.style.height = ""; wsTrack.style.removeProperty("--tx"); }
+          wsTop = ws.getBoundingClientRect().top + scrollY; wsH = ws.offsetHeight;
+        }
+        if (hx) { hxTop = hx.getBoundingClientRect().top + scrollY; hxH = hx.offsetHeight; }
+        docH = Math.max(1, document.documentElement.scrollHeight - vh);
+      };
+
+      if (hx && reduce) hx.classList.add("hx--static");
+      let ticking = false;
+      const frame = () => {
+        ticking = false;
+        const y = scrollY;
+        root.style.setProperty("--tod", (Math.min(1, y / docH)).toFixed(3));
+        if (hx && !reduce) {
+          const p = Math.min(1, Math.max(0, (y - hxTop + 0) / Math.max(1, hxH - vh)));
+          const pm = Math.min(1, p / 0.72);
+          hx.style.setProperty("--p", p.toFixed(4));
+          const s0 = (innerWidth < 720 || innerHeight > innerWidth) ? 1.12 : innerWidth < 1100 ? 1.12 : 0.9;
+          hx.style.setProperty("--s", (s0 * Math.pow(12, pm * pm * (3 - 2 * pm))).toFixed(4));
+          hx.classList.toggle("is-end", p > 0.62);
+        }
+        if (ws && wsTrack && wsOn()) {
+          const p = Math.min(1, Math.max(0, (y - wsTop) / Math.max(1, wsH - vh)));
+          wsTrack.style.setProperty("--tx", `${(-p * wsDist).toFixed(1)}px`);
+          ws.style.setProperty("--hp", p.toFixed(3));
+        }
+        if (px.length && !reduce && innerWidth >= 900) {
           for (const el of px) {
             const r = el.getBoundingClientRect();
             if (r.bottom < 0 || r.top > vh) continue;
-            const f = Number(el.dataset.parallax) || 0.08;
-            const max = r.height * 0.05; // Bild ist um 12 % skaliert → max. 5 % Versatz ohne sichtbaren Rand
-            const off = Math.max(-max, Math.min(max, (r.top + r.height / 2 - vh / 2) * -f));
+            const max = r.height * 0.05;
+            const off = Math.max(-max, Math.min(max, (r.top + r.height / 2 - vh / 2) * -(Number(el.dataset.parallax) || 0.08)));
             (el.firstElementChild as HTMLElement).style.transform = `translate3d(0, ${off.toFixed(1)}px, 0) scale(1.12)`;
           }
-          ticking = false;
+        }
+      };
+      const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+      // Handy: horizontale Wisch-Strecke → Fortschrittsbalken
+      wsTrack?.addEventListener("scroll", () => {
+        if (wsOn()) return;
+        const m = wsTrack.scrollWidth - wsTrack.clientWidth;
+        ws!.style.setProperty("--hp", (m > 0 ? wsTrack.scrollLeft / m : 0).toFixed(3));
+      }, { passive: true });
+      if (hx && !reduce) hx.style.setProperty("--s", String((innerWidth < 720 || innerHeight > innerWidth) ? 1.12 : innerWidth < 1100 ? 1.12 : 0.9));
+      measure(); frame();
+      addEventListener("scroll", onScroll, { passive: true });
+      let rz = 0;
+      addEventListener("resize", () => { clearTimeout(rz); rz = window.setTimeout(() => { measure(); frame(); }, 120); });
+      addEventListener("load", () => { measure(); frame(); });
+
+      // 3) Schlüssel dreht sich beim Antippen
+      document.querySelectorAll<HTMLElement>(".key-turn").forEach((k) => k.addEventListener("pointerdown", () => k.classList.add("turn")));
+
+      // 4) Nur Desktop mit Maus: Neigung, magnetische Buttons, Cursor-Follower
+      if (fine && !reduce) {
+        document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((c) => {
+          c.addEventListener("pointermove", (e) => {
+            const r = c.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+            c.classList.add("tilting");
+            c.style.setProperty("--ry", `${(x * 7).toFixed(2)}deg`);
+            c.style.setProperty("--rx", `${(-y * 7).toFixed(2)}deg`);
+          });
+          c.addEventListener("pointerleave", () => { c.classList.remove("tilting"); c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); });
+        });
+        document.querySelectorAll<HTMLElement>("[data-magnet]").forEach((m) => {
+          m.addEventListener("pointermove", (e) => {
+            const r = m.getBoundingClientRect();
+            m.style.transform = `translate(${((e.clientX - r.left - r.width / 2) * 0.22).toFixed(1)}px, ${((e.clientY - r.top - r.height / 2) * 0.32).toFixed(1)}px)`;
+          });
+          m.addEventListener("pointerleave", () => { m.style.transform = ""; });
+        });
+        const cur = document.querySelector<HTMLElement>(".cursor")!;
+        const label = cur.querySelector("span")!;
+        let tx = -100, ty = -100, cx = -100, cy = -100, run = false;
+        const loop = () => {
+          cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+          cur.style.transform = `translate3d(${cx.toFixed(1)}px, ${cy.toFixed(1)}px, 0)`;
+          if (Math.abs(tx - cx) + Math.abs(ty - cy) > 0.3) requestAnimationFrame(loop); else run = false;
         };
-        addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(run); } }, { passive: true });
-        run();
+        addEventListener("pointermove", (e) => {
+          tx = e.clientX; ty = e.clientY; cur.classList.add("on");
+          const t = (e.target as Element).closest<HTMLElement>("[data-cursor]");
+          cur.classList.toggle("big", !!t);
+          if (t) label.textContent = t.dataset.cursor || "";
+          if (!run) { run = true; requestAnimationFrame(loop); }
+        }, { passive: true });
+        document.addEventListener("pointerleave", () => cur.classList.remove("on"));
       }
     </script>
   </body>

@@ -1,15 +1,20 @@
 ---
+// Objektkarte: Hover-Neigung (JS, nur feiner Zeiger), Bildwechsel auf das zweite Foto,
+// Cursor „Ansehen“, Bild-Morph zur Detailseite (view-transition-name).
 import Img from "./Img.astro";
 import Icon from "./Icon.astro";
 import { u } from "../consts";
-interface Props { o: any; d?: number; }
-const { o, d = 0 } = Astro.props;
-const b = o.bilder[0];
+interface Props { o: any; d?: number; gross?: boolean; }
+const { o, d = 0, gross = false } = Astro.props;
+const [b1, b2] = o.bilder;
+const kat = /Büro/.test(o.typ) ? "mieten" : /Anlage|Mehrfamilien/.test(o.typ) ? "anlage" : "wohnen";
 ---
-<a class="oc reveal" style={`--d:${d}ms`} href={u(`immobilien/${o.slug}/`)}>
-  <div class="oc__pic pic zoom">
-    <Img src={b.src} w={b.w} h={b.h} alt={`${o.typ} in ${o.ort}`} sizes="(min-width: 1024px) 33vw, (min-width: 720px) 50vw, 100vw" />
+<a class:list={["oc reveal", { "oc--gross": gross }]} style={`--d:${d}ms`} href={u(`immobilien/${o.slug}/`)} data-tilt data-kat={kat} data-region={o.region}>
+  <div class="oc__pic pic" data-cursor="Ansehen" style={`view-transition-name: obj-${o.slug}`}>
+    <Img src={b1.src} w={b1.w} h={b1.h} alt={`${o.typ} in ${o.ort}`} sizes={gross ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 720px) 50vw, 100vw"} />
+    {b2 && <Img class="oc__b2" src={b2.src} w={b2.w} h={b2.h} alt="" sizes={gross ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 720px) 50vw, 100vw"} />}
     <span class="oc__badge">{o.typ.split(" (")[0].split(" – ")[0]}</span>
+    <span class="oc__preis-chip">{o.preis}</span>
   </div>
   <div class="oc__body">
     <p class="oc__ort"><Icon name="pin" size={16} /> {o.ort} · {o.region}</p>
@@ -27,10 +32,18 @@ const b = o.bilder[0];
   </div>
 </a>
 <style>
-  .oc { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--weiss); border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--linie); transition: box-shadow var(--t), transform var(--t), opacity 900ms var(--ease); height: 100%; }
-  .oc:hover { box-shadow: var(--shadow-lg); }
+  .oc { --rx: 0deg; --ry: 0deg; display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--weiss); border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--linie); height: 100%; transform-style: preserve-3d; transition: box-shadow var(--t), opacity 900ms var(--ease), transform 900ms var(--ease); }
+  :global(html.js) .oc.is-visible { transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)); }
+  .oc.tilting { transition: box-shadow var(--t), transform 120ms linear; }
+  .oc:hover { box-shadow: 0 30px 60px -20px rgba(13, 21, 36, .35); }
   .oc__pic { aspect-ratio: 3 / 2; }
-  .oc__badge { position: absolute; left: 16px; top: 16px; background: rgba(20,20,20,.78); color: var(--weiss); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+  .oc__pic :global(img) { position: absolute; inset: 0; transition: transform 1.2s var(--ease), opacity .7s var(--ease); }
+  .oc__pic :global(.oc__b2) { opacity: 0; }
+  .oc:hover .oc__pic :global(.oc__b2), .oc:focus-visible .oc__pic :global(.oc__b2) { opacity: 1; }
+  .oc:hover .oc__pic :global(img) { transform: scale(1.05); }
+  .oc__badge { position: absolute; z-index: 1; left: 16px; top: 16px; background: rgba(13,21,36,.78); color: var(--weiss); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+  .oc__preis-chip { position: absolute; z-index: 1; right: 16px; bottom: 16px; background: var(--weiss); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; padding: 6px 14px; border-radius: 999px; transform: translateY(8px); opacity: 0; transition: opacity .4s var(--ease), transform .4s var(--ease); }
+  .oc:hover .oc__preis-chip { opacity: 1; transform: none; }
   .oc__body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex: 1; }
   .oc__ort { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--stein); margin: 0 0 8px; }
   .oc__t { font-size: 1.3rem; margin-bottom: 16px; }
@@ -42,4 +55,11 @@ const b = o.bilder[0];
   .oc__preis small { font-family: var(--sans); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
   .oc__more { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--silber-300); display: grid; place-items: center; transition: background var(--t), color var(--t), border-color var(--t); }
   .oc:hover .oc__more { background: var(--ink); color: var(--weiss); border-color: var(--ink); }
+  /* Großformat (erste Karte im Raster) */
+  @media (min-width: 1024px) {
+    .oc--gross { grid-column: span 2; grid-row: span 2; }
+    .oc--gross .oc__pic { aspect-ratio: auto; flex: 1; min-height: 420px; }
+    .oc--gross .oc__t { font-size: 2rem; }
+    .oc--gross .oc__body { flex: none; }
+  }
 </style>

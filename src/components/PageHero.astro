@@ -1,5 +1,6 @@
 ---
-// Kopfbereich der Unterseiten: Überschrift + optional großes Bild (Ken-Burns).
+// Kopfbereich der Unterseiten. Mit Bild: Nachtblau-Fläche, das Foto öffnet sich aus der
+// Dachform des Logos (clip-path) zum vollen Bild. Ohne Bild: helle Variante mit großer Typo.
 import Img from "./Img.astro";
 import RoofLine from "./RoofLine.astro";
 import { u } from "../consts";
@@ -25,24 +26,44 @@ const { eyebrow, title, lead, bild, crumbs = [] } = Astro.props;
       <div class="reveal" style="--d:240ms"><slot /></div>
     </div>
     {bild ? (
-      <div class="ph__bild pic pic--r reveal-img"><Img src={bild.src} w={bild.w} h={bild.h} alt={bild.alt} eager sizes="(min-width: 1024px) 50vw, 100vw" /></div>
+      <div class="ph__bild pic"><Img src={bild.src} w={bild.w} h={bild.h} alt={bild.alt} eager sizes="(min-width: 1024px) 50vw, 100vw" /></div>
     ) : (
       <RoofLine class="ph__roof" width={260} />
     )}
   </div>
 </section>
 <style>
-  .ph { padding-block: 40px 64px; background: var(--papier); position: relative; overflow: hidden; }
+  .ph { padding-block: 40px 64px; background: var(--stimmung); position: relative; overflow: hidden; }
   @media (min-width: 900px) { .ph { padding-block: 64px 96px; } }
   .ph__inner { display: grid; gap: 40px; align-items: center; }
-  @media (min-width: 1024px) { .ph--bild .ph__inner { grid-template-columns: 1.05fr 1fr; gap: 64px; } .ph:not(.ph--bild) .ph__inner { grid-template-columns: 1fr auto; } }
+  @media (min-width: 1024px) { .ph--bild .ph__inner { grid-template-columns: 1.1fr 1fr; gap: 64px; } .ph:not(.ph--bild) .ph__inner { grid-template-columns: 1fr auto; } }
   .ph__text { min-width: 0; }
-  .ph h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
-  .ph__bild { aspect-ratio: 4 / 3; }
+  .ph h1 { font-size: clamp(2.4rem, 4.4vw, 4.1rem); line-height: 1.02; letter-spacing: -.03em; font-weight: 400; }
+  .ph :global(.lead) { max-width: 620px; }
+
+  /* Mit Bild: dunkle Bühne */
+  .ph--bild { background: radial-gradient(ellipse 70% 80% at 80% 40%, var(--nacht-2), var(--nacht) 70%); color: #dfe3ea; }
+  .ph--bild h1 { color: var(--weiss); }
+  .ph--bild h1 :global(em) { color: transparent; background: var(--glanz); -webkit-background-clip: text; background-clip: text; }
+  .ph--bild .eyebrow { color: var(--champagner-hell); }
+  .ph--bild :global(.lead), .ph--bild p { color: #c9cfda; }
+  .ph--bild .crumbs, .ph--bild .crumbs a { color: #9ea7b8; }
+  .ph--bild :global(.btn:not(.btn--line)) { background: var(--weiss); color: var(--ink); border-color: var(--weiss); }
+  .ph--bild :global(.btn--line) { color: var(--weiss); border-color: rgba(255,255,255,.5); }
+  .ph--bild :global(.btn--line:hover) { color: var(--ink); background: var(--weiss); }
+  .ph--bild :global(a:not(.btn)) { color: var(--champagner-hell); }
+  .ph__bild { aspect-ratio: 4 / 3.4; border-radius: 0 0 var(--r-lg) var(--r-lg); clip-path: polygon(50% 0%, 100% 26%, 100% 100%, 0% 100%, 0% 26%); animation: haus-auf 1.6s var(--ease) .2s both; }
   .ph__bild :global(img) { animation: kenburns 16s var(--ease) both; }
+  .ph__bild::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(13,21,36,0) 60%, rgba(13,21,36,.35)); }
+  @keyframes haus-auf {
+    from { clip-path: polygon(50% 28%, 66% 40%, 66% 74%, 34% 74%, 34% 40%); }
+    55% { clip-path: polygon(50% 8%, 86% 32%, 86% 92%, 14% 92%, 14% 32%); }
+    to { clip-path: polygon(50% 0%, 100% 26%, 100% 100%, 0% 100%, 0% 26%); }
+  }
   :global(.ph__roof) { display: none !important; }
   @media (min-width: 1024px) { :global(.ph__roof) { display: block !important; } }
   .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--stein); margin-bottom: 24px; }
   .crumbs a { color: var(--stein); }
-  @keyframes kenburns { from { transform: scale(1.1); } to { transform: scale(1); } }
+  @keyframes kenburns { from { transform: scale(1.12); } to { transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce) { .ph__bild { animation: none; } }
 </style>

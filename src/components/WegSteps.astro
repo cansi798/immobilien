@@ -1,0 +1,77 @@
+---
+// „Ihr Weg in sechs Schritten“ – horizontaler, an das Scrollen gekoppelter Abschnitt.
+// Desktop/Tablet: sticky + translateX (JS). Handy & reduzierte Bewegung: Wisch-Strecke mit Snap.
+import Img from "./Img.astro";
+import { bild, u } from "../consts";
+interface Props { items: { titel: string; text: string }[]; eyebrow?: string; text?: string; cta?: { href: string; label: string }; }
+const zahl = ["", "einem", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht"];
+const { items, eyebrow = "Ihr Verkauf, Schritt für Schritt", text = "Klarer Ablauf, feste Ansprechperson, keine Überraschungen – vom ersten Gespräch bis zur Schlüsselübergabe.", cta = { href: u("kontakt/?anliegen=verkaufen"), label: "Verkauf besprechen" } } = Astro.props;
+const n = zahl[items.length] ?? String(items.length);
+const fotos = [
+  { src: "img/henrick-jung", alt: "Henrick Jung" },
+  { src: "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/01", alt: "Außenansicht einer Doppelhaushälfte" },
+  { src: "img/objekte/poppenbuettel/01", alt: "Garten mit Pool aus der Vogelperspektive" },
+  { src: "img/objekte/langenhorn-wohnung/02", alt: "Wohnbereich einer Dachgeschosswohnung" },
+  { src: "img/objekte/city-nord-buero/04", alt: "Besprechungsbereich in einem Büro-Loft" },
+  { src: "img/objekte/lemsahl-mellingstedt-doppelhaushaelfte/05", alt: "Eingangsbereich mit Treppe" },
+];
+---
+<section class="ws nacht" id="weg" aria-label={`Ihr Weg in ${n} Schritten`}>
+  <div class="ws__sticky">
+    <div class="ws__track" tabindex="0" aria-label={`${items.length} Schritte, horizontal`}>
+      <div class="ws__intro">
+        <p class="eyebrow">{eyebrow}</p>
+        <h2 class="ws__h">Ihr Weg in <em>{n}</em> Schritten.</h2>
+        <p>{text}</p>
+        <a class="btn btn--hell" href={cta.href} data-magnet>{cta.label}</a>
+      </div>
+      {items.map((s, i) => {
+        const f = bild(fotos[i % fotos.length].src);
+        return (
+          <article class="ws__step">
+            <div class="ws__pic pic"><Img src={f.src} w={f.w} h={f.h} alt={fotos[i % fotos.length].alt} sizes="(min-width: 900px) 30vw, 80vw" /></div>
+            <div class="ws__txt">
+              <span class="ws__nr" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{s.titel}</h3>
+              <p>{s.text}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+    <div class="ws__bar" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+<style>
+  .ws { --hp: 0; position: relative; }
+  .ws__sticky { overflow: hidden; padding-block: 80px 48px; }
+  .ws__track { display: flex; gap: 28px; padding-inline: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .ws__track::-webkit-scrollbar { display: none; }
+  .ws__intro, .ws__step { flex: none; scroll-snap-align: center; }
+  .ws__intro { width: 84vw; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .ws__h { font-size: clamp(2.6rem, 6vw, 5.4rem); line-height: 1; letter-spacing: -.02em; }
+  .ws__intro .btn { align-self: flex-start; margin-top: 12px; }
+  .ws__step { width: 80vw; display: grid; gap: 22px; align-content: start; }
+  .ws__pic { aspect-ratio: 4 / 5; border-radius: var(--r-lg); }
+  .ws__pic :global(img) { transition: transform 1.2s var(--ease); }
+  .ws__step:hover .ws__pic :global(img) { transform: scale(1.05); }
+  .ws__nr { display: block; font-family: var(--serif); font-size: 4.2rem; line-height: .9; color: transparent; -webkit-text-stroke: 1px var(--champagner-hell); margin-bottom: 8px; }
+  .ws__txt h3 { font-size: 1.6rem; }
+  .ws__txt p { font-size: 16px; }
+  .ws__bar { margin: 36px 20px 0; height: 1px; background: var(--nacht-3); }
+  .ws__bar span { display: block; height: 1px; width: 100%; background: var(--glanz); transform-origin: left; transform: scaleX(var(--hp)); }
+
+  /* Desktop/Tablet mit JS: sticky + horizontale Bewegung */
+  @media (min-width: 820px) and (orientation: landscape) {
+    .ws.ws--h .ws__sticky { position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h)); display: flex; flex-direction: column; justify-content: center; padding-block: 32px; }
+    .ws.ws--h .ws__track { overflow: visible; scroll-snap-type: none; padding-inline: max(32px, calc((100vw - var(--max)) / 2 + 32px)); transform: translate3d(var(--tx, 0px), 0, 0); will-change: transform; }
+  }
+  @media (min-width: 600px) and (orientation: portrait) { .ws__step { width: 58vw; } .ws__intro { width: 70vw; } }
+  @media (min-width: 820px) and (orientation: landscape) {
+    .ws__intro { width: min(520px, 46vw); padding-right: 40px; }
+    .ws__step { width: min(760px, 62vw); grid-template-columns: 1fr 1fr; gap: 36px; align-items: end; }
+    .ws__pic { aspect-ratio: 4 / 5; max-height: calc(100svh - var(--header-h) - 160px); }
+    .ws__nr { font-size: 6rem; }
+    .ws__bar { margin-inline: max(32px, calc((100vw - var(--max)) / 2 + 32px)); }
+  }
+</style>

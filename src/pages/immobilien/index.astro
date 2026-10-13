@@ -4,12 +4,10 @@ import PageHero from "../../components/PageHero.astro";
 import ObjektCard from "../../components/ObjektCard.astro";
 import Img from "../../components/Img.astro";
 import Icon from "../../components/Icon.astro";
-import KontaktBand from "../../components/KontaktBand.astro";
+import Finale from "../../components/Finale.astro";
 import { u, SITE } from "../../consts";
 import daten from "../../data/objekte.json";
 const angebote = [...daten.angebote].sort((a, b) => a.order - b.order);
-const wohnen = angebote.filter((o) => !/Anlage|Büro|Mehrfamilien/.test(o.typ));
-const anlage = angebote.filter((o) => /Anlage|Büro|Mehrfamilien/.test(o.typ));
 ---
 <BaseLayout title="Immobilien in Hamburg & Umland | Henrick Jung Immobilien" description="Häuser, Wohnungen, Grundstücke sowie Anlage- und Gewerbeimmobilien in Hamburg, Schleswig-Holstein und Mecklenburg-Vorpommern – Angebote und Referenzen von Henrick Jung Immobilien.">
   <PageHero eyebrow="Immobilien" title="Schon etwas <em>Passendes</em> gefunden?" lead="Hier finden Sie Objekte aus meiner Vermarktung – vom Familienhaus bis zur Kapitalanlage. Nicht das Richtige dabei? Teilen Sie mir Ihre Wünsche mit: Innerhalb von 24 Stunden präsentiere ich Ihnen passende Objekte." crumbs={[{ label: "Immobilien" }]}>
@@ -23,11 +21,17 @@ const anlage = angebote.filter((o) => /Anlage|Büro|Mehrfamilien/.test(o.typ));
         <p><strong>Bitte beachten:</strong> Immobilienangebote ändern sich laufend. Die Objekte entsprechen dem zuletzt veröffentlichten Stand – einzelne Angebote können bereits verkauft oder vermietet sein. Fragen Sie die Verfügbarkeit gern unter <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a> oder per <a href={`mailto:${SITE.email}`}>E-Mail</a> an.</p>
       </div>
 
-      <div class="head"><p class="eyebrow reveal">Wohnen</p><h2 class="reveal">Häuser, Wohnungen & <em>Grundstücke</em></h2></div>
-      <div class="grid g3">{wohnen.map((o, i) => <ObjektCard o={o} d={(i % 3) * 110} />)}</div>
-
-      <div class="head mt"><p class="eyebrow reveal">Für Investoren & Unternehmen</p><h2 class="reveal">Anlage- & <em>Gewerbeimmobilien</em></h2></div>
-      <div class="grid g3">{anlage.map((o, i) => <ObjektCard o={o} d={(i % 3) * 110} />)}</div>
+      <div class="filter" id="filter" hidden>
+        <div class="filter__g" role="group" aria-label="Objektart">
+          {[["alle", "Alle"], ["wohnen", "Wohnen kaufen"], ["anlage", "Anlage & Gewerbe"], ["mieten", "Mieten"]].map(([v, l], i) => <button type="button" class="chip-btn" data-f="kat" data-v={v} aria-pressed={i === 0 ? "true" : "false"}>{l}</button>)}
+        </div>
+        <div class="filter__g" role="group" aria-label="Region">
+          {[["alle", "Alle Regionen"], ["Hamburg", "Hamburg"], ["Schleswig-Holstein", "Schleswig-Holstein"], ["Mecklenburg-Vorpommern", "Mecklenburg-Vorp."]].map(([v, l], i) => <button type="button" class="chip-btn" data-f="region" data-v={v} aria-pressed={i === 0 ? "true" : "false"}>{l}</button>)}
+        </div>
+        <p class="filter__n" aria-live="polite"><span id="fcount">{angebote.length}</span> Objekte</p>
+      </div>
+      <div class="grid g3" id="fgrid">{angebote.map((o, i) => <ObjektCard o={o} d={(i % 3) * 110} />)}</div>
+      <p class="filter__leer" id="fleer" hidden>Für diese Auswahl ist gerade kein Objekt online. <a href={u("kontakt/?anliegen=kaufen")}>Suchauftrag senden</a> – ich melde mich mit passenden Angeboten.</p>
     </div>
   </section>
 
@@ -48,9 +52,44 @@ const anlage = angebote.filter((o) => /Anlage|Büro|Mehrfamilien/.test(o.typ));
       </div>
     </div>
   </section>
-  <KontaktBand titel="Ihre Immobilie soll die <em>nächste</em> sein?" text="Ich vermarkte Ihre Immobilie mit derselben Sorgfalt – sprechen Sie mich an." />
+  <Finale />
 </BaseLayout>
+<script>
+  // Filter-Insel: wenige Zeilen Vanilla-JS, ohne JS bleibt die Liste vollständig.
+  const box = document.getElementById("filter");
+  if (box) {
+    box.hidden = false;
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("#fgrid [data-kat]"));
+    const st: Record<string, string> = { kat: "alle", region: "alle" };
+    const apply = () => {
+      let n = 0;
+      cards.forEach((c) => {
+        const ok = (st.kat === "alle" || c.dataset.kat === st.kat) && (st.region === "alle" || c.dataset.region === st.region);
+        c.hidden = !ok; if (ok) { n++; c.classList.add("is-visible"); }
+      });
+      document.getElementById("fcount")!.textContent = String(n);
+      document.getElementById("fleer")!.hidden = n > 0;
+    };
+    box.querySelectorAll<HTMLButtonElement>("button[data-f]").forEach((b) => b.addEventListener("click", () => {
+      st[b.dataset.f!] = b.dataset.v!;
+      box.querySelectorAll<HTMLButtonElement>(`button[data-f="${b.dataset.f}"]`).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      const go = () => apply();
+      (document as any).startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? (document as any).startViewTransition(go) : go();
+    }));
+  }
+</script>
 <style>
+  .filter { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; padding: 14px; margin-bottom: 40px; border: 1px solid var(--linie); border-radius: 28px; background: var(--weiss); position: sticky; top: calc(var(--header-h) + 12px); z-index: 5; box-shadow: var(--shadow-sm); }
+  .filter[hidden] { display: none; }
+  .filter__g { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip-btn { border: 1px solid var(--silber-300); background: var(--weiss); border-radius: 999px; padding: 9px 16px; font-size: 14.5px; transition: background var(--t), color var(--t), border-color var(--t); }
+  .chip-btn:hover { border-color: var(--ink); }
+  .chip-btn[aria-pressed="true"] { background: var(--nacht); color: var(--weiss); border-color: var(--nacht); }
+  .filter__n { margin: 0 8px 0 auto; font-size: 14px; color: var(--stein); }
+  .filter__leer { margin-top: 24px; }
+  #fgrid > [hidden] { display: none; }
+  @media (max-width: 900px) { .filter { border-radius: var(--r-lg); position: static; } .filter__g { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; width: 100%; padding-bottom: 2px; } .chip-btn { flex: none; } .filter__n { margin-left: 0; } }
+
   .hinweis { display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border: 1px solid var(--champagner-hell); background: #fbf8f2; border-radius: var(--r); margin-bottom: 64px; }
   .hinweis :global(.icon) { color: var(--champagner-text); flex: none; margin-top: 3px; }
   .hinweis p { margin: 0; max-width: none; font-size: 15.5px; }
