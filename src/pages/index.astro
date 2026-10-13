@@ -31,7 +31,7 @@ const kf = bild("img/objekte/poppenbuettel/02");
   <section class="section section--papier stm">
     <div class="container">
       <p class="eyebrow reveal">Über Henrick Jung Immobilien</p>
-      <h2 class="stm__h reveal" style="--d:80ms">Hinter jeder <span class="foto-wort" style={`background-image:linear-gradient(rgba(13,21,36,.38),rgba(13,21,36,.38)),url(${wortBild})`}>Tür</span> beginnt eine <em>Geschichte.</em></h2>
+      <h2 class="stm__h reveal" style="--d:80ms">Hinter jeder <span class="foto-wort" style={`background-image:linear-gradient(rgba(12,11,10,.38),rgba(12,11,10,.38)),url(${wortBild})`}>Tür</span> beginnt eine <em>Geschichte.</em></h2>
       <div class="stm__grid">
         <div class="stm__portrait pic reveal-img" style="--curtain: var(--morgen)"><Img src={portrait.src} w={portrait.w} h={portrait.h} alt="Henrick Jung, Immobilienmakler in Hamburg" sizes="(min-width: 900px) 260px, 50vw" /></div>
         <div class="stm__text">
@@ -169,23 +169,29 @@ const kf = bild("img/objekte/poppenbuettel/02");
   .stm__zahlen dt { font-family: var(--serif); font-size: clamp(2.6rem, 4.4vw, 3.8rem); line-height: 1; color: var(--ink); }
   .stm__zahlen dt small { font-size: .5em; margin-left: 2px; color: var(--champagner-text); }
   .stm__zahlen dd { margin: 0; font-size: 14.5px; color: var(--stein); line-height: 1.5; }
+  @media (max-width: 719px) {
+    .stm__h { margin-inline: auto; margin-bottom: 40px; }
+    .stm__portrait { margin-inline: auto; width: min(260px, 72vw); }
+    .stm__zahlen div { grid-template-columns: 1fr; gap: 6px; text-align: center; }
+    .stm__zahlen dd { max-width: 30ch; margin-inline: auto; }
+  }
 
   /* Zwei Wege */
   .wg { display: flex; flex-direction: column; background: var(--nacht); }
   .wg__p { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: flex-end; min-height: 88svh; text-decoration: none; color: var(--weiss); }
   .wg__p > :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transform: scale(1.06); transition: transform 1.6s var(--ease); }
-  .wg__p::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(13,21,36,.45) 0%, rgba(13,21,36,.92) 70%); transition: background .8s var(--ease); }
+  .wg__p::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(12,11,10,.45) 0%, rgba(12,11,10,.92) 70%); transition: background .8s var(--ease); }
   .wg__p:hover > :global(img) { transform: scale(1); }
   .wg__c { padding: 32px 20px 44px; width: 100%; }
   .wg__k { font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--champagner-hell); font-weight: 600; margin-bottom: 8px; }
   .wg__w { font-size: clamp(3.6rem, 14vw, 8.5rem); line-height: .9; letter-spacing: -.04em; color: var(--weiss); margin: 0 0 18px; font-weight: 400; }
   .wg__w span { color: var(--champagner); }
-  .wg__t { color: #dde1e9; max-width: 520px; }
+  .wg__t { color: #e2dcd1; max-width: 520px; }
   .wg__l { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 8px; }
-  .wg__l li { font-size: 13.5px; padding: 6px 14px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: #eef0f4; }
+  .wg__l li { font-size: 13.5px; padding: 6px 14px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: #f1ece4; }
   .wg__cta { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; padding: 14px 26px; border-radius: 999px; background: var(--weiss); color: var(--ink); }
   @media (min-width: 900px) {
-    .wg__p::before { background: linear-gradient(180deg, rgba(13,21,36,.1) 20%, rgba(13,21,36,.88) 85%); }
+    .wg__p::before { background: linear-gradient(180deg, rgba(12,11,10,.1) 20%, rgba(12,11,10,.88) 85%); }
     .wg { flex-direction: row; height: 92svh; }
     .wg__p { flex: 1; min-height: 0; transition: flex 1s var(--ease); }
     .wg__p:hover, .wg__p:focus-visible { flex: 1.55; }

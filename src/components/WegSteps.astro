@@ -66,6 +66,7 @@ const fotos = [
     .ws.ws--h .ws__sticky { position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h)); display: flex; flex-direction: column; justify-content: center; padding-block: 32px; }
     .ws.ws--h .ws__track { overflow: visible; scroll-snap-type: none; padding-inline: max(32px, calc((100vw - var(--max)) / 2 + 32px)); transform: translate3d(var(--tx, 0px), 0, 0); will-change: transform; }
   }
+  @media (max-width: 719px) { .ws__intro { width: calc(100vw - 40px); text-align: center; align-items: center; } .ws__intro .btn { align-self: center; } }
   @media (min-width: 600px) and (orientation: portrait) { .ws__step { width: 58vw; } .ws__intro { width: 70vw; } }
   @media (min-width: 820px) and (orientation: landscape) {
     .ws__intro { width: min(520px, 46vw); padding-right: 40px; }

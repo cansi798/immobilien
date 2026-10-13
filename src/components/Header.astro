@@ -80,7 +80,7 @@ const isActive = (href?: string) => !!href && href !== u("") && path.startsWith(
      Containing Block für das position:fixed-Mobilmenü machen (Menü wäre nur 0 px hoch). */
   .hdr::before {
     content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-    background: rgba(255,255,255,.97);
+    background: #fff;
     backdrop-filter: saturate(1.2) blur(14px); -webkit-backdrop-filter: saturate(1.2) blur(14px);
     transition: opacity var(--t);
   }

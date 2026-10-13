@@ -35,13 +35,13 @@ const kat = /Büro/.test(o.typ) ? "mieten" : /Anlage|Mehrfamilien/.test(o.typ) ?
   .oc { --rx: 0deg; --ry: 0deg; display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--weiss); border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--linie); height: 100%; transform-style: preserve-3d; transition: box-shadow var(--t), opacity 900ms var(--ease), transform 900ms var(--ease); }
   :global(html.js) .oc.is-visible { transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)); }
   .oc.tilting { transition: box-shadow var(--t), transform 120ms linear; }
-  .oc:hover { box-shadow: 0 30px 60px -20px rgba(13, 21, 36, .35); }
+  .oc:hover { box-shadow: 0 30px 60px -20px rgba(12,11,10,.35); }
   .oc__pic { aspect-ratio: 3 / 2; }
   .oc__pic :global(img) { position: absolute; inset: 0; transition: transform 1.2s var(--ease), opacity .7s var(--ease); }
   .oc__pic :global(.oc__b2) { opacity: 0; }
   .oc:hover .oc__pic :global(.oc__b2), .oc:focus-visible .oc__pic :global(.oc__b2) { opacity: 1; }
   .oc:hover .oc__pic :global(img) { transform: scale(1.05); }
-  .oc__badge { position: absolute; z-index: 1; left: 16px; top: 16px; background: rgba(13,21,36,.78); color: var(--weiss); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+  .oc__badge { position: absolute; z-index: 1; left: 16px; top: 16px; background: rgba(12,11,10,.78); color: var(--weiss); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
   .oc__preis-chip { position: absolute; z-index: 1; right: 16px; bottom: 16px; background: var(--weiss); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; padding: 6px 14px; border-radius: 999px; transform: translateY(8px); opacity: 0; transition: opacity .4s var(--ease), transform .4s var(--ease); }
   .oc:hover .oc__preis-chip { opacity: 1; transform: none; }
   .oc__body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex: 1; }

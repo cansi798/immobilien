@@ -102,7 +102,7 @@ p { margin: 0 0 1em; max-width: var(--text); }
 @media (min-width: 900px) { .section { padding-block: 120px; } }
 .section--papier { background: var(--papier); }
 .section--sand { background: var(--sand); }
-.dark { background: var(--nacht, #0d1524); color: #e6e8ee; }
+.dark { background: var(--nacht, #0f0e0d); color: #ece7df; }
 .dark h1, .dark h2, .dark h3 { color: var(--weiss); }
 .dark p { color: #c9c9c9; }
 .dark h2 em { color: var(--champagner-hell); }
@@ -210,20 +210,20 @@ html.js .draw.is-visible path, html.js .draw.is-visible line, html.js .draw.is-v
    Seitenübergänge, Cursor, Neigung, Laufband.
    ============================================================ */
 :root {
-  --nacht: #0d1524;
-  --nacht-2: #15213a;
-  --nacht-3: #22314f;
-  --glanz: linear-gradient(115deg, #a8895a 0%, #e9d8b4 38%, #b59a6a 62%, #f1e4c6 100%);
+  --nacht: #0f0e0d;
+  --nacht-2: #1d1a16;
+  --nacht-3: #3a342b;
+  --glanz: linear-gradient(115deg, #a8895a 0%, #d4bc8a 40%, #b59a6a 65%, #e2cfa4 100%);
   /* Tageszeit 0 = Morgen … 1 = Abend (per JS aus der Scrollposition) */
   --tod: 0;
   --morgen: #f8f1e5;
-  --abend: #e7e8ef;
+  --abend: #efe9df;
   --stimmung: color-mix(in oklab, var(--morgen) calc((1 - var(--tod)) * 100%), var(--abend));
 }
 .section--papier { background: var(--stimmung); transition: background-color .4s linear; }
-.nacht { background: var(--nacht); color: #e6e8ee; }
+.nacht { background: var(--nacht); color: #ece7df; }
 .nacht h1, .nacht h2, .nacht h3 { color: var(--weiss); }
-.nacht p { color: #c3c8d4; }
+.nacht p { color: #c9c2b6; }
 .nacht h2 em, .nacht h1 em { color: transparent; background: var(--glanz); -webkit-background-clip: text; background-clip: text; }
 .nacht .eyebrow { color: var(--champagner-hell); }
 .glanz-text { color: transparent; background: var(--glanz); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; animation: glanz 6s linear infinite; }
@@ -266,7 +266,7 @@ html.js .draw.is-visible path, html.js .draw.is-visible line, html.js .draw.is-v
 /* Tageszeit-Anzeige (Desktop) */
 .tageszeit { position: fixed; right: 18px; top: 50%; z-index: 80; height: 180px; width: 22px; transform: translateY(-50%); pointer-events: none; display: none; }
 .tageszeit::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--champagner-hell), var(--nacht-3)); }
-.tageszeit i { position: absolute; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; top: calc(var(--tod) * 100% - 6px); background: color-mix(in oklab, #f2c879 calc((1 - var(--tod)) * 100%), #9fb2d9); box-shadow: 0 0 0 4px color-mix(in oklab, rgba(242,200,121,.25) calc((1 - var(--tod)) * 100%), rgba(159,178,217,.25)); }
+.tageszeit i { position: absolute; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; top: calc(var(--tod) * 100% - 6px); background: color-mix(in oklab, #d4bc8a calc((1 - var(--tod)) * 100%), #8a7346); box-shadow: 0 0 0 4px color-mix(in oklab, rgba(212,188,138,.25) calc((1 - var(--tod)) * 100%), rgba(138,115,70,.25)); }
 .tageszeit b { position: absolute; right: 22px; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--stein); white-space: nowrap; }
 .tageszeit b:first-of-type { top: -6px; } .tageszeit b:last-of-type { bottom: -6px; }
 @media (min-width: 1200px) and (hover: hover) { .tageszeit { display: block; } }
@@ -277,4 +277,21 @@ html.js .draw.is-visible path, html.js .draw.is-visible line, html.js .draw.is-v
   .marquee { overflow-x: auto; }
   .foto-wort, .glanz-text { animation: none; }
   .cursor { display: none; }
+}
+
+/* ============================================================
+   Mobil: Überschriften, Kurztexte, Kennzahlen, Buttons und Bilder
+   mittig (Feedback Jamil). Lange Fließtexte bleiben als volle,
+   symmetrische Blöcke linksbündig lesbar.
+   ============================================================ */
+@media (max-width: 719px) {
+  main h1, main h2, main .lead, main .head, main .kopf, main .kopf__r,
+  main .stm__text, main .ws__intro, main .hx__end, main .wg__c, main .ph__text, main .brief { text-align: center; }
+  main .eyebrow { display: flex; justify-content: center; text-align: center; }
+  main .eyebrow::after { content: ""; width: 34px; height: 1px; background: currentColor; }
+  main .btns, main .badges, main .hx__trust, main .wg__l { justify-content: center; }
+  main .link-arrow { display: flex; justify-content: center; }
+  main .ws__intro .btn { align-self: center; }
+  main .lead, main .stm__text p, main .ph__text p, main .kopf__r p { margin-inline: auto; }
+  main .crumbs { justify-content: center; }
 }

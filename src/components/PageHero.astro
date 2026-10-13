@@ -42,19 +42,21 @@ const { eyebrow, title, lead, bild, crumbs = [] } = Astro.props;
   .ph :global(.lead) { max-width: 620px; }
 
   /* Mit Bild: dunkle Bühne */
-  .ph--bild { background: radial-gradient(ellipse 70% 80% at 80% 40%, var(--nacht-2), var(--nacht) 70%); color: #dfe3ea; }
+  .ph--bild { background: radial-gradient(ellipse 70% 80% at 80% 40%, var(--nacht-2), var(--nacht) 70%); color: #e4ded3; }
   .ph--bild h1 { color: var(--weiss); }
   .ph--bild h1 :global(em) { color: transparent; background: var(--glanz); -webkit-background-clip: text; background-clip: text; }
   .ph--bild .eyebrow { color: var(--champagner-hell); }
-  .ph--bild :global(.lead), .ph--bild p { color: #c9cfda; }
-  .ph--bild .crumbs, .ph--bild .crumbs a { color: #9ea7b8; }
+  .ph--bild :global(.lead), .ph--bild p { color: #cfc8bc; }
+  .ph--bild .crumbs, .ph--bild .crumbs a { color: #a89f90; }
   .ph--bild :global(.btn:not(.btn--line)) { background: var(--weiss); color: var(--ink); border-color: var(--weiss); }
   .ph--bild :global(.btn--line) { color: var(--weiss); border-color: rgba(255,255,255,.5); }
   .ph--bild :global(.btn--line:hover) { color: var(--ink); background: var(--weiss); }
   .ph--bild :global(a:not(.btn)) { color: var(--champagner-hell); }
+  .ph--bild :global(.badges li) { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); color: #ece7df; }
+  .ph--bild :global(.badges .icon) { color: var(--champagner-hell); }
   .ph__bild { aspect-ratio: 4 / 3.4; border-radius: 0 0 var(--r-lg) var(--r-lg); clip-path: polygon(50% 0%, 100% 26%, 100% 100%, 0% 100%, 0% 26%); animation: haus-auf 1.6s var(--ease) .2s both; }
   .ph__bild :global(img) { animation: kenburns 16s var(--ease) both; }
-  .ph__bild::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(13,21,36,0) 60%, rgba(13,21,36,.35)); }
+  .ph__bild::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(12,11,10,0) 60%, rgba(12,11,10,.35)); }
   @keyframes haus-auf {
     from { clip-path: polygon(50% 28%, 66% 40%, 66% 74%, 34% 74%, 34% 40%); }
     55% { clip-path: polygon(50% 8%, 86% 32%, 86% 92%, 14% 92%, 14% 32%); }
